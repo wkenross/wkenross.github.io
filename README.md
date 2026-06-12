@@ -25,3 +25,6 @@ wkenross.github.io
 
 Push this folder to the repository's `main` branch. GitHub Pages user sites are
 served from the repository root.
+
+See `ROOT_SITE_PUBLISH_PLANME.md` and `PUBLISHING_RUNME.md` for the launch
+sequence.

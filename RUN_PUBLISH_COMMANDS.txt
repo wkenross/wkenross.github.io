@@ -17,6 +17,18 @@ Step 2 - Push the already-committed local site:
 cd "$env:USERPROFILE\OneDrive\projects\wkenross.github.io"
 git push -u origin main
 
+If that push returns "Repository not found", create the repository first:
+
+https://github.com/new
+
+Owner: wkenross
+Repository name: wkenross.github.io
+Visibility: Public
+
+Then rerun:
+
+git push -u origin main
+
 Step 3 - Verify:
 
 https://wkenross.github.io/

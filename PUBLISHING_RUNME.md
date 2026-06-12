@@ -1,6 +1,6 @@
 # Root GitHub Pages Publishing RunMe
 
-Generated: 2026-06-12T18:19:01
+Generated: 2026-06-12T18:37:03
 
 ## Target
 
@@ -42,6 +42,11 @@ path is the most reliable default:
 cd "$env:USERPROFILE\OneDrive\projects\wkenross.github.io"
 git push -u origin main
 ```
+
+If that push returns `Repository not found`, the repository still needs to be
+created at `https://github.com/new` or it was created under a different owner or
+name. Confirm owner `wkenross` and repository name `wkenross.github.io`, then
+rerun `git push -u origin main`.
 
 If GitHub CLI is installed and authenticated:
 

@@ -1,0 +1,47 @@
+WHY GIT PUSH SAYS "REPOSITORY NOT FOUND"
+
+Current remote:
+
+https://github.com/wkenross/wkenross.github.io.git
+
+This error means GitHub cannot find a repository named:
+
+wkenross/wkenross.github.io
+
+or the GitHub account authenticated in the browser does not have access to it.
+
+DO THIS FIRST
+
+1. Open:
+
+https://github.com/new
+
+2. Create the repository with exactly:
+
+Owner: wkenross
+Repository name: wkenross.github.io
+Visibility: Public
+Initialize with README: No
+Initialize with .gitignore: No
+Initialize with license: No
+
+3. After GitHub creates the repository, return to PowerShell and run:
+
+cd "$env:USERPROFILE\OneDrive\projects\wkenross.github.io"
+git push -u origin main
+
+IF YOU CREATED THE REPO UNDER A DIFFERENT GITHUB USERNAME
+
+Run this instead, replacing YOUR_GITHUB_USERNAME:
+
+git remote set-url origin https://github.com/YOUR_GITHUB_USERNAME/YOUR_GITHUB_USERNAME.github.io.git
+git push -u origin main
+
+Then the website URL will also change to:
+
+https://YOUR_GITHUB_USERNAME.github.io/
+
+IMPORTANT
+
+Do not initialize the GitHub repo with a README, .gitignore, or license. This
+local folder already has committed files ready to push.

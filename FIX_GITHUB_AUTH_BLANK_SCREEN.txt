@@ -46,6 +46,23 @@ Initialize with license: No
 cd "$env:USERPROFILE\OneDrive\projects\wkenross.github.io"
 git push -u origin main
 
+If VS Code shows "Connect to GitHub":
+
+That prompt is normal, but the browser callback can get stuck on a blank
+localhost page. In that dialog, prefer:
+
+Sign in with a code
+
+Then follow GitHub's device-code instructions in the browser. After VS Code/Git
+is authenticated, you still must create the repository named
+wkenross.github.io before push can succeed.
+
+Important sequence:
+
+1. Sign in to GitHub as the account that owns wkenross.
+2. Create https://github.com/wkenross/wkenross.github.io.
+3. Return to PowerShell and run git push -u origin main.
+
 If owner is not wkenross:
 
 If GitHub shows a different username in the owner dropdown, stop and either

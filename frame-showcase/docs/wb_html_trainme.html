@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WB HTML TrainMe - FRAME Evidence Workbench</title>
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body class="kind-trainme">
+  <div class="layout">
+    <aside class="nav">
+      <p class="brand">FRAME Evidence Workbench</p>
+      <p class="tagline">Review-first FRAME showcase</p>
+      <a href="../index.html">Workbench Home</a>
+<a href="wb_html_planme.html">WB HTML PlanMe</a>
+<a href="wb_html_trainme.html">WB HTML TrainMe</a>
+<a href="wb_html_certifyme.html">WB HTML CertifyMe</a>
+<a href="wb_html_style_guide.html">Style Guide</a>
+<a href="wb_html_publish_workflow_planme.html">Publish Workflow</a>
+<a href="wb_github_showcase_infrastructure_planme.html">GitHub Showcase Infrastructure</a>
+<a href="wb_public_data_source_planme.html">Public Data Source Plan</a>
+<a href="../briefs/public_energy_data.html">Public Energy And Economic Data</a>
+<a href="../briefs/install_frame_automation.html">Install FRAME Automation</a>
+<a href="../briefs/sql_power_bi.html">SQL And Power BI</a>
+<a href="../briefs/agile_certification.html">Agile And Certification</a>
+<a href="../briefs/crm_automation.html">CRM Automation</a>
+<a href="../briefs/salesforce_cloud.html">Salesforce Cloud CRM</a>
+<a href="../briefs/safety_review.html">Safety Review</a>
+    </aside>
+    <div class="content">
+      <div class="meta">
+        <span class="pill kind">trainme</span>
+        <span class="pill">limited-review</span>
+      </div>
+      <main>
+        <h1 id="wb-html-trainme">WB HTML TrainMe</h1>
+<p>Updated: 2026-06-09</p>
+<h2 id="purpose">Purpose</h2>
+<p>Teach the practical workflow for turning FRAME Markdown into a clean static site.</p>
+<p>The core habit is simple: write in Markdown, curate for safety, build HTML, review locally, then publish only the reviewed output.</p>
+<h2 id="why-this-approach">Why This Approach</h2>
+<p>Static HTML is the first choice because it is:</p>
+<ul>
+<li>easy to host on GitHub Pages</li>
+<li>easy to inspect before publishing</li>
+<li>independent of a running server</li>
+<li>friendly to Markdown source files</li>
+<li>safer than wiring live tools into a public site</li>
+</ul>
+<p>The builder starts with Python standard library code so the workflow can run on a fresh FRAME workstation without a front-end package install.</p>
+<h2 id="standard-loop">Standard Loop</h2>
+<ol>
+<li>Choose a source document from a workflow folder.</li>
+<li>Decide whether it is public, limited, internal, or blocked.</li>
+<li>Copy only reviewed ideas into <code>content/pages</code>.</li>
+<li>Pick a page kind: <code>planme</code>, <code>trainme</code>, <code>certifyme</code>, <code>resume</code>, <code>tool</code>, or</li>
+<p><code>default</code>.</p>
+<li>Add the page to <code>config/site_manifest.json</code>.</li>
+<li>Run <code>scripts/py/build_site.py</code>.</li>
+<li>Open <code>html/index.html</code>.</li>
+<li>Review links, titles, tone, and private references.</li>
+<li>Publish only after review.</li>
+</ol>
+<h2 id="practical-lessons">Practical Lessons</h2>
+<ul>
+<li>A website is a packaging layer, not the source of truth.</li>
+<li>Markdown stays close to the workflow that owns the work.</li>
+<li>Generated HTML should be disposable.</li>
+<li>A good showcase page explains evidence, limits, and next steps.</li>
+<li>Tool pages should show transferable workflow thinking, not private tenant</li>
+<p>state.</p>
+</ul>
+<h2 id="useful-commands">Useful Commands</h2>
+<pre><code>
+py &quot;$env:USERPROFILE\OneDrive\projects\wb_html\scripts\py\build_site.py&quot;
+ii &quot;$env:USERPROFILE\OneDrive\projects\wb_html\html\index.html&quot;
+</code></pre>
+<h2 id="review-checklist">Review Checklist</h2>
+<ul>
+<li>no private URLs</li>
+<li>no real customers or contacts</li>
+<li>no tokens or secrets</li>
+<li>no private workbook names</li>
+<li>no screenshots with account details</li>
+<li>no claims of certifications not yet earned</li>
+<li>all data examples are synthetic or clearly scrubbed</li>
+</ul>
+<h2 id="done-criteria">Done Criteria</h2>
+<ul>
+<li>The site builds locally.</li>
+<li>Navigation works.</li>
+<li>Each page has a visible kind label.</li>
+<li>Review status is represented in the page metadata or source catalog.</li>
+<li>The generated output can be deleted and rebuilt.</li>
+</ul>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

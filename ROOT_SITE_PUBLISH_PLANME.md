@@ -46,6 +46,32 @@ https://github.com/wkenross/wkenross.github.io.git
 7. Use `https://wkenross.github.io/frame-showcase/` only when a deeper FRAME
    showcase link is appropriate.
 
+## FRAME Showcase Folder
+
+The root repository can host the current FRAME showcase directly under:
+
+```text
+frame-showcase\
+```
+
+That folder is populated from:
+
+```text
+C:\Users\KenRossiter\OneDrive\projects\wb_html\html
+```
+
+The initial install page is available locally at:
+
+```text
+frame-showcase\briefs\install_frame_automation.html
+```
+
+and publishes to:
+
+```text
+https://wkenross.github.io/frame-showcase/briefs/install_frame_automation.html
+```
+
 ## Acceptance Criteria
 
 - repository exists at `https://github.com/wkenross/wkenross.github.io`

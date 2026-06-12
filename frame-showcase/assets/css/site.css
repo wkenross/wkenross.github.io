@@ -1,0 +1,210 @@
+:root {
+  --ink: #1f2933;
+  --muted: #5b6573;
+  --paper: #f7f8fb;
+  --surface: #ffffff;
+  --line: #d9dee7;
+  --plan: #2457a6;
+  --train: #22745b;
+  --cert: #a06412;
+  --tool: #4d5b70;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Segoe UI", Arial, sans-serif;
+  line-height: 1.55;
+}
+
+a {
+  color: var(--plan);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  min-height: 100vh;
+}
+
+.nav {
+  border-right: 1px solid var(--line);
+  background: var(--surface);
+  padding: 28px 22px;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.tagline {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0 0 24px;
+}
+
+.nav a {
+  display: block;
+  padding: 7px 0;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid #eef1f5;
+}
+
+.nav a:hover {
+  color: var(--plan);
+}
+
+.content {
+  max-width: 980px;
+  padding: 42px 54px 72px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.pill {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 12px;
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+
+.kind-planme .pill.kind {
+  border-color: var(--plan);
+  color: var(--plan);
+}
+
+.kind-trainme .pill.kind {
+  border-color: var(--train);
+  color: var(--train);
+}
+
+.kind-certifyme .pill.kind {
+  border-color: var(--cert);
+  color: var(--cert);
+}
+
+.kind-tool .pill.kind {
+  border-color: var(--tool);
+  color: var(--tool);
+}
+
+main {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 34px;
+}
+
+h1 {
+  font-size: 34px;
+  line-height: 1.15;
+  margin: 0 0 20px;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: 22px;
+  margin-top: 34px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  letter-spacing: 0;
+}
+
+h3 {
+  font-size: 18px;
+  margin-top: 26px;
+  letter-spacing: 0;
+}
+
+.kind-planme h2 {
+  border-top-color: color-mix(in srgb, var(--plan) 35%, var(--line));
+}
+
+.kind-trainme h2 {
+  border-top-color: color-mix(in srgb, var(--train) 35%, var(--line));
+}
+
+.kind-certifyme h2 {
+  border-top-color: color-mix(in srgb, var(--cert) 35%, var(--line));
+}
+
+pre {
+  overflow-x: auto;
+  background: #17202a;
+  color: #f6f8fa;
+  padding: 16px;
+  border-radius: 6px;
+}
+
+code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.92em;
+}
+
+p code,
+li code,
+td code {
+  background: #eef1f5;
+  color: #1f2933;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0;
+  font-size: 14px;
+}
+
+th,
+td {
+  border: 1px solid var(--line);
+  padding: 8px 10px;
+  vertical-align: top;
+}
+
+th {
+  background: #eef1f5;
+  text-align: left;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 760px) {
+  .layout {
+    display: block;
+  }
+
+  .nav {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .content {
+    padding: 24px 16px 48px;
+  }
+
+  main {
+    padding: 22px;
+  }
+}

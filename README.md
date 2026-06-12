@@ -15,6 +15,13 @@ root URL. It links onward to the FRAME showcase project site:
 https://wkenross.github.io/frame-showcase/
 ```
 
+The `frame-showcase/` folder is generated from the `wb_html` workbench output.
+It currently includes an install automation brief at:
+
+```text
+https://wkenross.github.io/frame-showcase/briefs/install_frame_automation.html
+```
+
 ## Publish
 
 Create a GitHub repository named exactly:

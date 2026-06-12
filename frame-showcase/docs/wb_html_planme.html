@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WB HTML PlanMe - FRAME Evidence Workbench</title>
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body class="kind-planme">
+  <div class="layout">
+    <aside class="nav">
+      <p class="brand">FRAME Evidence Workbench</p>
+      <p class="tagline">Review-first FRAME showcase</p>
+      <a href="../index.html">Workbench Home</a>
+<a href="wb_html_planme.html">WB HTML PlanMe</a>
+<a href="wb_html_trainme.html">WB HTML TrainMe</a>
+<a href="wb_html_certifyme.html">WB HTML CertifyMe</a>
+<a href="wb_html_style_guide.html">Style Guide</a>
+<a href="wb_html_publish_workflow_planme.html">Publish Workflow</a>
+<a href="wb_github_showcase_infrastructure_planme.html">GitHub Showcase Infrastructure</a>
+<a href="wb_public_data_source_planme.html">Public Data Source Plan</a>
+<a href="../briefs/public_energy_data.html">Public Energy And Economic Data</a>
+<a href="../briefs/install_frame_automation.html">Install FRAME Automation</a>
+<a href="../briefs/sql_power_bi.html">SQL And Power BI</a>
+<a href="../briefs/agile_certification.html">Agile And Certification</a>
+<a href="../briefs/crm_automation.html">CRM Automation</a>
+<a href="../briefs/salesforce_cloud.html">Salesforce Cloud CRM</a>
+<a href="../briefs/safety_review.html">Safety Review</a>
+    </aside>
+    <div class="content">
+      <div class="meta">
+        <span class="pill kind">planme</span>
+        <span class="pill">limited-review</span>
+      </div>
+      <main>
+        <h1 id="wb-html-site-planme">WB HTML Site PlanMe</h1>
+<p>Updated: 2026-06-09</p>
+<h2 id="purpose">Purpose</h2>
+<p>Create a lightweight web workflow for publishing selected FRAME documentation as a polished, review-first static site.</p>
+<p>The site should make the growing collection of PlanMe, TrainMe, CertifyMe, Agile, SQL, Power BI, CRM, and safety documents easier to browse without losing the Markdown-first operating model.</p>
+<h2 id="goals">Goals</h2>
+<ul>
+<li>convert curated Markdown into GitHub-hostable HTML</li>
+<li>keep source Markdown as the working surface</li>
+<li>give PlanMe, TrainMe, CertifyMe, resume, and tool pages distinct but related</li>
+<p>looks</p>
+<li>support SQL and Power BI showcase pages using synthetic data</li>
+<li>support Agile/Jira certification evidence pages</li>
+<li>support CRM/HubSpot/Salesforce planning pages without private tenant details</li>
+<li>keep publication review-first and limited-audience until scrubbed</li>
+</ul>
+<h2 id="non-goals">Non-Goals</h2>
+<ul>
+<li>publish private workbook inputs</li>
+<li>publish live Jira, Salesforce, HubSpot, Outlook, or SharePoint URLs</li>
+<li>publish <code>.pbix</code> files before embedded data and connection strings are</li>
+<p>inspected</p>
+<li>replace the owning workflow folders</li>
+<li>create a decorative site before the content is useful</li>
+</ul>
+<h2 id="source-workflow">Source Workflow</h2>
+<pre><code>
+FRAME Markdown docs
+        |
+source catalog and review tags
+        |
+curated public-safe Markdown in wb_html/content
+        |
+build_site.py
+        |
+wb_html/html
+        |
+GitHub Pages or private review link
+</code></pre>
+<h2 id="folder-shape">Folder Shape</h2>
+<pre><code>
+wb_html/
+  assets/
+    css/
+    img/
+  config/
+  content/
+    pages/
+  docs/
+  html/
+  md/
+  pdf/
+  scripts/
+    py/
+</code></pre>
+<p><code>content/pages</code> holds curated site copy. <code>md</code> and <code>pdf</code> are reserved for future exported artifacts. <code>html</code> is generated output.</p>
+<h2 id="sub-workflows">Sub-Workflows</h2>
+<h3 id="1-site-shell">1. Site Shell</h3>
+<ul>
+<li>build navigation</li>
+<li>build home page</li>
+<li>build topic pages</li>
+<li>copy shared CSS and image assets</li>
+</ul>
+<p>Done when <code>html/index.html</code> opens locally and links to all staged pages.</p>
+<h3 id="2-markdown-curation">2. Markdown Curation</h3>
+<ul>
+<li>identify source docs</li>
+<li>decide whether each page is public, limited, internal, or blocked</li>
+<li>copy only public-safe ideas into <code>content/pages</code></li>
+<li>keep source paths in <code>config/source_catalog.json</code></li>
+</ul>
+<p>Done when every page has a source and review status.</p>
+<h3 id="3-style-system">3. Style System</h3>
+<ul>
+<li>PlanMe pages look strategic and roadmap-oriented</li>
+<li>TrainMe pages look instructional and step-based</li>
+<li>CertifyMe pages look evidence/checklist-oriented</li>
+<li>resume pages stay compact and hiring-manager friendly</li>
+<li>Jira, Salesforce, HubSpot, and Power BI pages share the same neutral FRAME</li>
+<p>style rather than copying each vendor UI</p>
+</ul>
+<p>Done when CSS supports these page kinds without separate one-off templates.</p>
+<h3 id="4-sql-and-power-bi-showcase">4. SQL And Power BI Showcase</h3>
+<ul>
+<li>connect SQL PlanMe/TrainMe/CertifyMe to Power BI PlanMe/TrainMe/CertifyMe</li>
+<li>show how SQL exports improve Excel BI reporting</li>
+<li>include only synthetic screenshots or screenshots produced from synthetic</li>
+<p>data</p>
+<li>link PL-300 certification readiness to real report examples</li>
+</ul>
+<p>Done when the site has one SQL/Power BI page with a clear path to sample reports.</p>
+<h3 id="5-github-pages-publishing">5. GitHub Pages Publishing</h3>
+<ul>
+<li>build into <code>html</code></li>
+<li>review locally</li>
+<li>copy or publish the output through the chosen GitHub Pages path</li>
+<li>keep private source files out of the published branch/folder</li>
+</ul>
+<p>Done when a reviewer can browse the generated site without needing local private data.</p>
+<h2 id="acceptance-criteria">Acceptance Criteria</h2>
+<ul>
+<li><code>wb_html</code> is included in <code>sr_update.code-workspace</code>.</li>
+<li>The first build creates <code>html/index.html</code>.</li>
+<li>The style guide defines PlanMe, TrainMe, CertifyMe, resume, and tool-page</li>
+<p>treatments.</p>
+<li>Source catalog tracks safety status.</li>
+<li>SQL/Power BI certification path is represented.</li>
+<li>External tool pages use generic language and scrubbed examples.</li>
+<li>Publication remains review-first.</li>
+</ul>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

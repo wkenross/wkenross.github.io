@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="300" viewBox="0 0 960 300" role="img" aria-labelledby="title desc">
+  <title id="title">FRAME web publishing workflow map</title>
+  <desc id="desc">Markdown documents move through safety review, curation, HTML build, and GitHub Pages review.</desc>
+  <rect width="960" height="300" fill="#f7f8fb"/>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#1f2933">
+    <rect x="40" y="90" width="170" height="96" rx="8" fill="#ffffff" stroke="#d9dee7"/>
+    <text x="70" y="128" font-weight="700">Workflow Docs</text>
+    <text x="70" y="156" font-size="14" fill="#5b6573">PlanMe / TrainMe</text>
+    <text x="70" y="176" font-size="14" fill="#5b6573">CertifyMe / README</text>
+    <path d="M220 138 H300" stroke="#4d5b70" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="310" y="90" width="170" height="96" rx="8" fill="#ffffff" stroke="#d9dee7"/>
+    <text x="344" y="128" font-weight="700">Safety Review</text>
+    <text x="344" y="156" font-size="14" fill="#5b6573">public / limited</text>
+    <text x="344" y="176" font-size="14" fill="#5b6573">internal / blocked</text>
+    <path d="M490 138 H570" stroke="#4d5b70" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="580" y="90" width="170" height="96" rx="8" fill="#ffffff" stroke="#d9dee7"/>
+    <text x="621" y="128" font-weight="700">HTML Build</text>
+    <text x="621" y="156" font-size="14" fill="#5b6573">shared CSS</text>
+    <text x="621" y="176" font-size="14" fill="#5b6573">static pages</text>
+    <path d="M760 138 H840" stroke="#4d5b70" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="780" y="204" width="140" height="42" rx="8" fill="#fff8ed" stroke="#e3c28e"/>
+    <text x="803" y="231" font-size="15" fill="#a06412">Review First</text>
+    <rect x="850" y="90" width="70" height="96" rx="8" fill="#ffffff" stroke="#d9dee7"/>
+    <text x="870" y="128" font-weight="700">GitHub</text>
+    <text x="867" y="156" font-size="14" fill="#5b6573">Pages</text>
+  </g>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4d5b70"/>
+    </marker>
+  </defs>
+</svg>

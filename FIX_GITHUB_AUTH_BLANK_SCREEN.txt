@@ -1,0 +1,71 @@
+GITHUB AUTH BLANK LOCALHOST SCREEN RECOVERY
+
+Symptom:
+
+Git push opens a browser tab like:
+
+localhost:<port>/?code=...&state=...
+
+but the page is blank.
+
+What this means:
+
+That localhost page is the Git Credential Manager callback page. It is not the
+GitHub repository page. If the terminal still says "Repository not found", the
+main problem is still that GitHub cannot see the repository at:
+
+https://github.com/wkenross/wkenross.github.io.git
+
+Most likely fix:
+
+1. Close the blank localhost tab.
+2. Open a normal browser tab or InPrivate tab.
+3. Go directly to:
+
+https://github.com/login
+
+4. Sign in with the GitHub account tied to:
+
+wkenross@gmail.com
+
+5. After login, go directly to:
+
+https://github.com/new?name=wkenross.github.io
+
+6. Create the repository with:
+
+Owner: wkenross
+Repository name: wkenross.github.io
+Visibility: Public
+Initialize with README: No
+Initialize with .gitignore: No
+Initialize with license: No
+
+7. Return to PowerShell and run:
+
+cd "$env:USERPROFILE\OneDrive\projects\wkenross.github.io"
+git push -u origin main
+
+If owner is not wkenross:
+
+If GitHub shows a different username in the owner dropdown, stop and either
+switch GitHub accounts or update the remote to that username.
+
+Example:
+
+git remote set-url origin https://github.com/YOUR_USERNAME/YOUR_USERNAME.github.io.git
+
+Then the website URL also changes to:
+
+https://YOUR_USERNAME.github.io/
+
+If Git authentication remains stuck after the repo exists:
+
+1. Open Windows Credential Manager.
+2. Remove saved GitHub / git:https://github.com credentials.
+3. Retry:
+
+git push -u origin main
+
+Do not use a GitHub password as a Git password. GitHub HTTPS pushes use browser
+authentication or a personal access token.

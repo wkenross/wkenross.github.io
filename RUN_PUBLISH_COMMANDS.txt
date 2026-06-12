@@ -1,0 +1,27 @@
+ROOT GITHUB PAGES SITE PUBLISH COMMANDS
+
+Step 1 - Create the repository in GitHub web UI:
+
+https://github.com/new
+
+Use:
+Owner: wkenross
+Repository name: wkenross.github.io
+Visibility: Public
+Initialize with README: No
+Initialize with .gitignore: No
+Initialize with license: No
+
+Step 2 - Push the already-committed local site:
+
+cd "$env:USERPROFILE\OneDrive\projects\wkenross.github.io"
+git push -u origin main
+
+Step 3 - Verify:
+
+https://wkenross.github.io/
+
+If origin is missing:
+
+git remote add origin https://github.com/wkenross/wkenross.github.io.git
+git push -u origin main

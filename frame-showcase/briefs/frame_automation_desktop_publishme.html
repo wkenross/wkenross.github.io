@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FRAME Automation Across Windows Desktops - FRAME Evidence Workbench</title>
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body class="kind-planme">
+  <div class="layout">
+    <aside class="nav">
+      <p class="brand">FRAME Evidence Workbench</p>
+      <p class="tagline">Review-first FRAME showcase</p>
+      <a href="../index.html">Workbench Home</a>
+<a href="../docs/wb_html_planme.html">WB HTML PlanMe</a>
+<a href="../docs/wb_html_trainme.html">WB HTML TrainMe</a>
+<a href="../docs/wb_html_certifyme.html">WB HTML CertifyMe</a>
+<a href="../docs/wb_html_style_guide.html">Style Guide</a>
+<a href="../docs/wb_html_publish_workflow_planme.html">Publish Workflow</a>
+<a href="../docs/wb_github_showcase_infrastructure_planme.html">GitHub Showcase Infrastructure</a>
+<a href="../docs/wb_public_data_source_planme.html">Public Data Source Plan</a>
+<a href="public_energy_data.html">Public Energy And Economic Data</a>
+<a href="install_frame_automation.html">Install FRAME Automation</a>
+<a href="frame_automation_desktop_publishme.html">FRAME Automation Across Windows Desktops</a>
+<a href="sql_power_bi.html">SQL And Power BI</a>
+<a href="agile_certification.html">Agile And Certification</a>
+<a href="crm_automation.html">CRM Automation</a>
+<a href="salesforce_cloud.html">Salesforce Cloud CRM</a>
+<a href="safety_review.html">Safety Review</a>
+    </aside>
+    <div class="content">
+      <div class="meta">
+        <span class="pill kind">planme</span>
+        <span class="pill">seed-review</span>
+      </div>
+      <main>
+        <h1 id="frame-automation-across-windows-desktops">FRAME Automation Across Windows Desktops</h1>
+<h2 id="publication-status">Publication Status</h2>
+<p>Status: seed-review</p>
+<p>Source workspace: <code>Install.code-workspace</code></p>
+<p>Source folder: <code>fr_install\docs</code></p>
+<p>Publication flow:</p>
+<pre><code>
+fr_install\docs\frame_automation_desktop_publishme.md
+  -&gt; wb_github\publish_inputs\workspaces\install\md\frame_automation_desktop_publishme.md
+  -&gt; wb_html\content\pages\frame_automation_desktop_publishme.md
+  -&gt; wb_html\html\briefs\frame_automation_desktop_publishme.html
+  -&gt; wb_github\package\github_pages\docs\briefs\frame_automation_desktop_publishme.html
+</code></pre>
+<p>This document is written as public-safe FRAME showcase material. It describes the operating pattern without publishing passwords, browser profiles, customer workbooks, private tenant links, cookies, tokens, or private account state.</p>
+<h2 id="overview">Overview</h2>
+<p>FRAME is a Windows automation framework organized around reproducible work lanes. Each lane has a named Windows virtual desktop, a VS Code workspace, a machine-local Edge remote-debugging profile, and workflow-specific input/output folders. The result is a practical operating model for running several automation streams on one laptop without mixing browser sessions, Codex chat context, Outlook windows, or source material.</p>
+<p>The current Dell Inspiron 15 Windows 11 workstation uses four principal desktop lanes:</p>
+<table>
+<thead><tr>
+<th>Desktop</th>
+<th>Workspace</th>
+<th>Role</th>
+<th>Edge port</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>frame_install</code></td>
+<td><code>Install.code-workspace</code></td>
+<td>framework installation, configuration, and documentation control</td>
+<td><code>9234</code></td>
+</tr>
+<tr>
+<td><code>frame_update</code></td>
+<td><code>fr_update.code-workspace</code></td>
+<td>local-first revenue/update framework source review</td>
+<td><code>9236</code></td>
+</tr>
+<tr>
+<td><code>Resumes</code></td>
+<td><code>resumes.code-workspace</code></td>
+<td>resume, job search, Outlook Classic, and application workflow</td>
+<td><code>9230</code></td>
+</tr>
+<tr>
+<td><code>Search_update</code></td>
+<td><code>sr_update.code-workspace</code></td>
+<td>Search-side publication staging, GitHub-safe intake, <code>wb_html</code>, and <code>wb_github</code></td>
+<td><code>9235</code></td>
+</tr>
+</tbody></table>
+<h2 id="why-virtual-desktops-matter">Why Virtual Desktops Matter</h2>
+<p>The framework uses virtual desktops as lightweight operating boundaries. The goal is not only a cleaner screen. The goal is consistent state.</p>
+<p>Each desktop keeps the active workflow close to its own browser profile, VS Code workspace, open documents, and operator context. This reduces accidental cross use between private source review, public publication staging, resume/job search work, and install configuration.</p>
+<p>The approach is especially useful when the same Windows user account needs to run several automations that all use Edge, VS Code, PowerShell, Python, and Codex. Instead of relying on memory to know which browser window belongs to which task, the launcher binds each workflow to a named desktop and a unique debug port.</p>
+<h2 id="windows-machine-pattern">Windows Machine Pattern</h2>
+<p>The machine-level pattern is intentionally repeatable:</p>
+<ul>
+<li>OneDrive carries project folders, workspace files, documentation, intake</li>
+<p>notes, and publication candidates.</p>
+<li>Machine-local folders carry browser profiles, WebDriver, Python virtual</li>
+<p>environments, Office identity state, and other runtime state that should not be synced between computers.</p>
+<li>PowerShell orchestrators create or verify desktops, launch VS Code</li>
+<p>workspaces, start Edge with a unique profile and remote-debugging port, and write canvas reports.</p>
+<li>Python scripts handle deeper workflow operations where structured processing,</li>
+<p>browser automation, Excel, SQL, or generated artifacts are needed.</p>
+<li>Smoke tests verify the desktop canvas and Edge CDP ports before the workflow</li>
+<p>is treated as ready.</p>
+</ul>
+<p>This lets another Windows 11 laptop be brought online from synced docs and scripts while still rebuilding private runtime state locally.</p>
+<h2 id="iphone-and-mobile-integration">iPhone And Mobile Integration</h2>
+<p>FRAME also includes an iPhone/mobile context loop. The phone is treated as a capture and handoff surface rather than as the main execution environment.</p>
+<p>Typical mobile inputs include dictated notes, requirements snippets, quick captures, review prompts, and context packets. These are staged through mobile-safe Markdown and text files under the install and Codex Mobile folders. The Windows desktop lanes then pick up those inputs through the appropriate VS Code workspace.</p>
+<p>This keeps mobile capture useful without mixing it directly into browser profiles, credentials, or live automation state. The phone can add context; the Windows lane runs the workflow.</p>
+<h2 id="desktop-builder">Desktop Builder</h2>
+<p>The four-desktop launcher is:</p>
+<pre><code>
+fr_install\scripts\ps1\Invoke-FrameDesktopBuilder.ps1
+</code></pre>
+<p>The Start Menu and Desktop shortcut are created by:</p>
+<pre><code>
+fr_install\scripts\ps1\Install-FrameDesktopBuilderShortcut.ps1
+</code></pre>
+<p>Normal launch mode is:</p>
+<pre><code>
+pwsh -NoProfile -ExecutionPolicy Bypass -File &quot;$env:OneDrive\projects\fr_install\scripts\ps1\Invoke-FrameDesktopBuilder.ps1&quot; -NonInteractive -SkipHealthy
+</code></pre>
+<p>Review mode is:</p>
+<pre><code>
+pwsh -NoProfile -ExecutionPolicy Bypass -File &quot;$env:OneDrive\projects\fr_install\scripts\ps1\Invoke-FrameDesktopBuilder.ps1&quot; -Canvas -StrictCanonical
+</code></pre>
+<p>The builder writes a canvas report showing the desktop inventory, expected canonical desktops, legacy or extra desktops, and Edge CDP readiness.</p>
+<h2 id="cleanup-and-rebuild">Cleanup And Rebuild</h2>
+<p>Windows virtual desktops cannot be reduced to zero. The safe reset model keeps or creates one <code>frame_install</code> desktop, removes the other FRAME desktop lanes, and then lets the operator reboot before running the desktop builder again.</p>
+<p>The reset script is:</p>
+<pre><code>
+fr_install\scripts\ps1\Reset-FrameDesktopCanvas.ps1
+</code></pre>
+<p>Dry-run review:</p>
+<pre><code>
+pwsh -NoProfile -ExecutionPolicy Bypass -File &quot;$env:OneDrive\projects\fr_install\scripts\ps1\Reset-FrameDesktopCanvas.ps1&quot;
+</code></pre>
+<p>Apply after saving work:</p>
+<pre><code>
+pwsh -NoProfile -ExecutionPolicy Bypass -File &quot;$env:OneDrive\projects\fr_install\scripts\ps1\Reset-FrameDesktopCanvas.ps1&quot; -Apply -CloseLaneEdge
+</code></pre>
+<p>The script leaves VS Code open by default so unsaved editor buffers are not lost. Add <code>-CloseVSCode</code> only after saving work.</p>
+<p>After reset:</p>
+<ol>
+<li>Reboot Windows.</li>
+<li>Launch <code>FRAME Desktop Builder</code> from Start or the taskbar.</li>
+<li>Run the canvas check to confirm the four canonical desktops and ports are</li>
+<p>back in place.</p>
+</ol>
+<h2 id="publication-lane">Publication Lane</h2>
+<p>The same desktop model supports publication. Private source review happens in the local-first <code>frame_update</code> lane. Public-safe Markdown is promoted into the Search-side publication lane, where <code>wb_html</code> converts reviewed Markdown to HTML and <code>wb_github</code> packages the generated site material for GitHub Pages.</p>
+<p>That separation is important. It keeps private working material out of the publication package, while still making the final public site reproducible from plain files and scripted build steps.</p>
+<h2 id="review-checklist">Review Checklist</h2>
+<ul>
+<li>No secrets, cookies, tokens, passwords, private browser profiles, or OAuth</li>
+<p>state are copied between machines.</p>
+<li>No customer workbook data or private tenant URLs are included in public</li>
+<p>material.</p>
+<li>Each desktop uses its own Edge profile and remote-debugging port.</li>
+<li>The canvas report shows only <code>frame_install</code>, <code>frame_update</code>, <code>Resumes</code>, and</li>
+<p><code>Search_update</code> before normal operation.</p>
+<li>Mobile/iPhone inputs enter through reviewed Markdown/text handoff files.</li>
+<li>Publication candidates move from <code>fr_install</code> or workflow docs into</li>
+<p><code>wb_html</code>, then through <code>wb_github</code>, after public-safety review.</p>
+</ul>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

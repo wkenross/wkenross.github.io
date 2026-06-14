@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>New Machine Setup Pattern - FRAME Evidence Workbench</title>
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body class="kind-planme">
+  <div class="layout">
+    <aside class="nav">
+      <p class="brand">FRAME Evidence Workbench</p>
+      <p class="tagline">Review-first FRAME showcase</p>
+      <a href="../index.html">Workbench Home</a>
+<a href="../docs/wb_html_planme.html">WB HTML PlanMe</a>
+<a href="../docs/wb_html_trainme.html">WB HTML TrainMe</a>
+<a href="../docs/wb_html_certifyme.html">WB HTML CertifyMe</a>
+<a href="../docs/wb_html_style_guide.html">Style Guide</a>
+<a href="../docs/wb_html_publish_workflow_planme.html">Publish Workflow</a>
+<a href="../docs/wb_github_showcase_infrastructure_planme.html">GitHub Showcase Infrastructure</a>
+<a href="../docs/wb_public_data_source_planme.html">Public Data Source Plan</a>
+<a href="public_energy_data.html">Public Energy And Economic Data</a>
+<a href="install_frame_automation.html">Install FRAME Automation</a>
+<a href="frame_automation_desktop_publishme.html">FRAME Automation Across Windows Desktops</a>
+<a href="sql_power_bi.html">SQL And Power BI</a>
+<a href="agile_certification.html">Agile And Certification</a>
+<a href="crm_automation.html">CRM Automation</a>
+<a href="salesforce_cloud.html">Salesforce Cloud CRM</a>
+<a href="safety_review.html">Safety Review</a>
+<a href="bi_tools_showcase.html">BI Tools Showcase Candidate</a>
+<a href="bi_reporting_case_study.html">BI Reporting Case Study Candidate</a>
+<a href="bi_script_catalog.html">BI Script Catalog</a>
+<a href="install_new_machine_setup.html">New Machine Setup Pattern</a>
+<a href="install_mobile_handoff.html">Mobile Handoff Integration</a>
+<a href="install_desktop_builder_canvas.html">Desktop Builder And Canvas Readiness</a>
+<a href="install_road_ready_sync.html">Road-Ready Outlook Sync Pattern</a>
+<a href="install_publication_pipeline.html">Install Publication Pipeline</a>
+    </aside>
+    <div class="content">
+      <div class="meta">
+        <span class="pill kind">planme</span>
+        <span class="pill">needs-review</span>
+      </div>
+      <main>
+        <h1 id="new-machine-setup-pattern">New Machine Setup Pattern</h1>
+<h2 id="purpose">Purpose</h2>
+<p>FRAME treats a new Windows laptop as a reproducible automation workstation. The install lane prepares the applications, project folders, browser tooling, VS Code workspaces, and verification checks needed before workflow-specific automation begins.</p>
+<p>The goal is not to clone a private machine. The goal is to rebuild the workstation pattern from reviewed files, synced project folders, and local runtime setup.</p>
+<h2 id="operating-model">Operating Model</h2>
+<p>The setup separates synced project material from machine-local runtime state:</p>
+<table>
+<thead><tr>
+<th>Layer</th>
+<th>Examples</th>
+<th>Portability</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Synced project layer</td>
+<td>workspace files, Markdown plans, publication inputs, script source</td>
+<td>carried through OneDrive or Git</td>
+</tr>
+<tr>
+<td>Machine tool layer</td>
+<td>PowerShell, Git, VS Code, Python, browsers, Office tools, BI tools</td>
+<td>installed per workstation</td>
+</tr>
+<tr>
+<td>Runtime layer</td>
+<td>browser debug profiles, Office identity, WebDriver binaries, virtual environments, logs</td>
+<td>rebuilt locally</td>
+</tr>
+</tbody></table>
+<p>This keeps the new laptop aligned with the existing workstation while avoiding the unsafe practice of copying private browser sessions, credentials, tokens, cookies, or account recovery material.</p>
+<h2 id="installer-posture">Installer Posture</h2>
+<p>The preferred installer style is:</p>
+<ul>
+<li>report first</li>
+<li>apply only when explicit switches are supplied</li>
+<li>tolerate already-installed tools</li>
+<li>write verification output that another operator can review</li>
+<li>keep passwords, tokens, and profile state out of scripts</li>
+</ul>
+<p>Dry-run and readiness checks are part of the framework design. A command that changes the machine should make that clear in its name, parameters, and output.</p>
+<h2 id="core-tool-readiness">Core Tool Readiness</h2>
+<p>A FRAME-ready Windows 11 laptop should verify:</p>
+<ul>
+<li>PowerShell 7</li>
+<li>Windows PowerShell compatibility for legacy scripts</li>
+<li>Git and GitHub CLI</li>
+<li>VS Code and required extensions</li>
+<li>Python and the selected virtual environment</li>
+<li>Microsoft Edge and Google Chrome</li>
+<li>Edge WebDriver and PATH configuration</li>
+<li>Acrobat Reader or Acrobat</li>
+<li>Power BI Desktop where BI reporting is part of the lane</li>
+<li>command-line helpers such as <code>rg</code>, <code>jq</code>, <code>fd</code>, <code>7zip</code>, and package tooling</li>
+</ul>
+<p>The install lane can stage installers, launch package-manager commands, and write follow-up instructions. Interactive sign-in, MFA, browser profile selection, and Office identity validation remain operator actions.</p>
+<h2 id="project-folder-pattern">Project Folder Pattern</h2>
+<p>The framework supports both local and synced project roots. A typical workstation can use:</p>
+<pre><code>
+%USERPROFILE%\projects
+%USERPROFILE%\OneDrive\projects
+</code></pre>
+<p>Workspace files should refer to environment variables wherever possible so the same workflow can run on a local-first desktop, a OneDrive-first desktop, or a temporary road-ready local sync.</p>
+<h2 id="verification-checklist">Verification Checklist</h2>
+<p>Before treating a new machine as ready:</p>
+<ul>
+<li>open the Install workspace in VS Code</li>
+<li>run the install/update readiness script in report mode</li>
+<li>confirm OneDrive project folders are present</li>
+<li>confirm workspace files open without missing folder prompts</li>
+<li>confirm Edge launches with the expected account profile</li>
+<li>confirm WebDriver is available on PATH</li>
+<li>confirm Python imports succeed for the core frame helpers</li>
+<li>confirm the publisher can build a local <code>wb_html</code> site</li>
+<li>confirm no private runtime folders were copied into public publish inputs</li>
+</ul>
+<h2 id="public-safety">Public Safety</h2>
+<p>This public page intentionally avoids account names, passwords, tenant URLs, private browser folders, mailbox state, and local recovery details. Those details belong in private operator notes, not in the GitHub Pages showcase.</p>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mobile Handoff Integration - FRAME Evidence Workbench</title>
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body class="kind-planme">
+  <div class="layout">
+    <aside class="nav">
+      <p class="brand">FRAME Evidence Workbench</p>
+      <p class="tagline">Review-first FRAME showcase</p>
+      <a href="../index.html">Workbench Home</a>
+<a href="../docs/wb_html_planme.html">WB HTML PlanMe</a>
+<a href="../docs/wb_html_trainme.html">WB HTML TrainMe</a>
+<a href="../docs/wb_html_certifyme.html">WB HTML CertifyMe</a>
+<a href="../docs/wb_html_style_guide.html">Style Guide</a>
+<a href="../docs/wb_html_publish_workflow_planme.html">Publish Workflow</a>
+<a href="../docs/wb_github_showcase_infrastructure_planme.html">GitHub Showcase Infrastructure</a>
+<a href="../docs/wb_public_data_source_planme.html">Public Data Source Plan</a>
+<a href="public_energy_data.html">Public Energy And Economic Data</a>
+<a href="install_frame_automation.html">Install FRAME Automation</a>
+<a href="frame_automation_desktop_publishme.html">FRAME Automation Across Windows Desktops</a>
+<a href="sql_power_bi.html">SQL And Power BI</a>
+<a href="agile_certification.html">Agile And Certification</a>
+<a href="crm_automation.html">CRM Automation</a>
+<a href="salesforce_cloud.html">Salesforce Cloud CRM</a>
+<a href="safety_review.html">Safety Review</a>
+<a href="bi_tools_showcase.html">BI Tools Showcase Candidate</a>
+<a href="bi_reporting_case_study.html">BI Reporting Case Study Candidate</a>
+<a href="bi_script_catalog.html">BI Script Catalog</a>
+<a href="install_new_machine_setup.html">New Machine Setup Pattern</a>
+<a href="install_mobile_handoff.html">Mobile Handoff Integration</a>
+<a href="install_desktop_builder_canvas.html">Desktop Builder And Canvas Readiness</a>
+<a href="install_road_ready_sync.html">Road-Ready Outlook Sync Pattern</a>
+<a href="install_publication_pipeline.html">Install Publication Pipeline</a>
+    </aside>
+    <div class="content">
+      <div class="meta">
+        <span class="pill kind">planme</span>
+        <span class="pill">needs-review</span>
+      </div>
+      <main>
+        <h1 id="mobile-handoff-integration">Mobile Handoff Integration</h1>
+<h2 id="purpose">Purpose</h2>
+<p>FRAME uses mobile devices as capture and review surfaces. The iPhone can help collect requirements, dictate notes, review prepared context, and hand off Markdown candidates. Windows remains the execution surface for PowerShell, Python, VS Code, browser automation, Office automation, SQL, and publication.</p>
+<h2 id="handoff-model">Handoff Model</h2>
+<p>The mobile loop is intentionally simple:</p>
+<ol>
+<li>Capture requirements, decisions, or field notes on the phone.</li>
+<li>Save the note into a mobile-safe inbox or context file.</li>
+<li>Review and normalize the note on Windows.</li>
+<li>Merge the requirement into the appropriate workspace documentation.</li>
+<li>Promote only curated public-safe material into publication inputs.</li>
+</ol>
+<p>This makes mobile useful without treating it as a hidden automation engine.</p>
+<h2 id="what-belongs-on-mobile">What Belongs On Mobile</h2>
+<p>Good mobile inputs include:</p>
+<ul>
+<li>short requirement notes</li>
+<li>interview or customer follow-up points</li>
+<li>ideas for PlanMe, CodeMe, RunMe, or PublishMe files</li>
+<li>links to public reference material</li>
+<li>quick review comments on already-sanitized Markdown</li>
+<li>small context packets for a future Codex or ChatGPT session</li>
+</ul>
+<p>Private credentials, tokens, raw mailbox exports, browser profile material, and customer data do not belong in public mobile handoff files.</p>
+<h2 id="ios-boundary">iOS Boundary</h2>
+<p>The phone has a clear manual boundary. Windows scripts can prepare folders, generate context files, and write instructions, but iOS sign-ins, application installation, privacy prompts, file-provider permissions, and Shortcuts approvals remain manual.</p>
+<p>That boundary is a feature. It keeps the operator in control of mobile identity and prevents the framework from implying silent control over phone apps.</p>
+<h2 id="framework-integration">Framework Integration</h2>
+<p>Mobile handoff content typically lands in one of three places:</p>
+<table>
+<thead><tr>
+<th>Destination</th>
+<th>Use</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>install docs</td>
+<td>machine setup and mobile readiness instructions</td>
+</tr>
+<tr>
+<td>workflow docs</td>
+<td>requirements for a specific workspace</td>
+</tr>
+<tr>
+<td>publication intake</td>
+<td>public-safe Markdown candidates for the website</td>
+</tr>
+</tbody></table>
+<p>After review, the material can be routed to <code>wb_html</code> and then to the GitHub Pages showcase if it is useful for public readers.</p>
+<h2 id="review-rules">Review Rules</h2>
+<ul>
+<li>keep public mobile examples generic</li>
+<li>avoid raw phone screenshots unless they are inspected first</li>
+<li>do not publish account identifiers or private iCloud/OneDrive paths</li>
+<li>separate requirement capture from execution scripts</li>
+<li>state clearly when an action requires manual iOS approval</li>
+</ul>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

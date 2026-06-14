@@ -27,6 +27,9 @@
 <a href="crm_automation.html">CRM Automation</a>
 <a href="salesforce_cloud.html">Salesforce Cloud CRM</a>
 <a href="safety_review.html">Safety Review</a>
+<a href="bi_tools_showcase.html">BI Tools Showcase Candidate</a>
+<a href="bi_reporting_case_study.html">BI Reporting Case Study Candidate</a>
+<a href="bi_script_catalog.html">BI Script Catalog</a>
     </aside>
     <div class="content">
       <div class="meta">
@@ -49,6 +52,25 @@
 <li>FRAME folder placement for local and OneDrive modes</li>
 <li>publication support for GitHub Pages and the FRAME showcase</li>
 </ul>
+<h2 id="workstation-pattern">Workstation Pattern</h2>
+<p>FRAME runs best as a workstation pattern, not just a folder of scripts. Each Windows machine is prepared to open several named workflow desktops. A typical setup uses four or five desktops, each dedicated to one automation stream. The desktops can be spread across multiple monitors so the operator can watch orchestrations, browser state, VS Code output, and workflow notes without mixing unrelated work.</p>
+<p>Each desktop opens a focused VS Code workspace. The workspace includes the core <code>frame</code> folder and the supporting workflow folders for that lane. This gives Codex, PowerShell, Python, and browser automation the right local context while keeping shared FRAME helpers available across workflows.</p>
+<p>The install scripts prepare the Windows application layer for that pattern:</p>
+<ul>
+<li>required Windows applications and command-line tools</li>
+<li>PowerShell and Python runtime checks</li>
+<li>VS Code workspace settings and Codex handoff files</li>
+<li>Edge and Chrome favorites/bookmark preparation</li>
+<li>Edge remote-debugging profiles for workflow automation</li>
+<li>WebDriver and PATH checks</li>
+<li>OneDrive, iCloud, and mobile handoff folders</li>
+<li>Outlook Classic and Office readiness where a workflow needs them</li>
+</ul>
+<p>Manual sign-in, MFA, and account recovery remain operator actions. The scripts prepare applications and verify readiness; they do not copy private browser sessions, cookies, tokens, or credentials.</p>
+<h2 id="browser-and-mobile-continuity">Browser And Mobile Continuity</h2>
+<p>FRAME uses a common browser identity strategy across desktops, machines, and iPhone. Edge and Chrome should present consistent favorites, bookmarks, and account menus so the same workflow links are available whether the operator is on the install desktop, the resume desktop, another Windows machine, or an iPhone review session.</p>
+<p>Automation profiles remain machine-local. Each workflow lane recreates its own debug profile and port on the local workstation. This preserves repeatable automation behavior without publishing or syncing private browser profile folders.</p>
+<p>The iPhone integration extends the same operating model. Mobile files and Shortcuts let the operator review key PlanMe and RunMe docs, dictate new requirements, and save Markdown drafts into a mobile requirements inbox. A Windows Codex session later intakes those drafts, inspects the live project files, and merges the requirement into the appropriate workflow.</p>
 <h2 id="primary-workspace">Primary Workspace</h2>
 <pre><code>
 C:\Users\KenRossiter\OneDrive\projects\Install.code-workspace

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BI Reporting Case Study Candidate - FRAME Evidence Workbench</title>
+  <title>FRAME Sales Analytics Showcase - FRAME Evidence Workbench</title>
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body class="kind-tool">
@@ -45,19 +45,47 @@
         <span class="pill">needs-review</span>
       </div>
       <main>
-        <h1 id="bi-reporting-case-study-candidate">BI Reporting Case Study Candidate</h1>
-<h2 id="problem">Problem</h2>
-<p>Business reporting often starts in Excel but needs reproducible source data, repeatable refresh, and tool-specific reporting outputs.</p>
-<h2 id="frame-pattern">FRAME Pattern</h2>
-<ol>
-<li>SQL workflow produces synthetic, reporting-ready CSV exports.</li>
-<li>BI workflow stages those exports with a manifest.</li>
-<li>Power BI and Tableau briefs are generated from the same data.</li>
-<li>The operator builds reports manually in the BI tools.</li>
-<li>Evidence review blocks sharing until artifacts are inspected.</li>
-</ol>
-<h2 id="public-safe-evidence">Public-Safe Evidence</h2>
-<p>Use screenshots or PDFs generated from synthetic data only. Keep workbook files private until inspected for embedded paths, credentials, account state, and data.</p>
+        <h1 id="frame-sales-analytics-showcase">FRAME Sales Analytics Showcase</h1>
+<p>FRAME Sales Analytics turns workbook-heavy revenue operations into repeatable automation workflows.</p>
+<p>The current private implementation is not yet ready for public code release, but the operating model is ready to describe:</p>
+<ul>
+<li>performance workbooks track customer and contract metadata</li>
+<li>monthly series support current, historical, quarterly, and annual review</li>
+<li>forecast workbooks are validated against performance history</li>
+<li>PowerShell orchestrations provide repeatable run paths</li>
+<li>Python operations inspect, transform, validate, and report workbook data</li>
+<li>SQL and Power BI become the durable reporting layer after extraction</li>
+</ul>
+<h2 id="functional-lanes">Functional Lanes</h2>
+<table>
+<thead><tr>
+<th>Lane</th>
+<th>Public purpose</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Sales analytics operations</td>
+<td>Revenue-performance update, validation, and reporting orchestration.</td>
+</tr>
+<tr>
+<td>Forecast reconciliation</td>
+<td>Historical performance and growth compared against sales forecasts and projections.</td>
+</tr>
+<tr>
+<td>Scheduler automation</td>
+<td>Schedule/calendar monitoring, notification, and CRM/legacy operations handoff.</td>
+</tr>
+<tr>
+<td>Shredder tools</td>
+<td>PDF/site extraction and consolidation into reporting workbooks.</td>
+</tr>
+<tr>
+<td>Month shift tools</td>
+<td>Controlled workbook month/header/calendar shifts for a new reporting period.</td>
+</tr>
+</tbody></table>
+<h2 id="publication-posture">Publication Posture</h2>
+<p>The first publishable asset is documentation. Code examples and workbook samples remain staged until the obfuscation path replaces private data with synthetic examples.</p>
       </main>
     </div>
   </div>

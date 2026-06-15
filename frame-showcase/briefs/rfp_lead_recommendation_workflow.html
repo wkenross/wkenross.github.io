@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BI Tools Showcase - FRAME Evidence Workbench</title>
+  <title>RFP And Lead Recommendation Workflow - FRAME Evidence Workbench</title>
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body class="kind-tool">
@@ -47,51 +47,96 @@
     <div class="content">
       <div class="meta">
         <span class="pill kind">tool</span>
-        <span class="pill">published-verified</span>
+        <span class="pill">ready-for-html-review</span>
       </div>
       <main>
-        <h1 id="bi-tools-showcase-candidate">BI Tools Showcase Candidate</h1>
-<p>Generated: 2026-06-14T04:37:55.515587+00:00</p>
-<p>This folder stages public-safe candidate material for the FRAME BI tools showcase. It is not the live site. Review before copying anything into <code>wb_github</code> or <code>wkenross.github.io</code>.</p>
-<h2 id="what-this-demonstrates">What This Demonstrates</h2>
+        <h1 id="rfp-and-lead-recommendation-workflow">RFP And Lead Recommendation Workflow</h1>
+<p>The recommendation workflow turns many small opportunity signals into a short, ranked list that an operator can actually review.</p>
+<h2 id="input-sources">Input Sources</h2>
+<p>The public-safe pattern supports:</p>
 <ul>
-<li>SQL export intake from synthetic source data.</li>
-<li>Power BI report planning from staged CSVs.</li>
-<li>Tableau dashboard planning from the same staged CSVs.</li>
-<li>Evidence review before screenshots, PDFs, workbook files, or extracts are shared.</li>
-<li>PowerShell orchestration scripts calling Python operation scripts.</li>
+<li>public RFP and procurement pages</li>
+<li>freelancer and service-marketplace skill pages</li>
+<li>industry association opportunity pages</li>
+<li>partner directories and vendor lists</li>
+<li>product-management, operations, development, and data-management communities</li>
+<li>imported CSVs from CRM exports or lead research</li>
+<li>email alerts that have already been reviewed for privacy</li>
 </ul>
-<h2 id="current-synthetic-totals">Current Synthetic Totals</h2>
+<h2 id="opportunity-card">Opportunity Card</h2>
+<p>Each source becomes a structured card:</p>
 <table>
 <thead><tr>
-<th>Metric</th>
-<th>Power BI profile</th>
-<th>Tableau profile</th>
+<th>Field</th>
+<th>Purpose</th>
 </tr></thead>
 <tbody>
 <tr>
-<td>Monthly rows</td>
-<td>6</td>
-<td>6</td>
+<td>source</td>
+<td>where the signal came from</td>
 </tr>
 <tr>
-<td>Scheduled volume</td>
-<td>54800.0</td>
-<td>54800.0</td>
+<td>organization</td>
+<td>buyer, company, agency, or marketplace client</td>
 </tr>
 <tr>
-<td>Actual volume</td>
-<td>54925.0</td>
-<td>54925.0</td>
+<td>title</td>
+<td>opportunity, RFP, project, or lead title</td>
 </tr>
 <tr>
-<td>Variance volume</td>
-<td>125.0</td>
-<td>125.0</td>
+<td>industry</td>
+<td>product, operations, development, data, marketing, or other</td>
+</tr>
+<tr>
+<td>url</td>
+<td>reviewed source link</td>
+</tr>
+<tr>
+<td>scope</td>
+<td>short description of the work</td>
+</tr>
+<tr>
+<td>due date</td>
+<td>date, deadline, or follow-up window</td>
+</tr>
+<tr>
+<td>value band</td>
+<td>rough value, budget signal, or priority tier</td>
+</tr>
+<tr>
+<td>risk flags</td>
+<td>ambiguity, compliance, low budget, or poor fit</td>
+</tr>
+<tr>
+<td>recommended action</td>
+<td>review, research, draft, follow up, or decline</td>
 </tr>
 </tbody></table>
-<h2 id="review-rule">Review Rule</h2>
-<p>No workbook files, screenshots, PDFs, extracts, or generated site files should be published until they pass privacy review.</p>
+<h2 id="scoring-model">Scoring Model</h2>
+<p>The scoring model is intentionally explainable:</p>
+<ul>
+<li>fit to services offered</li>
+<li>clarity of scope</li>
+<li>urgency or deadline value</li>
+<li>budget or value signal</li>
+<li>industry alignment</li>
+<li>availability of evidence or case studies</li>
+<li>risk and compliance concerns</li>
+</ul>
+<p>The output is a recommendation list, not an automatic response queue.</p>
+<h2 id="wizard-pattern">Wizard Pattern</h2>
+<p>For a selected recommendation, the wizard can open:</p>
+<ul>
+<li>the source page</li>
+<li>the matching service-offering page</li>
+<li>a proposal or outreach draft</li>
+<li>relevant case-study evidence</li>
+<li>the related inbox thread</li>
+<li>a checklist for reviewed next steps</li>
+</ul>
+<p>The wizard should stop before any external submission, profile update, or outbound message.</p>
+<h2 id="public-safe-example">Public-Safe Example</h2>
+<p>The staged script <code>marketing_recommendation_builder.py</code> reads synthetic opportunity rows and writes JSON, CSV, and Markdown recommendations. It demonstrates the scoring pattern without touching live sites or inboxes.</p>
       </main>
     </div>
   </div>

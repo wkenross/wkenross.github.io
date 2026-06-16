@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Interactive Wizard Publication Catalog - FRAME Evidence Workbench</title>
+  <title>Operations Wizard Patterns - FRAME Evidence Workbench</title>
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body class="kind-tool">
@@ -60,11 +60,11 @@
 <a href="marketing_inbox_followup_workflow.html">Marketing Inbox Follow-Up Workflow</a>
 <a href="multi_industry_search_playbook.html">Multi-Industry Search Playbook</a>
 <a href="marketing_automation_script_catalog.html">Marketing Automation Script Catalog</a>
-<a class="active" href="interactive_wizard_publication_catalog.html">Interactive Wizard Publication Catalog</a>
+<a href="interactive_wizard_publication_catalog.html">Interactive Wizard Publication Catalog</a>
 </section>
 <section class="nav-group">
 <p class="nav-heading">Operations Wizards</p>
-<a href="operations_wizard_patterns.html">Operations Wizard Patterns</a>
+<a class="active" href="operations_wizard_patterns.html">Operations Wizard Patterns</a>
 </section>
 <section class="nav-group">
 <p class="nav-heading">Project Delivery</p>
@@ -79,74 +79,49 @@
         <span class="pill">candidate-review-required</span>
       </div>
       <main>
-        <h1 id="interactive-wizard-publication-catalog">Interactive Wizard Publication Catalog</h1>
-<p>FRAME interactive wizards help an operator review recommendations and prepare next steps without losing context.</p>
-<p>The public catalog should describe patterns, not private automation details.</p>
-<h2 id="wizard-patterns">Wizard Patterns</h2>
-<table>
-<thead><tr>
-<th>Pattern</th>
-<th>Public description</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>Recommendation list wizard</td>
-<td>Reviews scored rows, opens source evidence, and records operator decisions.</td>
-</tr>
-<tr>
-<td>Application packet wizard</td>
-<td>Prepares resume paths, cover-letter drafts, and checklist notes for manual review.</td>
-</tr>
-<tr>
-<td>Lead generator wizard</td>
-<td>Turns public-safe source cards into ranked lead reports and CRM-ready fields.</td>
-</tr>
-<tr>
-<td>Inbox follow-up wizard</td>
-<td>Sorts opportunity, rejection, follow-up, and next-step messages after review.</td>
-</tr>
-<tr>
-<td>Mobile requirements wizard</td>
-<td>Promotes iPhone notes into Windows workflow requirements.</td>
-</tr>
-</tbody></table>
-<h2 id="public-repository-folder-plan">Public Repository Folder Plan</h2>
+        <h1 id="operations-wizard-patterns">Operations Wizard Patterns</h1>
+<p>FRAME operations wizards turn schedule pages, calendar-style operational screens, inventory reports, and workbook outputs into reviewed exception lists and guided next steps.</p>
+<p>The public story is operator-controlled workflow support, not unattended scraping or automatic updates.</p>
+<h2 id="scheduler-pattern">Scheduler Pattern</h2>
+<p>The scheduler lane supports schedule-driven operations:</p>
+<ul>
+<li>monitor schedule and calendar-style pages</li>
+<li>normalize exported schedule, allocation, contract, and incident tables</li>
+<li>identify schedule laggards, expiring contracts, allocation issues, and incomplete operational actions</li>
+<li>prepare notification queues or reminder drafts for review</li>
+<li>support CRM and legacy operations-system update queues</li>
+</ul>
+<h2 id="inventory-wizard-pattern">Inventory Wizard Pattern</h2>
+<p>The inventory lane supports inventory and supply reconciliation:</p>
+<ul>
+<li>ask the operator which terminal, product, or report date is in scope</li>
+<li>collect or confirm inventory-source data</li>
+<li>collect or confirm operations-management source data</li>
+<li>compare inventory, allocation, supply, truck, and related totals</li>
+<li>show discrepancies and proposed updates</li>
+<li>apply only approved workbook or report updates</li>
+<li>write a run summary for audit and handoff</li>
+</ul>
+<h2 id="public-safe-demo-inputs">Public-Safe Demo Inputs</h2>
+<p>Synthetic examples should use small CSV fixtures such as:</p>
 <pre><code>
-wizard-examples/
-  README.md
-  recommendation-list-schema.md
-  reviewed-action-wizard-pattern.md
-  inbox-followup-pattern.md
-  samples/
-    sample_opportunities.csv
-    sample_recommendations.csv
+data/sample/schedule_export.csv
+data/sample/calendar_page_export.csv
+data/sample/notification_queue.csv
+data/sample/crm_update_queue.csv
+data/sample/inventory_snapshot.csv
+data/sample/operations_snapshot.csv
 </code></pre>
-<h2 id="public-safe-sample-fields">Public-Safe Sample Fields</h2>
-<p>Recommendation list examples can include:</p>
+<h2 id="guardrails">Guardrails</h2>
 <ul>
-<li>source</li>
-<li>organization</li>
-<li>opportunity title</li>
-<li>public URL</li>
-<li>category</li>
-<li>fit score</li>
-<li>speed score</li>
-<li>risk score</li>
-<li>recommended next action</li>
-<li>operator decision</li>
-<li>notes</li>
+<li>Do not publish private portal URLs.</li>
+<li>Do not publish private workbook data, raw emails, screenshots, or customer records.</li>
+<li>Do not hard-code browser profiles or account state.</li>
+<li>Keep browser/site automation disabled unless a proxy or synthetic source is explicitly configured.</li>
+<li>Present notification and CRM updates as reviewed queues, not automatic sends or unattended account changes.</li>
 </ul>
-<h2 id="what-not-to-publish">What Not To Publish</h2>
-<ul>
-<li>Live browser profile paths.</li>
-<li>Live form selectors.</li>
-<li>Email account names beyond public contact information.</li>
-<li>Private email subjects or bodies.</li>
-<li>Platform-specific automation that could submit, send, scrape, or alter an external account without review.</li>
-<li>Credentials, tokens, cookies, MFA details, or recovery information.</li>
-</ul>
-<h2 id="public-message">Public Message</h2>
-<p>These wizards demonstrate a disciplined operator workflow: gather evidence, rank the options, prepare the next step, and keep the human decision visible.</p>
+<h2 id="why-it-fits-frame">Why It Fits FRAME</h2>
+<p>These workflows are another example of the FRAME pattern: gather source evidence, normalize it into tables, rank or flag exceptions, prepare the next action, and keep the operator visibly in control.</p>
       </main>
     </div>
   </div>

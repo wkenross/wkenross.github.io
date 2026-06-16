@@ -90,8 +90,8 @@ p {
 h1 {
   max-width: 860px;
   margin: 0;
-  font-size: clamp(46px, 8vw, 88px);
-  line-height: 0.98;
+  font-size: clamp(30px, 4.1vw, 48px);
+  line-height: 1.12;
   letter-spacing: 0;
 }
 

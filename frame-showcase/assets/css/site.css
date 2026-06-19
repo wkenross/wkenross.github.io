@@ -47,19 +47,41 @@ a {
 .tagline {
   color: var(--muted);
   font-size: 13px;
-  margin: 0 0 24px;
+  margin: 0 0 22px;
 }
 
-.nav a {
+.nav-section {
+  margin: 0 0 18px;
+}
+
+.nav-heading {
+  color: #6f4f1d;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  margin: 0 0 5px;
+  text-transform: uppercase;
+}
+
+.nav a.nav-link {
   display: block;
-  padding: 7px 0;
+  padding: 5px 0 5px 10px;
   color: var(--ink);
+  font-size: 14px;
+  line-height: 1.3;
   text-decoration: none;
   border-bottom: 1px solid #eef1f5;
+  border-left: 3px solid transparent;
 }
 
-.nav a:hover {
+.nav a.nav-link:hover {
   color: var(--plan);
+}
+
+.nav a.nav-link.current {
+  border-left-color: var(--train);
+  color: var(--train);
+  font-weight: 700;
 }
 
 .content {

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BI Script Catalog - FRAME Evidence Workbench</title>
+  <title>Reviewed Autopilot Architecture - FRAME Evidence Workbench</title>
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body class="kind-tool">
@@ -21,11 +21,11 @@
 </div>
 <div class="nav-section">
   <p class="nav-heading">Automated Marketing</p>
-  <a class="nav-link" href="marketing_automation_showcase.html">Marketing Automation Showcase</a><a class="nav-link" href="intelligent_rfp_sales_wizard_showcase.html">Intelligent RFP + Lead Wizards</a><a class="nav-link" href="registry_learning_and_json_wizards.html">Registry Learning</a><a class="nav-link" href="rfp_lead_recommendation_workflow.html">RFP + Lead Recommendations</a><a class="nav-link" href="marketing_inbox_followup_workflow.html">Inbox Follow-Up</a><a class="nav-link" href="multi_industry_search_playbook.html">Multi-Industry Search</a><a class="nav-link" href="marketing_automation_script_catalog.html">Script Catalog</a><a class="nav-link" href="reviewed_autopilot_architecture.html">Reviewed Autopilot</a>
+  <a class="nav-link" href="marketing_automation_showcase.html">Marketing Automation Showcase</a><a class="nav-link" href="intelligent_rfp_sales_wizard_showcase.html">Intelligent RFP + Lead Wizards</a><a class="nav-link" href="registry_learning_and_json_wizards.html">Registry Learning</a><a class="nav-link" href="rfp_lead_recommendation_workflow.html">RFP + Lead Recommendations</a><a class="nav-link" href="marketing_inbox_followup_workflow.html">Inbox Follow-Up</a><a class="nav-link" href="multi_industry_search_playbook.html">Multi-Industry Search</a><a class="nav-link" href="marketing_automation_script_catalog.html">Script Catalog</a><a class="nav-link current" href="reviewed_autopilot_architecture.html">Reviewed Autopilot</a>
 </div>
 <div class="nav-section">
   <p class="nav-heading">Business Intelligence</p>
-  <a class="nav-link" href="sql_power_bi.html">SQL Data</a><a class="nav-link" href="bi_tools_showcase.html">BI Tools</a><a class="nav-link" href="bi_reporting_case_study.html">BI Reporting Case Study</a><a class="nav-link current" href="bi_script_catalog.html">BI Script Catalog</a><a class="nav-link" href="crm_automation.html">CRM Management</a><a class="nav-link" href="salesforce_cloud.html">Salesforce Cloud CRM</a>
+  <a class="nav-link" href="sql_power_bi.html">SQL Data</a><a class="nav-link" href="bi_tools_showcase.html">BI Tools</a><a class="nav-link" href="bi_reporting_case_study.html">BI Reporting Case Study</a><a class="nav-link" href="bi_script_catalog.html">BI Script Catalog</a><a class="nav-link" href="crm_automation.html">CRM Management</a><a class="nav-link" href="salesforce_cloud.html">Salesforce Cloud CRM</a>
 </div>
 <div class="nav-section">
   <p class="nav-heading">Agile Frameworks</p>
@@ -47,64 +47,89 @@
     <div class="content">
       <div class="meta">
         <span class="pill kind">tool</span>
-        <span class="pill">published-verified</span>
+        <span class="pill">ready-for-html-review</span>
       </div>
       <main>
-        <h1 id="bi-script-catalog">BI Script Catalog</h1>
-<p>These scripts are staged as public candidates. They still require review before publication.</p>
+        <h1 id="reviewed-autopilot-architecture">Reviewed Autopilot Architecture</h1>
+<p>Reviewed autopilot is the next stage after recommendation lists and guided wizards.</p>
+<p>The goal is not unattended activity. The goal is to let the system handle clear low-risk cases while parking uncertain items for review.</p>
+<h2 id="autonomy-levels">Autonomy Levels</h2>
 <table>
 <thead><tr>
-<th>Script</th>
-<th>Purpose</th>
-<th>Status</th>
+<th>Level</th>
+<th>Behavior</th>
+<th>Review Gate</th>
 </tr></thead>
 <tbody>
 <tr>
-<td><code>scripts/ps1/orchestrate_bi_manual_build_loop.ps1</code></td>
-<td>PowerShell orchestration</td>
-<td>candidate_review_required</td>
+<td>Manual</td>
+<td>open evidence and package materials</td>
+<td>operator decides every action</td>
 </tr>
 <tr>
-<td><code>scripts/ps1/orchestrate_bi_evidence_review.ps1</code></td>
-<td>PowerShell orchestration</td>
-<td>candidate_review_required</td>
+<td>Assisted</td>
+<td>fill known pages and draft artifacts</td>
+<td>pause before final action</td>
 </tr>
 <tr>
-<td><code>scripts/ps1/orchestrate_powerbi_hello_world.ps1</code></td>
-<td>PowerShell orchestration</td>
-<td>candidate_review_required</td>
+<td>Reviewed autopilot</td>
+<td>act on strict low-risk rules</td>
+<td>audit report and exception queue</td>
 </tr>
 <tr>
-<td><code>scripts/ps1/orchestrate_tableau_hello_world.ps1</code></td>
-<td>PowerShell orchestration</td>
-<td>candidate_review_required</td>
-</tr>
-<tr>
-<td><code>scripts/ps1/Invoke-BiSqlExportIntake.ps1</code></td>
-<td>PowerShell orchestration</td>
-<td>candidate_review_required</td>
-</tr>
-<tr>
-<td><code>scripts/py/op_bi_sql_export_intake.py</code></td>
-<td>Python operation</td>
-<td>candidate_review_required</td>
-</tr>
-<tr>
-<td><code>scripts/py/op_power_bi_hello_world_brief.py</code></td>
-<td>Python operation</td>
-<td>candidate_review_required</td>
-</tr>
-<tr>
-<td><code>scripts/py/op_tableau_hello_world_brief.py</code></td>
-<td>Python operation</td>
-<td>candidate_review_required</td>
-</tr>
-<tr>
-<td><code>scripts/py/op_bi_evidence_review.py</code></td>
-<td>Python operation</td>
-<td>candidate_review_required</td>
+<td>Batch autopilot</td>
+<td>process many rows with parking rules</td>
+<td>only after repeated dry-run success</td>
 </tr>
 </tbody></table>
+<h2 id="what-can-be-automated-first">What Can Be Automated First</h2>
+<p>Good candidates:</p>
+<ul>
+<li>duplicate suppression</li>
+<li>obvious low-fit declines</li>
+<li>source and platform classification</li>
+<li>recommendation scoring</li>
+<li>page preparation</li>
+<li>CRM-ready CSV preparation</li>
+<li>draft creation</li>
+<li>inbox folder suggestions</li>
+<li>post-run reports</li>
+</ul>
+<h2 id="what-should-stay-reviewed">What Should Stay Reviewed</h2>
+<p>Keep these actions under explicit review:</p>
+<ul>
+<li>sending messages</li>
+<li>submitting proposals</li>
+<li>publishing pages</li>
+<li>importing into CRM</li>
+<li>accepting agreements</li>
+<li>purchases and subscriptions</li>
+<li>credential, identity, tax, banking, or background-check steps</li>
+</ul>
+<h2 id="training-the-autopilot">Training The Autopilot</h2>
+<p>The system should learn from:</p>
+<ul>
+<li>accepted opportunities</li>
+<li>skipped opportunities and reasons</li>
+<li>parked opportunities</li>
+<li>wizard success or failure</li>
+<li>source reliability</li>
+<li>CRM outcomes</li>
+<li>follow-up results</li>
+</ul>
+<p>This creates an evaluation dataset before any fine-tuning is considered.</p>
+<h2 id="practical-stack">Practical Stack</h2>
+<p>The FRAME approach uses:</p>
+<ul>
+<li>PowerShell orchestration</li>
+<li>Python scoring and data preparation</li>
+<li>Microsoft Edge remote-debug sessions</li>
+<li>Outlook/Office workflow surfaces</li>
+<li>JSON, CSV, and Markdown state</li>
+<li>optional SQLite or DuckDB history</li>
+<li>LLM-assisted scoring with structured outputs</li>
+</ul>
+<p>The result is an explainable operator system, not a black-box bot.</p>
       </main>
     </div>
   </div>

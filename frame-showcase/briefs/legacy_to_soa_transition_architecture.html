@@ -53,11 +53,13 @@
         <h1 id="legacy-to-soa-transition-architecture">Legacy-To-SOA Transition Architecture</h1>
 <p>FRAME is an automation framework for service-oriented architecture and generative-AI enablement.</p>
 <p>The practical mission is to help organizations move from closed, static, or monolithic operating models into service-oriented, cloud-queryable, BI-ready, AI-ready workflows without losing the familiar reports, controls, and business meaning that executives and operators still expect.</p>
+<p>Automated reporting is the bridge, not a side effect. FRAME keeps stakeholder reports, dashboards, exception lists, and operating views available while the source systems are being decomposed into services, endpoints, SQL models, BI semantic layers, and AI-readable handoffs.</p>
 <h2 id="core-transition-pattern">Core Transition Pattern</h2>
 <pre><code>
 monolithic report
-  -&gt; documented business meaning
-  -&gt; service boundary or endpoint candidate
+  -&gt; FRAME orchestration keeps the output alive
+  -&gt; documented business meaning and reconciliation notes
+  -&gt; service boundary, endpoint, or data-product candidate
   -&gt; SQL / BI / cloud-queryable proof
   -&gt; AI-assisted explanation, testing, and improvement
 </code></pre>
@@ -85,11 +87,11 @@ monolithic report
 <tbody>
 <tr>
 <td>Reports</td>
-<td>Preserve expected executive and operational outputs while source systems change.</td>
+<td>Preserve expected executive and operational outputs while source systems change; this is the first transition bridge.</td>
 </tr>
 <tr>
 <td>Web / Portal</td>
-<td>Map user-facing screens and portal flows into service and endpoint candidates.</td>
+<td>Map user-facing screens and portal flows into service and endpoint candidates; publish the evidence without becoming the whole strategy.</td>
 </tr>
 <tr>
 <td>Data / SQL</td>
@@ -108,6 +110,8 @@ monolithic report
 <td>Document, test, reconcile, observe, explain, and improve service contracts.</td>
 </tr>
 </tbody></table>
+<h2 id="guardrail">Guardrail</h2>
+<p>The service structure should not disrupt working orchestration. Existing nightly, intraday, approval, projection-validation, and publication scripts can continue to run where they work while FRAME documents the service boundaries they imply. Move code only after the replacement path is tested.</p>
 <h2 id="why-ai-needs-this">Why AI Needs This</h2>
 <p>Generative AI becomes useful when operations are legible: trusted data, callable endpoints, documented workflows, clear service boundaries, observable behavior, and governed actions. Stronger AI does not remove the need for service architecture; it makes missing service architecture more obvious.</p>
 <h2 id="public-safe-positioning">Public-Safe Positioning</h2>

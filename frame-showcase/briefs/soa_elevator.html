@@ -55,6 +55,68 @@
 <p>The practical bridge is not a giant rewrite. FRAME keeps familiar reports, dashboards, exception lists, approvals, forecasts, invoices, and operating views alive while the business meaning behind them is documented, tested, and reshaped into service contracts, endpoint candidates, SQL/BI models, and AI-readable handoffs.</p>
 <h2 id="short-version">Short Version</h2>
 <p>FRAME turns familiar business reports and workflows into service-oriented, cloud-queryable, AI-ready operating artifacts.</p>
+<h2 id="why-this-matters-for-the-b2b-opportunity">Why This Matters For The B2B Opportunity</h2>
+<p>The opportunity feedback asked for clearer evidence around B2B ecommerce, commerce catalogs, pricing, promotions, procurement systems, cart and checkout flows, order management, PunchOut, procurement integrations, and buyer-side platforms such as Ariba, Coupa, SAP Procurement, and JAGGAER.</p>
+<p>That is a practical SOA story. These requirements are not only asking whether a candidate knows names of procurement tools. They are asking whether the person can see how a buyer, supplier storefront, catalog, price, cart, approval, purchase order, invoice, CRM handoff, and support workflow fit together across systems.</p>
+<p>FRAME answers that by documenting the workflow as services and handoffs:</p>
+<ul>
+<li>catalog and item data</li>
+<li>customer, account, and access setup</li>
+<li>pricing, valuation, and eligibility rules</li>
+<li>cart, checkout, requisition, and order paths</li>
+<li>procurement-system integration points</li>
+<li>API, cXML, PunchOut, CRM, BI, and support handoffs</li>
+<li>validation checks and public-safe evidence</li>
+</ul>
+<h2 id="soa-and-generative-ai-readiness">SOA And Generative AI Readiness</h2>
+<p>A valid interpretation of the requirements is that service-oriented, API-aware, well-documented workflows are better positioned for generative AI than workflows that are locked inside a single proprietary screen or undocumented suite process.</p>
+<p>The careful version is: SAP Ariba, Coupa, SAP Procurement, and JAGGAER are not &quot;closed&quot; in the sense of having no integrations. They all expose integration paths. But they are suite-centered procurement platforms. To make them useful for AI-assisted work, teams still need documented service boundaries, API contracts, cXML/PunchOut flows, data lineage, validation rules, and human review points.</p>
+<p>That is where FRAME fits. It does not replace the procurement suite. It turns the surrounding business workflow into an AI-readable operating model.</p>
+<h2 id="vendor-and-integration-buckets">Vendor And Integration Buckets</h2>
+<table>
+<thead><tr>
+<th>Area</th>
+<th>How To Treat It</th>
+<th>SOA Angle</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>SAP Ariba</td>
+<td>Suite-centered procurement and supplier network with APIs and cXML/PunchOut patterns</td>
+<td>Integrate through documented APIs, cXML, catalog, sourcing, procurement, and network handoffs</td>
+</tr>
+<tr>
+<td>Coupa</td>
+<td>Suite-centered business-spend platform with REST APIs, supplier/cXML docs, and PunchOut catalog support</td>
+<td>Model requisitions, suppliers, purchase orders, invoices, and PunchOut as service contracts</td>
+</tr>
+<tr>
+<td>SAP Procurement / S/4HANA</td>
+<td>ERP-centered procurement stack with SAP integration patterns and OCI/cXML ecosystem paths</td>
+<td>Treat ERP procurement as system of record; wrap catalog, approval, order, invoice, and reporting boundaries</td>
+</tr>
+<tr>
+<td>JAGGAER</td>
+<td>Suite-centered source-to-pay platform with ERP, cloud connector, API, and PunchOut integration options</td>
+<td>Treat JAGGAER as a procurement hub; map APIs and cXML/ERP flows into reusable workflow evidence</td>
+</tr>
+<tr>
+<td>cXML / PunchOut</td>
+<td>Open-ish commerce integration standard used across procurement platforms</td>
+<td>Best first tooling target because one adapter story can demonstrate several named platforms</td>
+</tr>
+</tbody></table>
+<h2 id="tooling-recommendation">Tooling Recommendation</h2>
+<p>The best first proof is not to pick only one vendor UI. The best first proof is to build a small PunchOut/cXML and procurement-adapter workbench:</p>
+<ul>
+<li>parse a PunchOut setup request</li>
+<li>create a supplier catalog/cart response</li>
+<li>simulate cart return into a requisition path</li>
+<li>map supplier, item, price, account, purchase order, invoice, and approval fields</li>
+<li>document where Ariba, Coupa, SAP, and JAGGAER would attach</li>
+<li>keep the claims honest by marking direct implementation evidence separately from ecosystem terminology</li>
+</ul>
+<p>After that, Coupa is a reasonable first named-platform lane because its public documentation exposes REST API and PunchOut/cXML examples clearly enough to support a safe demo narrative. SAP Ariba should be second because it is central to the cXML/PunchOut ecosystem but often requires portal access for deeper API work. JAGGAER and SAP Procurement can be mapped as additional adapter lanes without pretending to have customer-instance access.</p>
 <h2 id="what-frame-produces">What FRAME Produces</h2>
 <ul>
 <li>service-boundary notes</li>
@@ -73,6 +135,19 @@ Services = skinny service contracts and wrappers
 SOA      = family room and publication path
 </code></pre>
 <p>Projects coach, enable, run, and validate services. Services stay small and make the reusable contract visible.</p>
+<h2 id="research-and-vendor-references">Research And Vendor References</h2>
+<ul>
+<li><a href="https://www.deloitte.com/us/en/what-we-do/capabilities/applied-artificial-intelligence/content/state-of-ai-in-the-enterprise.html">Deloitte: The State of AI in the Enterprise</a></li>
+<li><a href="https://www.gartner.com/en/documents/6276183">Gartner: Composable APIs, Services and Applications</a></li>
+<li><a href="https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/enterprise-technologys-next-chapter-four-gen-ai-shifts-that-will-reshape-business-technology">McKinsey: Four Gen AI Shifts That Will Reshape Enterprise Technology</a></li>
+<li><a href="https://www.mckinsey.com/featured-insights/mckinsey-on-books/rewired/glossary">McKinsey: Model Context Protocol Glossary</a></li>
+<li><a href="https://cxml.org/">cXML.org: Commerce XML Resources</a></li>
+<li><a href="https://developer.ariba.com/">SAP Ariba APIs Portal</a></li>
+<li><a href="https://docs.coupa.com/">Coupa Core API Documentation</a></li>
+<li><a href="https://compass.coupa.com/en-us/products/product-documentation/supplier-resources/for-suppliers/coupa-supplier-portal/set-up-the-csp/catalogs/punchout-catalogs">Coupa PunchOut Catalogs</a></li>
+<li><a href="https://www.jaggaer.com/solutions/integrations">JAGGAER One Integrations</a></li>
+<li><a href="https://docs.aws.amazon.com/marketplace/latest/buyerguide/procurement-system-integration.html">AWS Marketplace Procurement System Integration</a></li>
+</ul>
       </main>
     </div>
   </div>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FRAME Sales Analytics Showcase - FRAME Evidence Workbench</title>
+  <title>Legacy-To-SOA Transition Architecture - FRAME Evidence Workbench</title>
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
 <body class="kind-tool">
@@ -13,11 +13,11 @@
       <p class="tagline">Review-first FRAME showcase</p>
       <div class="nav-section">
   <p class="nav-heading">Framework Sources</p>
-  <a class="nav-link" href="legacy_to_soa_transition_architecture.html">Legacy-To-SOA Mission</a><a class="nav-link" href="b2b_b2c_solutions_showcase.html">B2B/B2C Portal Sources</a><a class="nav-link" href="energy_portal_solution_brief.html">Energy Portal</a><a class="nav-link" href="price_digests_solution_brief.html">Price Digests</a><a class="nav-link" href="fedm_solution_brief.html">FEDM</a><a class="nav-link" href="ai_tooling_review_first_pattern.html">AI Tooling</a><a class="nav-link" href="ai_autopilot_research_overview.html">AI Autopilot Research</a>
+  <a class="nav-link current" href="legacy_to_soa_transition_architecture.html">Legacy-To-SOA Mission</a><a class="nav-link" href="b2b_b2c_solutions_showcase.html">B2B/B2C Portal Sources</a><a class="nav-link" href="energy_portal_solution_brief.html">Energy Portal</a><a class="nav-link" href="price_digests_solution_brief.html">Price Digests</a><a class="nav-link" href="fedm_solution_brief.html">FEDM</a><a class="nav-link" href="ai_tooling_review_first_pattern.html">AI Tooling</a><a class="nav-link" href="ai_autopilot_research_overview.html">AI Autopilot Research</a>
 </div>
 <div class="nav-section">
   <p class="nav-heading">Analytic Sales</p>
-  <a class="nav-link current" href="sales_analytics_showcase.html">Sales Analytics Showcase</a><a class="nav-link" href="sales_analytics_workflow_map.html">Workflow Map</a><a class="nav-link" href="sales_analytics_obfuscation_path.html">Obfuscation Path</a><a class="nav-link" href="public_energy_data.html">Public Energy Data</a>
+  <a class="nav-link" href="sales_analytics_showcase.html">Sales Analytics Showcase</a><a class="nav-link" href="sales_analytics_workflow_map.html">Workflow Map</a><a class="nav-link" href="sales_analytics_obfuscation_path.html">Obfuscation Path</a><a class="nav-link" href="public_energy_data.html">Public Energy Data</a>
 </div>
 <div class="nav-section">
   <p class="nav-heading">Automated Marketing</p>
@@ -47,50 +47,71 @@
     <div class="content">
       <div class="meta">
         <span class="pill kind">tool</span>
-        <span class="pill">published-verified</span>
+        <span class="pill">candidate-review-required</span>
       </div>
       <main>
-        <h1 id="frame-sales-analytics-showcase">FRAME Sales Analytics Showcase</h1>
-<p>FRAME Sales Analytics turns workbook-heavy revenue operations into repeatable automation workflows.</p>
-<p>The current private implementation is not yet ready for public code release, but the operating model is ready to describe:</p>
+        <h1 id="legacy-to-soa-transition-architecture">Legacy-To-SOA Transition Architecture</h1>
+<p>FRAME is an automation framework for service-oriented architecture and generative-AI enablement.</p>
+<p>The practical mission is to help organizations move from closed, static, or monolithic operating models into service-oriented, cloud-queryable, BI-ready, AI-ready workflows without losing the familiar reports, controls, and business meaning that executives and operators still expect.</p>
+<h2 id="core-transition-pattern">Core Transition Pattern</h2>
+<pre><code>
+monolithic report
+  -&gt; documented business meaning
+  -&gt; service boundary or endpoint candidate
+  -&gt; SQL / BI / cloud-queryable proof
+  -&gt; AI-assisted explanation, testing, and improvement
+</code></pre>
+<p>This is not a vendor replacement claim. SAP, Oracle, Salesforce, FAME/FEDM, CRM platforms, procurement suites, and portal systems can all be useful participants. FRAME focuses on the transition artifacts that make business processes legible outside closed screens and static exports.</p>
+<h2 id="what-frame-produces">What FRAME Produces</h2>
 <ul>
-<li>performance workbooks track customer and contract metadata</li>
-<li>monthly series support current, historical, quarterly, and annual review</li>
-<li>forecast workbooks are validated against performance history</li>
-<li>PowerShell orchestrations provide repeatable run paths</li>
-<li>Python operations inspect, transform, validate, and report workbook data</li>
-<li>SQL and Power BI become the durable reporting layer after extraction</li>
+<li>executive-familiar reports</li>
+<li>endpoint inventories</li>
+<li>service-boundary notes</li>
+<li>workflow maps</li>
+<li>SQL checks and BI validation queries</li>
+<li>procurement, CRM, finance, and reporting handoffs</li>
+<li>exception reports</li>
+<li>Markdown/source-controlled documentation</li>
+<li>Codex-ready implementation packages</li>
+<li>AI-readable context and test notes</li>
 </ul>
-<h2 id="functional-lanes">Functional Lanes</h2>
+<h2 id="service-collation-model">Service Collation Model</h2>
+<p>FRAME services should be organized by business capability rather than by old project labels:</p>
 <table>
 <thead><tr>
-<th>Lane</th>
-<th>Public purpose</th>
+<th>Service Area</th>
+<th>Purpose</th>
 </tr></thead>
 <tbody>
 <tr>
-<td>Sales analytics operations</td>
-<td>Revenue-performance update, validation, and reporting orchestration.</td>
+<td>Reports</td>
+<td>Preserve expected executive and operational outputs while source systems change.</td>
 </tr>
 <tr>
-<td>Forecast reconciliation</td>
-<td>Historical performance and growth compared against sales forecasts and projections.</td>
+<td>Web / Portal</td>
+<td>Map user-facing screens and portal flows into service and endpoint candidates.</td>
 </tr>
 <tr>
-<td>Scheduler automation</td>
-<td>Schedule/calendar monitoring, notification, and CRM/legacy operations handoff.</td>
+<td>Data / SQL</td>
+<td>Make source meaning queryable and testable through SQL, cloud data, or BI models.</td>
 </tr>
 <tr>
-<td>Shredder tools</td>
-<td>PDF/site extraction and consolidation into reporting workbooks.</td>
+<td>Procurement</td>
+<td>Replicate procurement business meaning: supplier, requisition, approval, PO, receipt, invoice, exception, audit.</td>
 </tr>
 <tr>
-<td>Month shift tools</td>
-<td>Controlled workbook month/header/calendar shifts for a new reporting period.</td>
+<td>CRM / Revenue</td>
+<td>Keep customer, opportunity, contract, forecast, and follow-up workflows portable.</td>
+</tr>
+<tr>
+<td>Endpoint Assurance</td>
+<td>Document, test, reconcile, observe, explain, and improve service contracts.</td>
 </tr>
 </tbody></table>
-<h2 id="publication-posture">Publication Posture</h2>
-<p>The first publishable asset is documentation. Code examples and workbook samples remain staged until the obfuscation path replaces private data with synthetic examples.</p>
+<h2 id="why-ai-needs-this">Why AI Needs This</h2>
+<p>Generative AI becomes useful when operations are legible: trusted data, callable endpoints, documented workflows, clear service boundaries, observable behavior, and governed actions. Stronger AI does not remove the need for service architecture; it makes missing service architecture more obvious.</p>
+<h2 id="public-safe-positioning">Public-Safe Positioning</h2>
+<p>FRAME should describe architecture patterns, not accuse vendors. A platform becomes a monolith-risk blocker when business logic, data, workflow state, metadata, and actions are trapped behind boundaries that are costly or hard to inspect, query, automate, test, or improve.</p>
       </main>
     </div>
   </div>

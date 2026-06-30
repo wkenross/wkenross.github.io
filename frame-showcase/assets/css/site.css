@@ -55,6 +55,25 @@ a {
   margin: 0 0 22px;
 }
 
+.nav-home-link {
+  display: block;
+  margin: 0 0 14px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--plan);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--plan);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+.nav-home-link:hover {
+  background: #f6f9fd;
+}
+
 .risk-nav-button {
   width: 100%;
   margin: 0 0 22px;

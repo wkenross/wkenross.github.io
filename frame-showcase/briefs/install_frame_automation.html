@@ -270,6 +270,48 @@ Downloads\Install\bootstrap\START_HERE_KR.md
 </tr>
 </tbody></table>
 <p>The public page links to stable official download pages rather than promising a fresh exact version number on every page load. Exact version checks belong in <code>PrerequisiteCheck</code> and the install software manifest.</p>
+<h2 id="bootstrap-configuration-contract">Bootstrap Configuration Contract</h2>
+<p>After Edge/OneDrive access is ready and the full <code>Services &gt; Install</code> folder is downloaded to <code>Downloads\Install</code>, the KR starter runs:</p>
+<pre><code>
+Downloads\Install\bootstrap\RUN_KR_BOOTSTRAP.ps1
+</code></pre>
+<p>That calls <code>FirstLoginBootstrap -Apply -InstallMissingPackages -RunWindowsReadiness</code>. The scripted contract is:</p>
+<table>
+<thead><tr>
+<th>Area</th>
+<th>Scripted behavior</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Codex communication</td>
+<td><code>CommunicationRuleCheck</code> verifies <code>communicate.md</code>, SOA operator message folders, and first-read communication docs.</td>
+</tr>
+<tr>
+<td>Codex workspace context</td>
+<td><code>WorkspaceOnboarding -WorkspaceId &lt;id&gt; -OpenWorkspace -OpenDocs</code> can open the selected VS Code workspace plus the registered README/context/PlanMe first-read files.</td>
+</tr>
+<tr>
+<td>File Explorer</td>
+<td>Bootstrap and post-bootstrap set File Explorer to show hidden files, protected files, and known file extensions for the signed-in Windows user.</td>
+</tr>
+<tr>
+<td>Launchers</td>
+<td>First-login bootstrap installs the <code>FRAME Desktop Builder</code> shortcut on the Desktop and under Start Menu <code>FRAME Install</code>; taskbar pinning is best-effort and may still be manual on Windows 11.</td>
+</tr>
+<tr>
+<td>PowerShell host</td>
+<td>Scripts prefer <code>pwsh.exe</code> when available and fall back to Windows PowerShell only for early bootstrap. Installing/upgrading PowerShell is handled by prerequisite/readiness checks, but the user should reopen terminals after an upgrade.</td>
+</tr>
+<tr>
+<td>Browser/PDF defaults</td>
+<td>Windows readiness checks whether Edge is the browser default and Adobe Acrobat/Reader is the PDF default. Windows 11 protects default-app hashes, so the script reports and opens Default Apps when manual confirmation is needed rather than force-writing those associations.</td>
+</tr>
+<tr>
+<td>Windows stability/readiness</td>
+<td><code>WindowsReadiness</code> is exposed through the Install service router and is run during KR bootstrap. Its current implementation still delegates to <code>projects\fr_install</code> until that logic is fully promoted into <code>Services\Install</code>.</td>
+</tr>
+</tbody></table>
+<p>The important distinction is: profile-safe settings and FRAME launch surfaces are scripted; Windows-protected identity/default-app choices are checked and guided; final account sign-ins, MFA, Office/Adobe activation, and protected default-app confirmation remain operator-supervised.</p>
 <h2 id="primary-workspace">Primary Workspace</h2>
 <pre><code>
 %USERPROFILE%\OneDrive\projects\Install.code-workspace

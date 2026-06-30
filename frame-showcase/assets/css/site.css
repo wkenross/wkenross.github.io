@@ -12,6 +12,7 @@
   --b2b-blue-dark: #173f66;
   --b2b-blue-soft: #eaf3fb;
   --b2b-blue-line: #c7dceb;
+  --artifact-accent: var(--line);
 }
 
 * {
@@ -52,6 +53,30 @@ a {
   color: var(--muted);
   font-size: 13px;
   margin: 0 0 22px;
+}
+
+.risk-nav-button {
+  width: 100%;
+  margin: 0 0 22px;
+  border: 1px solid color-mix(in srgb, var(--plan) 35%, var(--line));
+  border-left: 4px solid var(--plan);
+  border-radius: 6px;
+  background: #f6f9fd;
+  color: var(--plan);
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+  padding: 9px 10px;
+  text-align: left;
+}
+
+.risk-nav-button:hover,
+.risk-nav-button:focus-visible {
+  background: #eef5fc;
+  outline: 2px solid color-mix(in srgb, var(--plan) 30%, transparent);
+  outline-offset: 2px;
 }
 
 .nav-section {
@@ -130,6 +155,59 @@ a {
   color: var(--tool);
 }
 
+.artifact-overview {
+  --artifact-accent: #1e5f99;
+}
+
+.artifact-architecture {
+  --artifact-accent: #6554b7;
+}
+
+.artifact-business-plan {
+  --artifact-accent: #8a5a16;
+}
+
+.artifact-roadmap {
+  --artifact-accent: #22745b;
+}
+
+.artifact-backlog {
+  --artifact-accent: #a04444;
+}
+
+.artifact-runbook {
+  --artifact-accent: #4d5b70;
+}
+
+.artifact-research {
+  --artifact-accent: #5b6573;
+}
+
+.artifact-discovery {
+  --artifact-accent: #7a5a1f;
+}
+
+.artifact-enable-guide {
+  --artifact-accent: #1f7a62;
+}
+
+.artifact-delivery-pathway {
+  --artifact-accent: #2f6f8f;
+}
+
+.artifact-tool {
+  --artifact-accent: #1f7a62;
+}
+
+.pill.artifact {
+  border-color: var(--artifact-accent);
+  color: var(--artifact-accent);
+}
+
+body[class*="artifact-"] main {
+  border-top: 5px solid var(--artifact-accent);
+}
+
 .theme-b2b-adapter {
   --paper: #f4f8fc;
   --surface: #ffffff;
@@ -161,6 +239,10 @@ a {
   box-shadow: 0 16px 38px rgba(30, 95, 153, 0.08);
 }
 
+.theme-b2b-adapter[class*="artifact-"] .content main {
+  border-top-color: var(--artifact-accent);
+}
+
 .theme-b2b-adapter h1 {
   color: var(--b2b-blue-dark);
 }
@@ -176,6 +258,110 @@ a {
 .theme-b2b-adapter .pill.kind {
   border-color: var(--b2b-blue);
   color: var(--b2b-blue);
+}
+
+.theme-b2b-adapter .risk-nav-button {
+  background: #f2f8fd;
+  border-color: #c8dcec;
+}
+
+.risk-dialog {
+  width: min(680px, calc(100vw - 32px));
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink);
+  padding: 0;
+}
+
+.risk-dialog::backdrop {
+  background: rgba(20, 32, 45, 0.54);
+}
+
+.risk-dialog-panel {
+  border: 1px solid var(--line);
+  border-top: 6px solid var(--plan);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 24px 70px rgba(20, 32, 45, 0.28);
+}
+
+.risk-dialog-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 24px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.risk-dialog-kicker {
+  margin: 0 0 4px;
+  color: var(--plan);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.risk-dialog h2 {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-size: 22px;
+}
+
+.risk-dialog-close {
+  display: inline-grid;
+  place-items: center;
+  min-width: 34px;
+  height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.risk-dialog-close:hover,
+.risk-dialog-close:focus-visible {
+  border-color: var(--plan);
+  color: var(--plan);
+  outline: 2px solid color-mix(in srgb, var(--plan) 28%, transparent);
+  outline-offset: 2px;
+}
+
+.risk-dialog-body {
+  padding: 18px 24px 24px;
+}
+
+.risk-dialog-body p {
+  margin-top: 0;
+}
+
+.risk-dialog dl {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.35fr) 1fr;
+  gap: 10px 18px;
+  margin: 18px 0;
+}
+
+.risk-dialog dt {
+  color: var(--plan);
+  font-weight: 800;
+}
+
+.risk-dialog dd {
+  margin: 0;
+}
+
+.risk-dialog-note {
+  border-left: 4px solid var(--train);
+  background: #f2f8f5;
+  color: var(--ink);
+  padding: 10px 12px;
 }
 
 main {
@@ -280,5 +466,13 @@ img {
 
   main {
     padding: 22px;
+  }
+
+  .risk-dialog dl {
+    display: block;
+  }
+
+  .risk-dialog dt {
+    margin-top: 12px;
   }
 }

@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Price Digests Solution Brief - FRAME Evidence Workbench</title>
+  <title>JAGGAER Access And Installation Posture - FRAME Evidence Workbench</title>
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
-<body class="kind-tool">
+<body class="kind-tool theme-b2b-adapter artifact-access-posture">
   <div class="layout">
     <aside class="nav">
       <p class="brand">FRAME Evidence Workbench</p>
@@ -14,7 +14,7 @@
       <button class="risk-nav-button" type="button" data-risk-open>Product Risk Analysis</button>
       <div class="nav-section">
   <p class="nav-heading">Framework Sources</p>
-  <a class="nav-link" href="legacy_to_soa_transition_architecture.html">Legacy-To-SOA Mission</a><a class="nav-link" href="b2b_ecommerce_adapter.html">B2B eCommerce Adapter</a><a class="nav-link" href="frame_procurement_adapter_architecture.html">Adapter Architecture</a><a class="nav-link" href="procurement_adapter_agile_backlog.html">Adapter Agile Backlog</a><a class="nav-link" href="procurement_vendor_research_pack.html">Partner Matrix</a><a class="nav-link" href="product_discovery_research_kit.html">Discovery Research Kit</a><a class="nav-link" href="competitive_swot_differentiation_brief.html">Competitive SWOT</a><a class="nav-link" href="spend_management_gotcha_dropoff_map.html">Gotcha Map</a><a class="nav-link" href="spend_management_admin_day_in_life.html">Admin Day In Life</a><a class="nav-link" href="jaggaer_procurement_adapter_enablement_guide.html">JAGGAER Enablement</a><a class="nav-link" href="jaggaer_access_installation_posture.html">JAGGAER Access</a><a class="nav-link" href="frame_automation_adapter_delivery_pathway.html">FRAME Delivery Pathway</a><a class="nav-link" href="procurement_adapter_workbench.html">Adapter Prototype</a><a class="nav-link" href="b2b_b2c_solutions_showcase.html">B2B/B2C Portal Sources</a><a class="nav-link" href="energy_portal_solution_brief.html">Energy Portal</a><a class="nav-link current" href="price_digests_solution_brief.html">Price Digests</a><a class="nav-link" href="fedm_solution_brief.html">FEDM</a><a class="nav-link" href="ai_tooling_review_first_pattern.html">AI Tooling</a><a class="nav-link" href="ai_autopilot_research_overview.html">AI Autopilot Research</a>
+  <a class="nav-link" href="legacy_to_soa_transition_architecture.html">Legacy-To-SOA Mission</a><a class="nav-link" href="b2b_ecommerce_adapter.html">B2B eCommerce Adapter</a><a class="nav-link" href="frame_procurement_adapter_architecture.html">Adapter Architecture</a><a class="nav-link" href="procurement_adapter_agile_backlog.html">Adapter Agile Backlog</a><a class="nav-link" href="procurement_vendor_research_pack.html">Partner Matrix</a><a class="nav-link" href="product_discovery_research_kit.html">Discovery Research Kit</a><a class="nav-link" href="competitive_swot_differentiation_brief.html">Competitive SWOT</a><a class="nav-link" href="spend_management_gotcha_dropoff_map.html">Gotcha Map</a><a class="nav-link" href="spend_management_admin_day_in_life.html">Admin Day In Life</a><a class="nav-link" href="jaggaer_procurement_adapter_enablement_guide.html">JAGGAER Enablement</a><a class="nav-link current" href="jaggaer_access_installation_posture.html">JAGGAER Access</a><a class="nav-link" href="frame_automation_adapter_delivery_pathway.html">FRAME Delivery Pathway</a><a class="nav-link" href="procurement_adapter_workbench.html">Adapter Prototype</a><a class="nav-link" href="b2b_b2c_solutions_showcase.html">B2B/B2C Portal Sources</a><a class="nav-link" href="energy_portal_solution_brief.html">Energy Portal</a><a class="nav-link" href="price_digests_solution_brief.html">Price Digests</a><a class="nav-link" href="fedm_solution_brief.html">FEDM</a><a class="nav-link" href="ai_tooling_review_first_pattern.html">AI Tooling</a><a class="nav-link" href="ai_autopilot_research_overview.html">AI Autopilot Research</a>
 </div>
 <div class="nav-section">
   <p class="nav-heading">Product Management &amp; Marketing</p>
@@ -48,52 +48,101 @@
     <div class="content">
       <div class="meta">
         <span class="pill kind">tool</span>
+        <span class="pill artifact">access posture</span>
         <span class="pill">candidate-review-required</span>
       </div>
       <main>
-        <h1 id="price-digests-solution-brief">Price Digests Solution Brief</h1>
-<p>Price Digests is the B2B/B2C case study for vehicle valuation, insurance risk, insurer API delivery, public-sector valuation, and product analytics.</p>
-<h2 id="product-story">Product Story</h2>
-<p>The solution helped users reason about commercial vehicle value and related workflows:</p>
+        <h1 id="jaggaer-access-and-installation-posture">JAGGAER Access And Installation Posture</h1>
+<p>This artifact answers a practical sprint question: should the JAGGAER lane be treated like a local install, a free trial, a supplier portal, a demo request, or a synthetic adapter lab?</p>
+<h2 id="current-answer">Current Answer</h2>
+<p>JAGGAER should be treated as:</p>
+<pre><code>
+research-ready, supplier-aware, demo/contact-sales gated, and synthetic-lab ready
+</code></pre>
+<p>It should not yet be described as:</p>
+<pre><code>
+locally installed, single-seat priced, or tenant-configured by FRAME
+</code></pre>
+<p>The product-management value is still strong. The access finding itself becomes part of the sprint: document the boundary, build the supplier-side prototype, and keep any live-tenant work behind an explicit access decision.</p>
+<h2 id="cost-and-access-view">Cost And Access View</h2>
+<table>
+<thead><tr>
+<th>Access Type</th>
+<th>Finding</th>
+<th>Product Implication</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Buyer/customer tenant</td>
+<td>Public material routes prospects to book a demo and points to SaaS/customer agreements rather than a simple single-user install.</td>
+<td>Treat buyer-side administration as quote/demo gated.</td>
+</tr>
+<tr>
+<td>Supplier portal</td>
+<td>JAGGAER says supplier portal participation is free and supports profiles, training, notifications, and user roles.</td>
+<td>Useful for persona and supplier enablement research, but not the same as buyer tenant ownership.</td>
+</tr>
+<tr>
+<td>Catalog supplier enablement</td>
+<td>JAGGAER says catalog supplier enablement needs a customer enablement request or eligible catalog program.</td>
+<td>Keep supplier/catalog setup as a project-gated risk.</td>
+</tr>
+<tr>
+<td>Integration support</td>
+<td>Public terms describe support packages, supplier catalog integrations, supplier enablement services, and additional professional services where needed.</td>
+<td>Convert support and scope ambiguity into backlog risks and acceptance criteria.</td>
+</tr>
+</tbody></table>
+<h2 id="tool-registry-position">Tool Registry Position</h2>
+<p>Recommended registry label:</p>
+<pre><code>
+JAGGAER - procurement adapter research and supplier enablement lane
+</code></pre>
+<p>Recommended type:</p>
+<pre><code>
+browser shortcut / vendor research / adapter pattern / not local runtime
+</code></pre>
+<p>This can sit near HubSpot, Salesforce, Office 365, VS Code, SQL, Talend, and BI tools, but with a different access classification. Those tools may be locally installed or self-service. JAGGAER is an enterprise SaaS endpoint and supplier enablement pattern until a real tenant, supplier account, demo, or partner path is obtained.</p>
+<h2 id="sprint-addition">Sprint Addition</h2>
+<table>
+<thead><tr>
+<th>Story</th>
+<th>Outcome</th>
+<th>Acceptance Criteria</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>JAG-SPIKE-0 Confirm access, cost, and shortcut posture</td>
+<td>The team knows whether JAGGAER is installable, trialable, supplier-accessible, demo-only, or synthetic-only for the sprint.</td>
+<td>Public pricing/trial search is recorded; supplier portal vs buyer tenant access is separated; registry classification is set; desktop/Edge shortcut plan exists; no production tenant claim is made.</td>
+</tr>
+</tbody></table>
+<h2 id="frame-delivery-path">FRAME Delivery Path</h2>
+<p>If live access becomes available, FRAME should record the access type, allowed use, roles, supplier account, catalog path, PunchOut/cXML credentials, test transaction path, support contacts, and data handling boundaries.</p>
+<p>If live access is not available, FRAME should proceed with public research, synthetic hosted catalog and PunchOut/cXML fixtures, e-PO/confirmation/invoice and ASN event modeling, SQL/BI launch-health reporting, and visible backlog risks.</p>
+<h2 id="dashboard-signal">Dashboard Signal</h2>
+<p>The important dashboard signal is not whether JAGGAER was installed locally. The signal is whether the product team can separate:</p>
 <ul>
-<li>commercial vehicle underwriters and insurers needed structured valuation,</li>
-<p>specification, equipment, and risk context</p>
-<li>insurer-facing systems needed API/data delivery so workflows did not depend</li>
-<p>only on manual portal use</p>
-<li>API delivery needed contract thinking: endpoint shape, response quality,</li>
-<p>monitoring, issue triage, and clear communication with consuming systems</p>
-<li>tax authorities and consumers needed defensible valuation workflows for</li>
-<p>public-sector and consumer-facing decisions</p>
-<li>product managers needed usage, adoption, support, and backlog evidence to</li>
-<p>prioritize the next work</p>
+<li>what can be prototyped safely now;</li>
+<li>what requires supplier portal or customer request access;</li>
+<li>what requires buyer tenant ownership;</li>
+<li>what belongs in a production implementation plan.</li>
 </ul>
-<h2 id="frame-connection">FRAME Connection</h2>
-<p>This case study maps to:</p>
+<p>That distinction protects credibility while still moving the adapter prototype forward.</p>
+<h2 id="source-anchors">Source Anchors</h2>
 <ul>
-<li><code>sr_b2b_b2c</code> for the product narrative</li>
-<li><code>sr_agile_pm</code> for Jira-ready epics and stories</li>
-<li><code>sr_crm</code> for account and customer context</li>
-<li><code>sr_sql_data</code> for vehicle, valuation, event, and API-call models</li>
-<li><code>sr_bi_tools</code> for adoption and product-health dashboards</li>
-<li><code>sr_tech_proj_mgmt</code> for Pendo-style SaaS portal operations</li>
-</ul>
-<h2 id="api-testing-and-adapter-relevance">API Testing And Adapter Relevance</h2>
-<p>Price Digests is useful for the B2B eCommerce Adapter story because it adds the API-product and endpoint-monitoring side of the FRAME experience. Procurement adapters need the same discipline:</p>
-<ul>
-<li>define the expected request and response contract;</li>
-<li>validate required fields and data quality;</li>
-<li>monitor endpoint behavior over time;</li>
-<li>connect failures to support, backlog, and roadmap decisions;</li>
-<li>report health in a way product, engineering, CX, and commercial teams can</li>
-<p>understand.</p>
-</ul>
-<p>API Fortress, acquired by Sauce Labs in 2020, is a useful modern reference point for this kind of continuous API testing and monitoring. FRAME does not claim to replace Sauce Labs; it uses the same product idea at prototype scale: make service and adapter behavior testable before launch and visible after go-live.</p>
-<h2 id="publication-rule">Publication Rule</h2>
-<p>This brief is safe only as a generalized product-management story. Raw backlog files, PRDs, customer names, implementation notes, emails, API details, screenshots, and private analytics must stay out of public pages.</p>
-<p>Public source:</p>
-<ul>
-<li>Sauce Labs acquisition of API Fortress:</li>
-<p>https://saucelabs.com/company/news/sauce-labs-acquires-api-fortress-to-bolster-continuous-testing-platform-with-modern-api-testing-solution</p>
+<li>JAGGAER Supplier Support:</li>
+<p>https://www.jaggaer.com/supplier-support</p>
+<li>JAGGAER Book A Demo:</li>
+<p>https://www.jaggaer.com/book-a-demo</p>
+<li>JAGGAER ONE Terms of Service:</li>
+<p>https://www.jaggaer.com/jaggaer-one-terms-of-service</p>
+<li>JAGGAER Supplier Enablement Terms:</li>
+<p>https://www.jaggaer.com/wp-content/uploads/2024/06/JAGGAER-Supplier-Enablement-terms.pdf</p>
+<li>JAGGAER Partner Program:</li>
+<p>https://www.jaggaer.com/partners/become-partner</p>
+<li>Sigma-Aldrich / MilliporeSigma eCommerce Solutions:</li>
+<p>https://www.sigmaaldrich.com/US/en/life-science/ecommerce/ecommerce-solutions</p>
 </ul>
       </main>
     </div>

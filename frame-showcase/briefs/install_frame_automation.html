@@ -210,6 +210,66 @@ Downloads\Install\bootstrap\START_HERE_KR.md
 </tr>
 </tbody></table>
 <p>The practical readiness rule is that FRAME should distinguish &quot;required to operate&quot; from &quot;preferred latest.&quot; A machine can be usable while still carrying yellow follow-up items, such as an available PowerShell update, as long as the running scripts do not depend on the newer version.</p>
+<h2 id="core-software-links">Core Software Links</h2>
+<p>FRAME maintains a local install software manifest in <code>Services\Install\data\install_software_manifest.json</code>. The manifest is the intended source for Windows software IDs, check commands, target policy, and official download links.</p>
+<table>
+<thead><tr>
+<th>Component</th>
+<th>Need</th>
+<th>Official link</th>
+<th>Install/update lane</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>PowerShell 7</td>
+<td>Required</td>
+<td><a href="https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-windows">Microsoft Learn PowerShell install</a></td>
+<td><code>winget install --id Microsoft.PowerShell --source winget --installer-type wix</code></td>
+</tr>
+<tr>
+<td>Python 3.13</td>
+<td>Required</td>
+<td><a href="https://www.python.org/downloads/windows/">Python for Windows</a></td>
+<td><code>winget install --id Python.Python.3.13 --scope machine</code></td>
+</tr>
+<tr>
+<td>Git for Windows</td>
+<td>Required</td>
+<td><a href="https://git-scm.com/download/win">Git for Windows</a></td>
+<td><code>winget install --id Git.Git --exact --scope machine</code></td>
+</tr>
+<tr>
+<td>Visual Studio Code</td>
+<td>Required</td>
+<td><a href="https://code.visualstudio.com/download">Download VS Code</a></td>
+<td><code>winget install --id Microsoft.VisualStudioCode --exact --scope machine</code></td>
+</tr>
+<tr>
+<td>Microsoft Edge</td>
+<td>Required</td>
+<td><a href="https://www.microsoft.com/edge/download">Download Microsoft Edge</a></td>
+<td>Usually preinstalled; update through Edge or Windows policy</td>
+</tr>
+<tr>
+<td>Microsoft Edge WebDriver</td>
+<td>Required</td>
+<td><a href="https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/">Edge WebDriver</a></td>
+<td>Download the driver matching installed Edge and place it under <code>C:\WebDriver\bin</code></td>
+</tr>
+<tr>
+<td>Windows Package Manager</td>
+<td>Required</td>
+<td><a href="https://learn.microsoft.com/en-us/windows/package-manager/winget/">winget documentation</a></td>
+<td>Repair or update App Installer if <code>winget</code> is missing</td>
+</tr>
+<tr>
+<td>ChatGPT / Codex desktop assist</td>
+<td>Recommended</td>
+<td><a href="https://chatgpt.com/download">Download ChatGPT</a></td>
+<td>Install from the official app link; use it to inspect reports and runbooks</td>
+</tr>
+</tbody></table>
+<p>The public page links to stable official download pages rather than promising a fresh exact version number on every page load. Exact version checks belong in <code>PrerequisiteCheck</code> and the install software manifest.</p>
 <h2 id="primary-workspace">Primary Workspace</h2>
 <pre><code>
 %USERPROFILE%\OneDrive\projects\Install.code-workspace

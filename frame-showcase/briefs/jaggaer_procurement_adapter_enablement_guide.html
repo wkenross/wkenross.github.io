@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JAGGAER Procurement Adapter Enablement Guide - FRAME Evidence Workbench</title>
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body class="kind-tool theme-b2b-adapter artifact-enablement-guide">
+  <div class="layout">
+    <aside class="nav">
+      <p class="brand">FRAME Evidence Workbench</p>
+      <p class="tagline">Review-first FRAME showcase</p>
+      <div class="nav-section">
+  <p class="nav-heading">Framework Sources</p>
+  <a class="nav-link" href="legacy_to_soa_transition_architecture.html">Legacy-To-SOA Mission</a><a class="nav-link" href="b2b_ecommerce_adapter.html">B2B eCommerce Adapter</a><a class="nav-link" href="frame_procurement_adapter_architecture.html">Adapter Architecture</a><a class="nav-link" href="procurement_adapter_agile_backlog.html">Adapter Agile Backlog</a><a class="nav-link" href="procurement_vendor_research_pack.html">Vendor Research Pack</a><a class="nav-link current" href="jaggaer_procurement_adapter_enablement_guide.html">JAGGAER Enablement</a><a class="nav-link" href="frame_automation_adapter_delivery_pathway.html">FRAME Delivery Pathway</a><a class="nav-link" href="procurement_adapter_workbench.html">Procurement Adapter</a><a class="nav-link" href="b2b_b2c_solutions_showcase.html">B2B/B2C Portal Sources</a><a class="nav-link" href="energy_portal_solution_brief.html">Energy Portal</a><a class="nav-link" href="price_digests_solution_brief.html">Price Digests</a><a class="nav-link" href="fedm_solution_brief.html">FEDM</a><a class="nav-link" href="ai_tooling_review_first_pattern.html">AI Tooling</a><a class="nav-link" href="ai_autopilot_research_overview.html">AI Autopilot Research</a>
+</div>
+<div class="nav-section">
+  <p class="nav-heading">Analytic Sales</p>
+  <a class="nav-link" href="sales_analytics_showcase.html">Sales Analytics Showcase</a><a class="nav-link" href="sales_analytics_workflow_map.html">Workflow Map</a><a class="nav-link" href="sales_analytics_obfuscation_path.html">Obfuscation Path</a><a class="nav-link" href="public_energy_data.html">Public Energy Data</a>
+</div>
+<div class="nav-section">
+  <p class="nav-heading">Automated Marketing</p>
+  <a class="nav-link" href="marketing_automation_showcase.html">Marketing Automation Showcase</a><a class="nav-link" href="intelligent_rfp_sales_wizard_showcase.html">Intelligent RFP + Lead Wizards</a><a class="nav-link" href="registry_learning_and_json_wizards.html">Registry Learning</a><a class="nav-link" href="rfp_lead_recommendation_workflow.html">RFP + Lead Recommendations</a><a class="nav-link" href="marketing_inbox_followup_workflow.html">Inbox Follow-Up</a><a class="nav-link" href="multi_industry_search_playbook.html">Multi-Industry Search</a><a class="nav-link" href="marketing_automation_script_catalog.html">Script Catalog</a><a class="nav-link" href="reviewed_autopilot_architecture.html">Reviewed Autopilot</a>
+</div>
+<div class="nav-section">
+  <p class="nav-heading">Business Intelligence</p>
+  <a class="nav-link" href="sql_power_bi.html">SQL Data</a><a class="nav-link" href="endpoint_assurance_loop.html">Endpoint Assurance</a><a class="nav-link" href="bi_tools_showcase.html">BI Tools</a><a class="nav-link" href="bi_reporting_case_study.html">BI Reporting Case Study</a><a class="nav-link" href="bi_script_catalog.html">BI Script Catalog</a><a class="nav-link" href="crm_automation.html">CRM Management</a><a class="nav-link" href="salesforce_cloud.html">Salesforce Cloud CRM</a>
+</div>
+<div class="nav-section">
+  <p class="nav-heading">Agile Frameworks</p>
+  <a class="nav-link" href="agile_certification.html">Technical Project Management</a><a class="nav-link" href="agile_framework_showcase.html">Agile Operating Model</a><a class="nav-link" href="agile_frame_artifact_mapping.html">Artifact Mapping</a><a class="nav-link" href="frame_delivery_roadmap.html">Delivery Roadmap</a><a class="nav-link" href="frame_project_plan.html">Project Plan</a><a class="nav-link" href="frame_release_plan.html">Release Plan</a>
+</div>
+<div class="nav-section">
+  <p class="nav-heading">Install And Configure</p>
+  <a class="nav-link" href="install_frame_automation.html">Install FRAME Automation</a><a class="nav-link" href="frame_automation_desktop_publishme.html">Windows Desktop Automation</a><a class="nav-link" href="install_new_machine_setup.html">New Machine Setup</a><a class="nav-link" href="install_mobile_handoff.html">Mobile Handoff</a><a class="nav-link" href="install_desktop_builder_canvas.html">Desktop Builder</a><a class="nav-link" href="install_road_ready_sync.html">Road-Ready Outlook Sync</a><a class="nav-link" href="install_publication_pipeline.html">Publication Pipeline</a>
+</div>
+<div class="nav-section">
+  <p class="nav-heading">Workbench Governance</p>
+  <a class="nav-link" href="../index.html">Workbench Home</a><a class="nav-link" href="../docs/wb_html_planme.html">WB HTML PlanMe</a><a class="nav-link" href="../docs/wb_html_trainme.html">WB HTML TrainMe</a><a class="nav-link" href="../docs/wb_html_certifyme.html">WB HTML CertifyMe</a><a class="nav-link" href="../docs/wb_html_style_guide.html">Style Guide</a><a class="nav-link" href="../docs/wb_html_publish_workflow_planme.html">Publish Workflow</a><a class="nav-link" href="../docs/wb_github_showcase_infrastructure_planme.html">GitHub Infrastructure</a><a class="nav-link" href="../docs/wb_public_data_source_planme.html">Public Data Source Plan</a><a class="nav-link" href="safety_review.html">Safety Review</a><a class="nav-link" href="operations_wizard_patterns.html">Operations Wizard Patterns</a>
+</div>
+<div class="nav-section">
+  <p class="nav-heading">Additional Notes</p>
+  <a class="nav-link" href="soa_elevator.html">FRAME SOA Elevator</a><a class="nav-link" href="procurement_adapter_business_plan.html">Procurement Adapter Business Plan</a><a class="nav-link" href="procurement_adapter_prototype_lanes.html">Procurement Adapter Prototype Lanes</a><a class="nav-link" href="b2b_endpoint_fulfillment.html">B2B Endpoint Fulfillment</a><a class="nav-link" href="interactive_wizard_publication_catalog.html">Interactive Wizard Publication Catalog</a>
+</div>
+    </aside>
+    <div class="content">
+      <div class="meta">
+        <span class="pill kind">tool</span>
+        
+        <span class="pill artifact">enablement guide</span>
+        <span class="pill">candidate-review-required</span>
+      </div>
+      <main>
+        <h1 id="jaggaer-procurement-adapter-enablement-guide">JAGGAER Procurement Adapter Enablement Guide</h1>
+<p>Created: 2026-06-30</p>
+<p>Status: active education, research, and sprint-planning artifact for the JAGGAER-first procurement adapter lane.</p>
+<h2 id="what-we-are-calling-this">What We Are Calling This</h2>
+<p>Public artifact name:</p>
+<pre><code>
+JAGGAER Procurement Adapter Enablement Guide
+</code></pre>
+<p>Agile artifact type:</p>
+<pre><code>
+integration enablement guide / research spike output / technical discovery guide
+</code></pre>
+<p>FRAME-local bundle:</p>
+<pre><code>
+TrainMe + PlanMe + TaskMe
+</code></pre>
+<p>Use this as the named learning and planning artifact for the procurement system lane. It is stronger than <code>planme</code> in public/product language because it combines education, discovery, implementation boundaries, and sprint-ready tasks.</p>
+<h2 id="short-answer">Short Answer</h2>
+<p>Yes. For the current FRAME proof, it is safe to say we do not need a full SAP, Oracle, Coupa, Workday, or JAGGAER buyer instance to learn the supplier-side adapter pattern or to build a credible prototype.</p>
+<p>FRAME can prototype the parts that a supplier-side B2B eCommerce adapter must understand:</p>
+<ul>
+<li>hosted catalog files;</li>
+<li>cXML PunchOut setup requests and responses;</li>
+<li>cart return and requisition events;</li>
+<li>e-purchase orders;</li>
+<li>order confirmations;</li>
+<li>electronic invoices;</li>
+<li>advanced shipping notices;</li>
+<li>exception and retry events;</li>
+<li>normalized JSON adapter events;</li>
+<li>SQL and BI launch-health reporting;</li>
+<li>Agile epics, stories, acceptance criteria, and risks.</li>
+</ul>
+<p>That is enough to show product-management and architecture competence.</p>
+<p>It is not enough to claim production platform ownership. Production onboarding still requires customer and platform-provider access: tenant configuration, supplier records, buyer identities, credentials, shared secrets, endpoint URLs, category and UOM mapping, contract-pricing rules, test scripts, firewall or network allowlists when required, go-live monitoring, and support ownership.</p>
+<h2 id="what-sigma-aldrich-needs-from-a-partner-adapter">What Sigma-Aldrich Needs From A Partner Adapter</h2>
+<p>The Sigma-Aldrich / MilliporeSigma eCommerce page frames the procurement need as one-to-one system connectivity between the buyer&#x27;s existing spend management platform and MilliporeSigma business systems. It names JAGGAER, Ariba, SAP, Oracle, Coupa, and other providers as the ecosystem to support.</p>
+<p>The partner adapter needs to cover these business capabilities:</p>
+<ul>
+<li>connect an existing spend management or procurement platform to supplier</li>
+<p>commerce systems;</p>
+<li>support e-Catalog product selection through PunchOut or hosted files;</li>
+<li>accept e-purchase orders;</li>
+<li>send electronic invoices;</li>
+<li>send order confirmations;</li>
+<li>send advanced shipping notices;</li>
+<li>support project planning, setup, end-to-end testing, launch, and go-live</li>
+<p>monitoring;</p>
+<li>preserve account-specific pricing, contract pricing, approval logic, and</li>
+<p>reconciliation evidence;</p>
+<li>make transaction status and exceptions visible enough for procurement,</li>
+<p>customer service, IT, and finance teams to act.</p>
+</ul>
+<p>The important product-management point is that the adapter is not merely a protocol translator. It is a lifecycle product: discovery, onboarding, configuration, launch monitoring, operations, analytics, and continuous optimization.</p>
+<h2 id="what-frame-can-prototype-without-a-full-buyer-instance">What FRAME Can Prototype Without A Full Buyer Instance</h2>
+<p>FRAME can build a credible supplier-side lab by modeling the messages and evidence that cross the service boundary.</p>
+<p>Prototype locally:</p>
+<table>
+<thead><tr>
+<th>Adapter area</th>
+<th>Local proof</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Hosted catalog</td>
+<td>CSV or flat-file validator for product, UOM, price, contract flag, lifecycle status, and update recency</td>
+</tr>
+<tr>
+<td>PunchOut entry</td>
+<td>Synthetic cXML <code>PunchOutSetupRequest</code> and setup response with landing URL</td>
+</tr>
+<tr>
+<td>Cart return</td>
+<td>Synthetic <code>PunchOutOrderMessage</code> mapped into a normalized requisition event</td>
+</tr>
+<tr>
+<td>Purchase order</td>
+<td>cXML or EDI-style PO fixture mapped to an adapter event</td>
+</tr>
+<tr>
+<td>Confirmation</td>
+<td>Order-confirmation fixture with accepted, changed, delayed, or rejected lines</td>
+</tr>
+<tr>
+<td>Invoice</td>
+<td>Electronic invoice fixture with totals, tax, freight, payment terms, and discrepancy handling</td>
+</tr>
+<tr>
+<td>ASN</td>
+<td>Shipment notice fixture with carrier, tracking, expected delivery, and line quantities</td>
+</tr>
+<tr>
+<td>Exception handling</td>
+<td>Missing UOM, stale price, invalid category, unknown buyer identity, bad credential, duplicate PO, and mismatched invoice scenarios</td>
+</tr>
+<tr>
+<td>Reporting</td>
+<td>SQL-ready event log and BI-style launch-health summary</td>
+</tr>
+<tr>
+<td>Agile delivery</td>
+<td>Epics, stories, acceptance criteria, risks, and sprint tasks tied to validated fixture evidence</td>
+</tr>
+</tbody></table>
+<p>This is the right local installation posture for the Tools service: enough to learn and demonstrate the adapter shape, without pretending to administer a customer&#x27;s procurement tenant.</p>
+<h2 id="what-requires-customer-or-platform-provider-access">What Requires Customer Or Platform Provider Access</h2>
+<p>These items cannot be finalized from public documentation alone:</p>
+<ul>
+<li>customer tenant URL and environment split for test and production;</li>
+<li>buyer company identity, supplier identity, and credential domains;</li>
+<li>shared secrets, certificates, and any network allowlisting;</li>
+<li>supplier record, supplier site, contract, catalog, or content-zone setup;</li>
+<li>customer-specific category, UNSPSC, item, UOM, tax, freight, and currency</li>
+<p>mappings;</p>
+<li>account-specific pricing, product eligibility, and restricted-product rules;</li>
+<li>order routing method and invoice route;</li>
+<li>platform logs and certification test results;</li>
+<li>go-live acceptance, monitoring thresholds, and production support model.</li>
+</ul>
+<p>These become discovery questions and implementation tasks, not blockers for a public-safe prototype.</p>
+<h2 id="jaggaer-base-setup">JAGGAER Base Setup</h2>
+<p>JAGGAER is the first named procurement-system lane.</p>
+<p>Minimum setup for a supplier-side adapter proof:</p>
+<ul>
+<li>public JAGGAER integration vocabulary;</li>
+<li>hosted catalog or PunchOut/cXML fixture;</li>
+<li>e-PO/order delivery fixture;</li>
+<li>confirmation fixture;</li>
+<li>invoice fixture;</li>
+<li>ASN or shipment-status fixture;</li>
+<li>supplier enablement checklist;</li>
+<li>route matrix for cXML, EDIINT X12, email, portal, or API-style exchange;</li>
+<li>normalized FRAME adapter event schema.</li>
+</ul>
+<p>Minimum setup for a real JAGGAER onboarding:</p>
+<ul>
+<li>buyer or customer project sponsor;</li>
+<li>JAGGAER/customer environment access;</li>
+<li>supplier enablement record and relationship;</li>
+<li>test and production endpoint URLs;</li>
+<li>credentials or certificates;</li>
+<li>selected order-delivery method;</li>
+<li>confirmation and invoice capabilities;</li>
+<li>ERP, finance, or eInvoicing integration decisions;</li>
+<li>setup, testing, production cutover, and go-live monitoring plan.</li>
+</ul>
+<p>JAGGAER&#x27;s own integration material is useful because it speaks directly to APIs, bidirectional communication, ERP touchpoints, procure-to-pay, source-to-contract, and supply-chain collaboration. Its supplier enablement material also gives FRAME the right fixture vocabulary: hosted catalogs, PunchOut/cXML, cXML or EDIINT order delivery, confirmations, electronic invoicing, and testing.</p>
+<h2 id="other-vendor-base-setup">Other Vendor Base Setup</h2>
+<table>
+<thead><tr>
+<th>Vendor lane</th>
+<th>What we likely need for prototype</th>
+<th>What production still needs</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>SAP Ariba / SAP Business Network</td>
+<td>Supplier account research, cXML/PunchOut or hosted catalog fixture, PO/invoice/order-confirmation fixture, catalog publishing assumptions</td>
+<td>Buyer relationship, SAP Business Network account setup, customer trading relationship, account type and fees where applicable, catalog and transaction configuration</td>
+</tr>
+<tr>
+<td>SAP Procurement / S/4HANA</td>
+<td>OCI/cXML/API boundary map, ERP object vocabulary, PO/invoice flow fixture</td>
+<td>Customer SAP tenant, S/4HANA or ECC integration details, IDoc/API/OCI route, ERP add-ons or middleware, security and transport process</td>
+</tr>
+<tr>
+<td>Oracle Procurement</td>
+<td>Direct cXML supplier punchout definition fixture, procurement BU/catalog/category/UOM map, Oracle native XML comparison</td>
+<td>Oracle Fusion Procurement tenant, catalog administrator setup, supplier and supplier site, punchout URL, buyer identities, mapping set, test connection results</td>
+</tr>
+<tr>
+<td>Coupa</td>
+<td>cXML supplier enablement checklist, PunchOut setup/cart return, PO, invoice, and UOM fixtures</td>
+<td>Customer Coupa URL, supplier and contract records, cXML credentials, supplier questionnaire, UOM setup, PO and invoice endpoint testing, production credentials</td>
+</tr>
+<tr>
+<td>Workday Procurement</td>
+<td>Supplier portal/catalog/PO/invoice learning lane, catalog-load and invoice-from-PO fixture, worktag/reporting map</td>
+<td>Customer-granted supplier access, Workday Central Login or supplier portal access, enabled procurement apps, customer-specific catalog, PO, invoice, and reporting permissions</td>
+</tr>
+<tr>
+<td>Ivalua, GEP, PeopleSoft, others</td>
+<td>Source-to-pay vocabulary map and generic cXML/EDI/API fixture lane</td>
+<td>Customer/platform access, supplier relationship setup, platform-specific certification and support rules</td>
+</tr>
+</tbody></table>
+<h2 id="frame-prototype-shape">FRAME Prototype Shape</h2>
+<p>The Tools service should keep the proof small and executable:</p>
+<pre><code>
+public vendor research
+  -&gt; supplier enablement checklist
+  -&gt; hosted catalog / PunchOut / PO / invoice / ASN fixtures
+  -&gt; validator and normalizer
+  -&gt; normalized adapter event JSONL
+  -&gt; SQL/BI launch-health report
+  -&gt; Jira-ready backlog
+  -&gt; public-safe product summary
+</code></pre>
+<p>This lets the interview story connect product management, architecture, data, operations, and Agile delivery:</p>
+<ul>
+<li>product brief defines why the adapter matters;</li>
+<li>roadmap chooses the JAGGAER lane first;</li>
+<li>architecture defines the integration boundary;</li>
+<li>fixtures make assumptions testable;</li>
+<li>validator turns research into evidence;</li>
+<li>event log becomes BI-ready;</li>
+<li>backlog turns gaps into sprint work.</li>
+</ul>
+<p>Complementary FRAME delivery pathway:</p>
+<pre><code>
+docs\frame_automation_adapter_delivery_pathway.md
+</code></pre>
+<p>Use that companion artifact to explain how Windows, iPhone/mobile capture, PowerShell, Python, SQL, BI, CRM, Agile tooling, and reviewed AI move the JAGGAER lane from research into a first two-week adapter prototype sprint.</p>
+<h2 id="sprint-backlog-additions">Sprint Backlog Additions</h2>
+<table>
+<thead><tr>
+<th>Story</th>
+<th>Outcome</th>
+<th>Acceptance Criteria</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>JAG-ENABLE-1 Define base installation boundary</td>
+<td>Team can explain what can be prototyped locally vs. what needs JAGGAER/customer access</td>
+<td>Guide includes prototype and production-access sections</td>
+</tr>
+<tr>
+<td>JAG-ENABLE-2 Build JAGGAER supplier enablement checklist</td>
+<td>JAGGAER lane has a repeatable onboarding checklist</td>
+<td>Checklist covers hosted catalog, PunchOut, PO, confirmation, invoice, ASN, credentials, testing, and go-live</td>
+</tr>
+<tr>
+<td>JAG-ENABLE-3 Create vendor base-setup matrix</td>
+<td>Interview prep can compare JAGGAER, SAP, Oracle, Coupa, Workday, and later lanes</td>
+<td>Matrix names minimum prototype setup and production dependencies</td>
+</tr>
+<tr>
+<td>JAG-ENABLE-4 Expand fixture validator</td>
+<td>Synthetic JAGGAER-style order and invoice files can be parsed or produce readable errors</td>
+<td>Validation report flags missing fields and maps each error to a backlog candidate</td>
+</tr>
+<tr>
+<td>JAG-ENABLE-5 Publish-safe summary</td>
+<td>B2B Adapter site can describe the procurement-system lane without overclaiming</td>
+<td>Public page states JAGGAER-first prototype and clearly avoids production-tenant claims</td>
+</tr>
+</tbody></table>
+<h2 id="interview-safe-language">Interview-Safe Language</h2>
+<p>Use:</p>
+<pre><code>
+For a supplier-side B2B eCommerce adapter, I would not wait for a full SAP,
+Oracle, Coupa, Workday, or JAGGAER tenant to start product discovery. I would
+prototype the integration boundary with hosted catalog, PunchOut/cXML, PO,
+confirmation, invoice, ASN, exception, SQL/BI, and launch-monitoring fixtures.
+Then I would turn the tenant-specific facts - identities, credentials,
+catalog mappings, order routes, invoice routes, and go-live criteria - into
+the onboarding sprint backlog.
+</code></pre>
+<p>Avoid:</p>
+<pre><code>
+We have already implemented a production JAGGAER/SAP/Oracle/Coupa/Workday
+integration.
+</code></pre>
+<h2 id="source-anchors">Source Anchors</h2>
+<ul>
+<li>Sigma-Aldrich / MilliporeSigma eCommerce Solutions:</li>
+<p>https://www.sigmaaldrich.com/US/en/life-science/ecommerce/ecommerce-solutions</p>
+<li>JAGGAER One Integrations:</li>
+<p>https://www.jaggaer.com/solutions/integrations</p>
+<li>JAGGAER Source to Pay:</li>
+<p>https://www.jaggaer.com/solutions/source-to-pay</p>
+<li>JAGGAER Supplier Enablement terms:</li>
+<p>https://www.jaggaer.com/wp-content/uploads/2024/06/JAGGAER-Supplier-Enablement-terms.pdf</p>
+<li>JAGGAER Public APIs:</li>
+<p>https://www.jaggaer.com/wp-content/uploads/2024/06/JAGGAER-Integration-via-JAGGAER-Public-APIs.pdf</p>
+<li>SAP Business Network supplier pricing:</li>
+<p>https://www.sap.com/products/business-network/suppliers/pricing.html</p>
+<li>Coupa cXML Supplier Enablement:</li>
+<p>https://compass.coupa.com/en-us/products/product-documentation/suppliers/supplier-integration-resources/cxml-supplier-enablement</p>
+<li>Oracle direct cXML supplier punchout:</li>
+<p>https://docs.oracle.com/en/cloud/saas/procurement/26b/oapro/create-a-punchout-catalog-with-a-direct-cxml-supplier-punchout-source.html</p>
+<li>Workday Unified Supplier Portal:</li>
+<p>https://doc.workday.com/user-guide/en-us/strategic-sourcing/supplier-account-setup/concept--unified-supplier-portal-for-suppliers.html</p>
+</ul>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

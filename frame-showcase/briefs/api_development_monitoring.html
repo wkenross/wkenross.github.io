@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Install Publication Pipeline - FRAME Evidence Workbench</title>
+  <title>API Development And Monitoring - FRAME Evidence Workbench</title>
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
-<body class="kind-planme">
+<body class="kind-tool">
   <div class="layout">
     <aside class="nav">
       <p class="brand">FRAME Evidence Workbench</p>
@@ -30,7 +30,7 @@
 </div>
 <div class="nav-section">
   <p class="nav-heading">Automation Framework</p>
-  <a class="nav-link" href="operations_wizard_patterns.html">PowerShell Orchestration</a><a class="nav-link" href="marketing_automation_script_catalog.html">Python Operational Scripts</a><a class="nav-link" href="json_core_tooling.html">JSON Core Tool</a><a class="nav-link" href="api_development_monitoring.html">API Development &amp; Monitoring</a><a class="nav-link" href="web_development_delivery.html">Web Development</a><a class="nav-link" href="authentication_usage_cloud_infrastructure.html">Authentication &amp; Usage</a><a class="nav-link" href="sql_power_bi.html">SQL Reporting</a><a class="nav-link" href="reviewed_autopilot_architecture.html">AI Integration</a><a class="nav-link" href="install_road_ready_sync.html">Office 365 Productivity</a><a class="nav-link" href="install_mobile_handoff.html">Windows To Mobile Link</a><a class="nav-link" href="multi_industry_search_playbook.html">Web Data Automation</a><a class="nav-link" href="marketing_inbox_followup_workflow.html">Email Automation</a>
+  <a class="nav-link" href="operations_wizard_patterns.html">PowerShell Orchestration</a><a class="nav-link" href="marketing_automation_script_catalog.html">Python Operational Scripts</a><a class="nav-link" href="json_core_tooling.html">JSON Core Tool</a><a class="nav-link current" href="api_development_monitoring.html">API Development &amp; Monitoring</a><a class="nav-link" href="web_development_delivery.html">Web Development</a><a class="nav-link" href="authentication_usage_cloud_infrastructure.html">Authentication &amp; Usage</a><a class="nav-link" href="sql_power_bi.html">SQL Reporting</a><a class="nav-link" href="reviewed_autopilot_architecture.html">AI Integration</a><a class="nav-link" href="install_road_ready_sync.html">Office 365 Productivity</a><a class="nav-link" href="install_mobile_handoff.html">Windows To Mobile Link</a><a class="nav-link" href="multi_industry_search_playbook.html">Web Data Automation</a><a class="nav-link" href="marketing_inbox_followup_workflow.html">Email Automation</a>
 </div>
 <div class="nav-section">
   <p class="nav-heading">Integrated Tools</p>
@@ -46,7 +46,7 @@
 </div>
 <div class="nav-section">
   <p class="nav-heading">Install And Configure</p>
-  <a class="nav-link" href="install_frame_automation.html">Install FRAME Automation</a><a class="nav-link" href="frame_automation_desktop_publishme.html">Windows Desktop Automation</a><a class="nav-link" href="install_new_machine_setup.html">New Machine Setup</a><a class="nav-link" href="install_mobile_handoff.html">Mobile Handoff</a><a class="nav-link" href="install_desktop_builder_canvas.html">Desktop Builder</a><a class="nav-link" href="install_road_ready_sync.html">Road-Ready Outlook Sync</a><a class="nav-link current" href="install_publication_pipeline.html">Publication Pipeline</a>
+  <a class="nav-link" href="install_frame_automation.html">Install FRAME Automation</a><a class="nav-link" href="frame_automation_desktop_publishme.html">Windows Desktop Automation</a><a class="nav-link" href="install_new_machine_setup.html">New Machine Setup</a><a class="nav-link" href="install_mobile_handoff.html">Mobile Handoff</a><a class="nav-link" href="install_desktop_builder_canvas.html">Desktop Builder</a><a class="nav-link" href="install_road_ready_sync.html">Road-Ready Outlook Sync</a><a class="nav-link" href="install_publication_pipeline.html">Publication Pipeline</a>
 </div>
 <div class="nav-section">
   <p class="nav-heading">Workbench Governance</p>
@@ -59,84 +59,79 @@
     </aside>
     <div class="content">
       <div class="meta">
-        <span class="pill kind">planme</span>
-        <span class="pill">published-verified</span>
+        <span class="pill kind">tool</span>
+        <span class="pill">ready-for-html-review</span>
       </div>
       <main>
-        <h1 id="install-publication-pipeline">Install Publication Pipeline</h1>
-<h2 id="purpose">Purpose</h2>
-<p>The Install workspace now has a repeatable path for turning reviewed setup documentation into public website pages. The path keeps raw workspace notes separate from the generated GitHub Pages site.</p>
-<h2 id="flow">Flow</h2>
-<p>The publication lane moves through five stages:</p>
+        <h1 id="api-development-and-monitoring">API Development And Monitoring</h1>
+<p>FRAME treats API development as a product capability, not only a coding task. The goal is to help teams discover, prototype, validate, monitor, and explain service-oriented handoffs before and during production implementation.</p>
+<p>For B2B commerce, this includes hosted catalogs, PunchOut/cXML, e-PO, invoice, ASN, status, documents, support events, REST APIs, EDI-style exchanges, and dashboard-ready launch-health signals.</p>
+<h2 id="api-workbench-pattern">API Workbench Pattern</h2>
 <table>
 <thead><tr>
 <th>Stage</th>
-<th>Folder</th>
-<th>Role</th>
+<th>FRAME Support</th>
 </tr></thead>
 <tbody>
 <tr>
-<td>intake</td>
-<td><code>wb_github\publish_inputs\workspaces\install\md</code></td>
-<td>reviewed Markdown candidates</td>
+<td>Discover</td>
+<td>Research platform documentation, partner requirements, customer workflows, and integration standards.</td>
 </tr>
 <tr>
-<td>manifest</td>
-<td><code>wb_github\publish_inputs\workspaces\install\manifests</code></td>
-<td>target path and review status</td>
+<td>Model</td>
+<td>Draft endpoint candidates, fixture payloads, schemas, event contracts, and claim boundaries.</td>
 </tr>
 <tr>
-<td>content</td>
-<td><code>wb_html\content\pages</code></td>
-<td>normalized site Markdown</td>
+<td>Prototype</td>
+<td>Use Python operation scripts and PowerShell orchestration to simulate request/response flows and validation checks.</td>
 </tr>
 <tr>
-<td>generated HTML</td>
-<td><code>wb_html\html\briefs</code></td>
-<td>local rendered pages</td>
+<td>Test</td>
+<td>Run contract, fixture, parser, browser, and service-readiness checks before broader release.</td>
 </tr>
 <tr>
-<td>root site</td>
-<td><code>wkenross.github.io\frame-showcase</code></td>
-<td>GitHub Pages output</td>
+<td>Monitor</td>
+<td>Track availability, latency, error categories, cart-return failures, PO acceptance, invoice exceptions, and launch-support issues.</td>
+</tr>
+<tr>
+<td>Report</td>
+<td>Convert results into product dashboards, backlog items, sprint risks, and executive-ready status summaries.</td>
 </tr>
 </tbody></table>
-<p>This gives each operator a clear handoff point. Install authors stage pages. The HTML factory renders them. The GitHub publisher packages and pushes the result.</p>
-<h2 id="publisher-command">Publisher Command</h2>
-<p>The install lane is promoted with:</p>
-<pre><code>
-pwsh -NoProfile -ExecutionPolicy Bypass -File &quot;$env:USERPROFILE\OneDrive\projects\wb_github\scripts\ps1\Publish-WbGithubSite.ps1&quot; -PromoteInstallInputs -CommitAndPush -VerifyPublicUrls -CommitMessage &quot;Publish install workspace showcase updates&quot;
-</code></pre>
-<p>The same command can be run without <code>-CommitAndPush</code> when the operator wants to review generated HTML locally before publishing.</p>
-<h2 id="safety-gate">Safety Gate</h2>
-<p>The manifest is not a privacy review by itself. A page should enter the manifest only after the Markdown has been checked for:</p>
+<h2 id="monitoring-capability">Monitoring Capability</h2>
+<p>FRAME&#x27;s monitoring story is intentionally practical:</p>
 <ul>
-<li>passwords, tokens, cookies, and recovery material</li>
-<li>account identifiers that do not belong in public copy</li>
-<li>raw screenshots or mailbox state</li>
-<li>private tenant URLs</li>
-<li>customer workbook details</li>
-<li>claims that overstate automation, certification, or tool capability</li>
+<li>test APIs and adapter flows with synthetic fixtures before production access;</li>
+<li>capture validation results as logs, JSONL rows, CSV extracts, and dashboard</li>
+<p>signals;</p>
+<li>use modern API testing approaches such as contract tests, Postman-style</li>
+<p>collections, Playwright API checks, or API Fortress / Sauce Labs-style monitoring where appropriate;</p>
+<li>convert recurring failures into user stories, acceptance criteria, and launch</li>
+<p>risk notes.</p>
 </ul>
-<h2 id="relationship-to-other-workspaces">Relationship To Other Workspaces</h2>
-<p>The install publication lane complements workflow-specific lanes:</p>
-<ul>
-<li><code>sr_bi_tools</code> stages BI and reporting material</li>
-<li>Search/update workspaces stage public-safe operational examples</li>
-<li>resume and mobile workflows can contribute sanitized context and process</li>
-<p>pages</p>
-<li><code>wb_html</code> remains the rendering factory</li>
-<li><code>wb_github</code> remains the publication control point</li>
-</ul>
-<p>The result is a website that can show how FRAME is installed, operated, and extended without publishing the private working folders directly.</p>
-<h2 id="acceptance-checks">Acceptance Checks</h2>
-<ul>
-<li>Markdown candidate exists before manifest entry</li>
-<li>manifest target path points to a <code>briefs/*.html</code> page</li>
-<li>generated HTML builds locally</li>
-<li>root GitHub Pages repo receives only generated public artifacts</li>
-<li>live URL returns HTTP 200 after push and propagation</li>
-</ul>
+<h2 id="relevant-experience-pattern">Relevant Experience Pattern</h2>
+<p>Prior B2B portal work reinforces the pattern:</p>
+<table>
+<thead><tr>
+<th>Experience Lane</th>
+<th>API / Exchange Lesson</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Price Digests</td>
+<td>API delivery, customer-facing valuation workflows, testing discipline, and usage-oriented product reporting.</td>
+</tr>
+<tr>
+<td>FEDM</td>
+<td>SaaS migration, data warehouse access, REST/API complements, validation, and analytics handoff.</td>
+</tr>
+<tr>
+<td>Energy Portal</td>
+<td>XML/JSON/EDI-style exchange thinking, order-management handoffs, carrier/terminal workflows, invoice/status visibility, and executive reporting.</td>
+</tr>
+</tbody></table>
+<h2 id="product-claim-boundary">Product Claim Boundary</h2>
+<p>FRAME can accelerate API discovery, prototype adapters, validation, monitoring design, dashboard shape, and backlog creation. Production APIs still require enterprise security review, credentials, platform access, engineering ownership, SLA/SLO decisions, and operational support.</p>
       </main>
     </div>
   </div>

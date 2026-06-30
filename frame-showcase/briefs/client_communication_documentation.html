@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Install Publication Pipeline - FRAME Evidence Workbench</title>
+  <title>Client Communication And Documentation - FRAME Evidence Workbench</title>
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
-<body class="kind-planme">
+<body class="kind-tool">
   <div class="layout">
     <aside class="nav">
       <p class="brand">FRAME Evidence Workbench</p>
@@ -38,7 +38,7 @@
 </div>
 <div class="nav-section">
   <p class="nav-heading">Communication &amp; Documentation</p>
-  <a class="nav-link" href="client_communication_documentation.html">Client Communication</a><a class="nav-link" href="client_communication_documentation.html">Technical Writing</a><a class="nav-link" href="client_communication_documentation.html">Marketing And Company Docs</a><a class="nav-link" href="client_communication_documentation.html">Runbooks And Handoffs</a>
+  <a class="nav-link current" href="client_communication_documentation.html">Client Communication</a><a class="nav-link current" href="client_communication_documentation.html">Technical Writing</a><a class="nav-link current" href="client_communication_documentation.html">Marketing And Company Docs</a><a class="nav-link current" href="client_communication_documentation.html">Runbooks And Handoffs</a>
 </div>
 <div class="nav-section">
   <p class="nav-heading">Framework Sources</p>
@@ -46,7 +46,7 @@
 </div>
 <div class="nav-section">
   <p class="nav-heading">Install And Configure</p>
-  <a class="nav-link" href="install_frame_automation.html">Install FRAME Automation</a><a class="nav-link" href="frame_automation_desktop_publishme.html">Windows Desktop Automation</a><a class="nav-link" href="install_new_machine_setup.html">New Machine Setup</a><a class="nav-link" href="install_mobile_handoff.html">Mobile Handoff</a><a class="nav-link" href="install_desktop_builder_canvas.html">Desktop Builder</a><a class="nav-link" href="install_road_ready_sync.html">Road-Ready Outlook Sync</a><a class="nav-link current" href="install_publication_pipeline.html">Publication Pipeline</a>
+  <a class="nav-link" href="install_frame_automation.html">Install FRAME Automation</a><a class="nav-link" href="frame_automation_desktop_publishme.html">Windows Desktop Automation</a><a class="nav-link" href="install_new_machine_setup.html">New Machine Setup</a><a class="nav-link" href="install_mobile_handoff.html">Mobile Handoff</a><a class="nav-link" href="install_desktop_builder_canvas.html">Desktop Builder</a><a class="nav-link" href="install_road_ready_sync.html">Road-Ready Outlook Sync</a><a class="nav-link" href="install_publication_pipeline.html">Publication Pipeline</a>
 </div>
 <div class="nav-section">
   <p class="nav-heading">Workbench Governance</p>
@@ -59,84 +59,61 @@
     </aside>
     <div class="content">
       <div class="meta">
-        <span class="pill kind">planme</span>
-        <span class="pill">published-verified</span>
+        <span class="pill kind">tool</span>
+        <span class="pill">ready-for-html-review</span>
       </div>
       <main>
-        <h1 id="install-publication-pipeline">Install Publication Pipeline</h1>
-<h2 id="purpose">Purpose</h2>
-<p>The Install workspace now has a repeatable path for turning reviewed setup documentation into public website pages. The path keeps raw workspace notes separate from the generated GitHub Pages site.</p>
-<h2 id="flow">Flow</h2>
-<p>The publication lane moves through five stages:</p>
+        <h1 id="client-communication-and-documentation">Client Communication And Documentation</h1>
+<p>FRAME depends on strong client communication, technical writing, product documentation, and company/marketing messaging. The same automation workbench that builds scripts and dashboards also produces the artifacts that help stakeholders understand what is being built, why it matters, and how to use it.</p>
+<h2 id="documentation-surfaces">Documentation Surfaces</h2>
 <table>
 <thead><tr>
-<th>Stage</th>
-<th>Folder</th>
-<th>Role</th>
+<th>Surface</th>
+<th>Purpose</th>
 </tr></thead>
 <tbody>
 <tr>
-<td>intake</td>
-<td><code>wb_github\publish_inputs\workspaces\install\md</code></td>
-<td>reviewed Markdown candidates</td>
+<td>README</td>
+<td>Orient a service, tool, or workflow quickly.</td>
 </tr>
 <tr>
-<td>manifest</td>
-<td><code>wb_github\publish_inputs\workspaces\install\manifests</code></td>
-<td>target path and review status</td>
+<td>Plan / roadmap</td>
+<td>Explain what will be built, in what order, and why.</td>
 </tr>
 <tr>
-<td>content</td>
-<td><code>wb_html\content\pages</code></td>
-<td>normalized site Markdown</td>
+<td>Architecture brief</td>
+<td>Show systems, service boundaries, adapters, data flows, and claim boundaries.</td>
 </tr>
 <tr>
-<td>generated HTML</td>
-<td><code>wb_html\html\briefs</code></td>
-<td>local rendered pages</td>
+<td>Business plan / product brief</td>
+<td>Define personas, value, market signal, operating model, risks, and measurable outcomes.</td>
 </tr>
 <tr>
-<td>root site</td>
-<td><code>wkenross.github.io\frame-showcase</code></td>
-<td>GitHub Pages output</td>
+<td>Backlog and stories</td>
+<td>Convert strategy into epics, user stories, acceptance criteria, and sprint risks.</td>
+</tr>
+<tr>
+<td>Runbook</td>
+<td>Make setup, validation, publication, and recovery repeatable.</td>
+</tr>
+<tr>
+<td>Client-facing narrative</td>
+<td>Translate technical work into business value, adoption, and decision support.</td>
 </tr>
 </tbody></table>
-<p>This gives each operator a clear handoff point. Install authors stage pages. The HTML factory renders them. The GitHub publisher packages and pushes the result.</p>
-<h2 id="publisher-command">Publisher Command</h2>
-<p>The install lane is promoted with:</p>
+<h2 id="communication-pattern">Communication Pattern</h2>
+<p>FRAME keeps communication close to delivery:</p>
 <pre><code>
-pwsh -NoProfile -ExecutionPolicy Bypass -File &quot;$env:USERPROFILE\OneDrive\projects\wb_github\scripts\ps1\Publish-WbGithubSite.ps1&quot; -PromoteInstallInputs -CommitAndPush -VerifyPublicUrls -CommitMessage &quot;Publish install workspace showcase updates&quot;
+research and stakeholder notes
+  -&gt; product brief and roadmap
+  -&gt; architecture and backlog
+  -&gt; validation evidence
+  -&gt; client-ready summary
+  -&gt; public-safe showcase when appropriate
 </code></pre>
-<p>The same command can be run without <code>-CommitAndPush</code> when the operator wants to review generated HTML locally before publishing.</p>
-<h2 id="safety-gate">Safety Gate</h2>
-<p>The manifest is not a privacy review by itself. A page should enter the manifest only after the Markdown has been checked for:</p>
-<ul>
-<li>passwords, tokens, cookies, and recovery material</li>
-<li>account identifiers that do not belong in public copy</li>
-<li>raw screenshots or mailbox state</li>
-<li>private tenant URLs</li>
-<li>customer workbook details</li>
-<li>claims that overstate automation, certification, or tool capability</li>
-</ul>
-<h2 id="relationship-to-other-workspaces">Relationship To Other Workspaces</h2>
-<p>The install publication lane complements workflow-specific lanes:</p>
-<ul>
-<li><code>sr_bi_tools</code> stages BI and reporting material</li>
-<li>Search/update workspaces stage public-safe operational examples</li>
-<li>resume and mobile workflows can contribute sanitized context and process</li>
-<p>pages</p>
-<li><code>wb_html</code> remains the rendering factory</li>
-<li><code>wb_github</code> remains the publication control point</li>
-</ul>
-<p>The result is a website that can show how FRAME is installed, operated, and extended without publishing the private working folders directly.</p>
-<h2 id="acceptance-checks">Acceptance Checks</h2>
-<ul>
-<li>Markdown candidate exists before manifest entry</li>
-<li>manifest target path points to a <code>briefs/*.html</code> page</li>
-<li>generated HTML builds locally</li>
-<li>root GitHub Pages repo receives only generated public artifacts</li>
-<li>live URL returns HTTP 200 after push and propagation</li>
-</ul>
+<p>That helps avoid a common failure mode: impressive tools with no clear story, or polished slides that are disconnected from actual implementation evidence.</p>
+<h2 id="why-it-matters">Why It Matters</h2>
+<p>For SOA and B2B work, clear writing is a delivery tool. It helps align IT, Commercial, Merchandising, Marketing, Engineering, Design, CX, data, support, procurement, and partner teams around the same product commitments.</p>
       </main>
     </div>
   </div>

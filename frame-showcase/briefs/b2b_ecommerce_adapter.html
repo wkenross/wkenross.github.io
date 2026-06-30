@@ -41,7 +41,7 @@
 </div>
 <div class="nav-section">
   <p class="nav-heading">Additional Notes</p>
-  <a class="nav-link" href="soa_elevator.html">FRAME SOA Elevator</a><a class="nav-link" href="b2b_endpoint_fulfillment.html">B2B Endpoint Fulfillment</a><a class="nav-link" href="interactive_wizard_publication_catalog.html">Interactive Wizard Publication Catalog</a>
+  <a class="nav-link" href="soa_elevator.html">FRAME SOA Elevator</a><a class="nav-link" href="procurement_adapter_prototype_lanes.html">Procurement Adapter Prototype Lanes</a><a class="nav-link" href="b2b_endpoint_fulfillment.html">B2B Endpoint Fulfillment</a><a class="nav-link" href="interactive_wizard_publication_catalog.html">Interactive Wizard Publication Catalog</a>
 </div>
     </aside>
     <div class="content">
@@ -54,6 +54,7 @@
 <p>FRAME supports a practical B2B Core Platform and B2B eCommerce Adaptor story: connect buyer-side procurement systems, supplier commerce capabilities, catalogs, pricing, carts, orders, documents, fulfillment signals, support, and reporting without losing the operating evidence stakeholders already trust.</p>
 <h2 id="frame-adapter-architecture">FRAME Adapter Architecture</h2>
 <p>The strongest claim is not that FRAME replaces Ariba, Coupa, SAP Procurement, JAGGAER, Oracle, Workday, commerce platforms, middleware, or ERP systems. The strong claim is that FRAME helps a product manager and cross-functional team close the early discovery and proof gap quickly:</p>
+<p>The current prototype path is organized as six lanes: MilliporeSigma eProcurement, Coupa, SAP Ariba / SAP Business Network, JAGGAER, Oracle Procurement, and Workday Procurement. Each lane can honor its own exchange preference while still returning normalized FRAME adapter event JSON for SQL, BI, Jira, and launch monitoring.</p>
 <pre><code>
 vendor research
   -&gt; fixture prototypes
@@ -67,6 +68,7 @@ vendor research
 <p>Public-safe architecture and research briefs:</p>
 <ul>
 <li><a href="frame_procurement_adapter_architecture.html">FRAME Procurement Adapter Architecture</a></li>
+<li><a href="procurement_adapter_prototype_lanes.html">Procurement Adapter Prototype Lanes</a></li>
 <li><a href="procurement_vendor_research_pack.html">Procurement Vendor Research Pack</a></li>
 </ul>
 <p>The public story is intentionally generalized. It does not expose a private client implementation or claim ownership of a live procurement tenant. It shows how FRAME would help launch, test, monitor, and improve a B2B eCommerce adaptor using public-safe artifacts and synthetic data.</p>
@@ -158,6 +160,10 @@ requirements and current-state evidence
 <td>Explains FRAME as a prototype, fixture, acceptance-test, and launch-monitoring harness for procurement adapters</td>
 </tr>
 <tr>
+<td>Procurement Adapter Prototype Lanes</td>
+<td>Provider-specific adapter skeletons for MilliporeSigma, Coupa, SAP Ariba, JAGGAER, Oracle, and Workday</td>
+</tr>
+<tr>
 <td>Procurement Vendor Research Pack</td>
 <td>Captures public-source vocabulary for Coupa, SAP Ariba, JAGGAER, cXML, PunchOut, hosted files, and implementation questions</td>
 </tr>
@@ -201,6 +207,7 @@ requirements and current-state evidence
 <h2 id="public-safe-links">Public-Safe Links</h2>
 <ul>
 <li><a href="frame_procurement_adapter_architecture.html">FRAME Procurement Adapter Architecture</a></li>
+<li><a href="procurement_adapter_prototype_lanes.html">Procurement Adapter Prototype Lanes</a></li>
 <li><a href="procurement_vendor_research_pack.html">Procurement Vendor Research Pack</a></li>
 <li><a href="procurement_adapter_workbench.html">Procurement Adapter Workbench</a></li>
 <li><a href="b2b_b2c_solutions_showcase.html">B2B/B2C Solutions Showcase</a></li>

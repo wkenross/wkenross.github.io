@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>B2B Endpoint Fulfillment - FRAME Evidence Workbench</title>
+  <title>Procurement Adapter Prototype Lanes - FRAME Evidence Workbench</title>
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
-<body class="kind-tool">
+<body class="kind-tool theme-b2b-adapter">
   <div class="layout">
     <aside class="nav">
       <p class="brand">FRAME Evidence Workbench</p>
@@ -41,7 +41,7 @@
 </div>
 <div class="nav-section">
   <p class="nav-heading">Additional Notes</p>
-  <a class="nav-link" href="soa_elevator.html">FRAME SOA Elevator</a><a class="nav-link" href="procurement_adapter_prototype_lanes.html">Procurement Adapter Prototype Lanes</a><a class="nav-link current" href="b2b_endpoint_fulfillment.html">B2B Endpoint Fulfillment</a><a class="nav-link" href="interactive_wizard_publication_catalog.html">Interactive Wizard Publication Catalog</a>
+  <a class="nav-link" href="soa_elevator.html">FRAME SOA Elevator</a><a class="nav-link current" href="procurement_adapter_prototype_lanes.html">Procurement Adapter Prototype Lanes</a><a class="nav-link" href="b2b_endpoint_fulfillment.html">B2B Endpoint Fulfillment</a><a class="nav-link" href="interactive_wizard_publication_catalog.html">Interactive Wizard Publication Catalog</a>
 </div>
     </aside>
     <div class="content">
@@ -50,71 +50,100 @@
         <span class="pill">candidate-review-required</span>
       </div>
       <main>
-        <h1 id="b2b-endpoint-fulfillment">B2B Endpoint Fulfillment</h1>
-<p>This page is retained as a supporting service-boundary note. The main public-safe product page for B2B Core Platform and B2B eCommerce Adaptor work is now:</p>
-<ul>
-<li><a href="b2b_ecommerce_adapter.html">B2B eCommerce Adapter Workbench</a></li>
-</ul>
-<p>FRAME helps product and engineering teams move from portal-centered workflows to endpoint-based transaction fulfillment without losing the reports, controls, and business context stakeholders rely on.</p>
-<p>The work starts by understanding the full business transaction, not only the technical interface. A useful endpoint story includes what users need to see, trust, acknowledge, reconcile, and report.</p>
-<h2 id="transaction-lifecycle">Transaction Lifecycle</h2>
+        <h1 id="procurement-adapter-prototype-lanes">Procurement Adapter Prototype Lanes</h1>
+<p>FRAME now treats the B2B eCommerce adaptor as a family of prototype lanes, not one vague integration idea. Each lane starts from public procurement-platform documentation, creates synthetic fixtures, normalizes events to JSON, and produces evidence for product planning, testing, launch monitoring, and Jira follow-up.</p>
+<h2 id="common-spine">Common Spine</h2>
+<pre><code>
+buyer procurement platform
+  -&gt; hosted catalog or PunchOut entry
+  -&gt; supplier B2B commerce / catalog / pricing experience
+  -&gt; cart or quote return
+  -&gt; requisition and approval
+  -&gt; e-purchase order
+  -&gt; confirmation, ASN, invoice, exception, reporting
+</code></pre>
+<p>FRAME keeps the exchange boundary explicit:</p>
+<pre><code>
+cXML / XML / OCI / EDI / hosted file / API payload
+  -&gt; parser and fixture validator
+  -&gt; normalized FRAME adapter event JSON
+  -&gt; SQL-ready event log
+  -&gt; BI dashboard, Jira story, launch monitor, or exception note
+</code></pre>
+<h2 id="six-adapter-lanes">Six Adapter Lanes</h2>
 <table>
 <thead><tr>
-<th>Stage</th>
-<th>Product Question</th>
-<th>FRAME Output</th>
+<th>Lane</th>
+<th>Public Preference</th>
+<th>Prototype Output</th>
 </tr></thead>
 <tbody>
 <tr>
-<td>Discover</td>
-<td>What screens, files, reports, and decisions run the workflow today?</td>
-<td>Portal maps, source notes, report inventory, and process context.</td>
+<td>MilliporeSigma eProcurement</td>
+<td>e-Catalogs through PunchOut or hosted file; e-POs, invoices, confirmations, ASNs; project plan, setup/testing, go-live monitoring</td>
+<td>End-to-end implementation lane with fixture scope and launch monitor</td>
 </tr>
 <tr>
-<td>Define</td>
-<td>Which parts should become endpoints, reports, queues, or reviewed actions?</td>
-<td>Service boundaries, endpoint candidates, and data contracts.</td>
+<td>Coupa</td>
+<td>cXML PunchOut, setup request/response, cart return, requisition creation</td>
+<td>Coupa-like setup request, setup response, cart return, requisition event</td>
 </tr>
 <tr>
-<td>Validate</td>
-<td>Do new outputs match existing stakeholder expectations?</td>
-<td>Report continuity checks, reconciliation notes, SQL/BI handoffs, and acceptance criteria.</td>
+<td>SAP Ariba / SAP Business Network</td>
+<td>cXML-enabled supplier website, PunchOut Level 1/2, supplier-hosted catalog</td>
+<td>Level 1/2 flow map, index assumptions, item-level acceptance checks</td>
 </tr>
 <tr>
-<td>Operate</td>
-<td>How do users keep working while systems modernize?</td>
-<td>Automation wrappers, reviewed runbooks, and exception queues.</td>
+<td>JAGGAER</td>
+<td>Hosted catalog or PunchOut, cXML or EDIINT X12 order delivery, confirmations, invoice route, test/prod signoff</td>
+<td>Enablement checklist, order route, invoice fixture, signoff report</td>
 </tr>
 <tr>
-<td>Improve</td>
-<td>What did the evidence teach the roadmap?</td>
-<td>Backlog items, release notes, and AI-readable operating context.</td>
+<td>Oracle Procurement</td>
+<td>cXML and Oracle native XML models, direct cXML supplier punchout source</td>
+<td>Direct cXML punchout definition, category fallback, returned-cart validation</td>
+</tr>
+<tr>
+<td>Workday Procurement</td>
+<td>Supplier punchout, supplier portal, POs, invoices, EDI 810/850/855/856, cXML, web services</td>
+<td>Punchout session, worktag map, PO/invoice events, spend-reporting readiness</td>
 </tr>
 </tbody></table>
-<h2 id="likely-endpoint-families">Likely Endpoint Families</h2>
-<ul>
-<li>account, customer, or counterparty lookup</li>
-<li>product, catalog, or eligibility lookup</li>
-<li>pricing, valuation, or quote request</li>
-<li>order, request, requisition, or transaction submission</li>
-<li>acknowledgement, fulfillment status, and exception state</li>
-<li>invoice, document, and support-case access</li>
-<li>reporting, analytics, and stakeholder visibility</li>
-</ul>
 <h2 id="why-this-matters">Why This Matters</h2>
-<p>B2B portal modernization is rarely just a page redesign or API wrapper. The hard part is preserving the operating promise while the system changes:</p>
+<p>This is the honest bridge from experience to the job requirement. FRAME is not claiming production ownership of Ariba, Coupa, SAP Procurement, JAGGAER, Oracle, or Workday tenants. FRAME is showing a repeatable method to ramp into those ecosystems:</p>
+<ol>
+<li>Read the vendor and customer implementation material.</li>
+<li>Convert vocabulary into fixtures and acceptance checks.</li>
+<li>Validate message shape with synthetic data.</li>
+<li>Normalize events into JSON for reporting and SQL.</li>
+<li>Use launch evidence to drive backlog, support, and roadmap decisions.</li>
+</ol>
+<h2 id="connection-to-visviva">Connection To VisViva</h2>
+<p>The energy portal work matters because it used the same adapter thinking: closed operational workflows, order-management handoffs, carrier/truck status, invoice data, logistics events, browser automation, and executive reporting all had to be made visible and testable. Procurement adapters apply that same FRAME pattern to hosted catalogs, PunchOut, e-PO, invoice, ASN, and exception flows.</p>
+<h2 id="sources">Sources</h2>
 <ul>
-<li>users need continuity of trusted reports and status views</li>
-<li>operators need clear exception handling and accountability</li>
-<li>product teams need acceptance criteria that reflect the real workflow</li>
-<li>engineering teams need clean service boundaries and testable data contracts</li>
-<li>AI-assisted tools need documented context, source lineage, and guardrails</li>
+<li>MilliporeSigma eCommerce Solutions:</li>
+<p>https://www.sigmaaldrich.com/US/en/life-science/ecommerce/ecommerce-solutions</p>
+<li>Coupa Punchout Catalogs:</li>
+<p>https://compass.coupa.com/en-us/products/product-documentation/supplier-resources/for-suppliers/coupa-supplier-portal/set-up-the-csp/catalogs/punchout-catalogs</p>
+<li>SAP Business Network Level 2 PunchOut:</li>
+<p>https://help.sap.com/docs/business-network-for-procurement/cxml-solutions/level-2-punchout</p>
+<li>JAGGAER Supplier Enablement terms:</li>
+<p>https://www.jaggaer.com/wp-content/uploads/2024/06/JAGGAER-Supplier-Enablement-terms.pdf</p>
+<li>Oracle Procurement Punchout Catalogs:</li>
+<p>https://docs.oracle.com/en/cloud/saas/procurement/26a/oapro/punchout-catalogs.html</p>
+<li>Workday Procurement:</li>
+<p>https://www.workday.com/content/dam/web/se/documents/datasheets/datasheet-procurement-se.pdf</p>
+<li>cXML Reference Guide:</li>
+<p>https://xml.cxml.org/current/cXMLReferenceGuide.pdf</p>
 </ul>
-<p>FRAME treats reports, portals, scripts, spreadsheets, and inboxes as evidence of business intent. That evidence is then shaped into service contracts, endpoint candidates, SQL/BI validation, and reviewed automation.</p>
-<h2 id="interview-ready-positioning">Interview-Ready Positioning</h2>
-<p>For a B2B portal launch, the strongest product-management story is:</p>
-<p>&gt; Start with the business transaction. Preserve what stakeholders already trust. &gt; Then expose the workflow as service boundaries, endpoint candidates, &gt; validation checks, and AI-readable operating context.</p>
-<p>That is the practical bridge between legacy terminal systems, portal workflows, CRM/ERP suites, and future service-oriented architecture.</p>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="frame_procurement_adapter_architecture.html">FRAME Procurement Adapter Architecture</a></li>
+<li><a href="procurement_vendor_research_pack.html">Procurement Vendor Research Pack</a></li>
+<li><a href="b2b_ecommerce_adapter.html">B2B eCommerce Adapter Workbench</a></li>
+<li><a href="procurement_adapter_workbench.html">Procurement Adapter Workbench</a></li>
+</ul>
       </main>
     </div>
   </div>

@@ -41,7 +41,7 @@
 </div>
 <div class="nav-section">
   <p class="nav-heading">Additional Notes</p>
-  <a class="nav-link" href="soa_elevator.html">FRAME SOA Elevator</a><a class="nav-link" href="b2b_endpoint_fulfillment.html">B2B Endpoint Fulfillment</a><a class="nav-link" href="interactive_wizard_publication_catalog.html">Interactive Wizard Publication Catalog</a>
+  <a class="nav-link" href="soa_elevator.html">FRAME SOA Elevator</a><a class="nav-link" href="procurement_adapter_prototype_lanes.html">Procurement Adapter Prototype Lanes</a><a class="nav-link" href="b2b_endpoint_fulfillment.html">B2B Endpoint Fulfillment</a><a class="nav-link" href="interactive_wizard_publication_catalog.html">Interactive Wizard Publication Catalog</a>
 </div>
     </aside>
     <div class="content">
@@ -118,6 +118,40 @@ buyer spend platform
 <td>Jira-ready epics, stories, acceptance criteria, and launch checklist</td>
 </tr>
 </tbody></table>
+<h2 id="provider-specific-prototype-lanes">Provider-Specific Prototype Lanes</h2>
+<p>The workbench now separates the adapter story into named lanes. This keeps the prototype honest: Coupa, SAP Ariba, JAGGAER, Oracle, and Workday share many procurement ideas, but they do not all configure and exchange data in exactly the same way.</p>
+<table>
+<thead><tr>
+<th>Lane</th>
+<th>Exchange Pattern To Prototype</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>MilliporeSigma eProcurement</td>
+<td>e-Catalog through PunchOut or hosted file; e-PO; invoice; confirmation; ASN</td>
+</tr>
+<tr>
+<td>Coupa</td>
+<td>cXML PunchOut setup, setup response, cart return, requisition</td>
+</tr>
+<tr>
+<td>SAP Ariba / SAP Business Network</td>
+<td>PunchOut Level 1/2 and supplier-hosted catalog</td>
+</tr>
+<tr>
+<td>JAGGAER</td>
+<td>Hosted catalog or PunchOut; cXML or EDIINT X12 order/invoice route</td>
+</tr>
+<tr>
+<td>Oracle Procurement</td>
+<td>cXML or Oracle native XML punchout model</td>
+</tr>
+<tr>
+<td>Workday Procurement</td>
+<td>Supplier punchout, supplier portal, EDI 810/850/855/856, cXML, web services</td>
+</tr>
+</tbody></table>
+<p>See <a href="procurement_adapter_prototype_lanes.html">Procurement Adapter Prototype Lanes</a> for the provider-by-provider skeleton.</p>
 <h2 id="product-management-uses">Product-Management Uses</h2>
 <ul>
 <li>four-square prioritization: value/impact vs. effort/feasibility/risk;</li>

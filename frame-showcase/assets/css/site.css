@@ -414,6 +414,60 @@ main {
   padding: 34px;
 }
 
+.quick-menu {
+  border: 1px solid color-mix(in srgb, var(--plan) 32%, var(--line));
+  border-left: 5px solid var(--plan);
+  border-radius: 8px;
+  background: #f8fbff;
+  margin: 0 0 26px;
+  padding: 0;
+}
+
+.quick-menu summary {
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 800;
+  list-style-position: inside;
+  padding: 14px 16px;
+}
+
+.quick-menu-body {
+  border-top: 1px solid color-mix(in srgb, var(--plan) 24%, var(--line));
+  padding: 0 16px 16px;
+}
+
+.quick-menu-lead,
+.quick-menu-note {
+  color: var(--muted);
+}
+
+.quick-steps {
+  margin: 12px 0 14px;
+  padding-left: 22px;
+}
+
+.quick-menu-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0 8px;
+}
+
+.quick-menu-links a {
+  border: 1px solid var(--plan);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--plan);
+  font-weight: 700;
+  padding: 8px 10px;
+  text-decoration: none;
+}
+
+.quick-menu-links a:hover,
+.quick-menu-links a:focus-visible {
+  background: #eef5fc;
+}
+
 h1 {
   font-size: 34px;
   line-height: 1.15;
@@ -509,6 +563,15 @@ img {
 
   main {
     padding: 22px;
+  }
+
+  .quick-menu-links {
+    display: block;
+  }
+
+  .quick-menu-links a {
+    display: block;
+    margin-bottom: 8px;
   }
 
   .risk-dialog dl {

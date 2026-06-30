@@ -65,6 +65,23 @@
       </div>
       <main>
         <h1 id="install-frame-automation">Install FRAME Automation</h1>
+<details class="quick-menu" open>
+<summary>Bootstrap Quick Menu</summary>
+<div class="quick-menu-body">
+<p class="quick-menu-lead">Use this when you are setting up a fresh Windows user or a new FRAME laptop.</p>
+<ol class="quick-steps">
+<li><strong>Sign in first.</strong> Log into the Windows user, open Edge, and sign in to the Microsoft account that can reach OneDrive.</li>
+<li><strong>Download the full folder.</strong> From OneDrive live, download <code>Services &gt; Install</code> into <code>Downloads\Install</code>. Do not download only the bootstrap folder for the normal path.</li>
+<li><strong>Start the bootstrap.</strong> Open <code>Downloads\Install\bootstrap\START_HERE_KR.md</code>, then run <code>COPY_PASTE_KR_BOOTSTRAP.txt</code> or <code>RUN_KR_BOOTSTRAP.cmd</code>.</li>
+</ol>
+<p><strong>What happens next:</strong> first-login bootstrap starts the service router and runs user readiness checks. Full framework install/config continues through <code>PostBootstrapContinuation</code>; the runbook tells the operator when to start that second step. It is not a silent background install.</p>
+<div class="quick-menu-links">
+<a href="https://code.visualstudio.com/download">Download VS Code</a>
+<a href="https://chatgpt.com/download">Download ChatGPT</a>
+</div>
+<p class="quick-menu-note">Use Codex or ChatGPT as an assistant over the downloaded folder when a check fails; the scripts and runbooks remain the source of truth.</p>
+</div>
+</details>
 <h2 id="purpose">Purpose</h2>
 <p>This page introduces the installation lane for the FRAME automation framework. It is intended for reviewers who want to understand how the Windows 11 laptop, VS Code workspaces, OneDrive project folders, Edge browser automation, and FRAME scripts fit together.</p>
 <h2 id="what-the-install-workspace-does">What The Install Workspace Does</h2>
@@ -151,12 +168,13 @@
 <h2 id="new-user-bootstrap-pattern">New-User Bootstrap Pattern</h2>
 <p>The current FRAME bootstrap pattern is intentionally human-first for identity and script-first for installation.</p>
 <p>The operator signs in to the new Windows account, opens Edge, signs in to the Microsoft account that has access to the FRAME OneDrive material, and verifies that the cloud <code>Services &gt; Install</code> folder is reachable. The scripts do not copy browser profiles, cookies, MFA sessions, OneDrive tokens, or saved passwords from another Windows user.</p>
-<p>After identity is established, download the full <code>Services &gt; Install</code> folder to the new user&#x27;s <code>Downloads\Install</code> folder. Downloading only the bootstrap folder is faster, but it leaves the new account without the service docs, router scripts, reports folder, bootstrap helpers, and validation files that Codex and PowerShell need when something goes wrong. The full folder download is the recommended default.</p>
+<p>After identity is established, download the full <code>Services &gt; Install</code> folder from OneDrive live to the new user&#x27;s <code>Downloads\Install</code> folder. Downloading only the bootstrap folder is faster, but it leaves the new account without the service docs, router scripts, reports folder, bootstrap helpers, and validation files that Codex and PowerShell need when something goes wrong. The full folder download is the recommended default.</p>
 <p>The first file for a clean current bootstrap is:</p>
 <pre><code>
 Downloads\Install\bootstrap\START_HERE_KR.md
 </code></pre>
 <p>That runbook points to the matching copy/paste command and command helper in the same bootstrap folder. The command locates the downloaded Install service, runs the service router, performs first-login checks, and records reports under the downloaded or synced service folder.</p>
+<p>Bootstrap is the first step, not the whole install by itself. Framework install/config continues through <code>PostBootstrapContinuation</code> after the first-login checks and source readiness checkpoint pass. The runbook tells the operator when to start that second command; it is not a silent background install.</p>
 <p>Codex or ChatGPT is useful at this stage as an operator assistant over the downloaded folder: it can read the runbook, inspect reports, explain failures, and choose the next service operation. It should not replace the runbook with a free-form &quot;figure it out&quot; install. The scripts remain the source of truth for machine changes.</p>
 <h2 id="service-command-surface">Service Command Surface</h2>
 <p>Install operations are launched through a small service router so operators do not have to remember individual script paths. Important operations include:</p>

@@ -9,6 +9,9 @@
   --accent-strong: #0f4d41;
   --gold: #b8842f;
   --blue: #315f91;
+  --adapter-blue: #1f5f99;
+  --adapter-blue-dark: #153f67;
+  --adapter-blue-soft: #eaf3fb;
 }
 
 * {
@@ -120,6 +123,45 @@ h3 {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 32px;
+}
+
+.adapter-callout {
+  max-width: 780px;
+  margin: 28px 0 0;
+  padding: 22px 24px;
+  border: 1px solid #c7dceb;
+  border-left: 6px solid var(--adapter-blue);
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffffff 0%, var(--adapter-blue-soft) 100%);
+  box-shadow: 0 14px 34px rgba(31, 95, 153, 0.1);
+}
+
+.adapter-callout .eyebrow {
+  color: var(--adapter-blue);
+}
+
+.adapter-callout h2 {
+  font-size: clamp(24px, 3vw, 34px);
+  line-height: 1.14;
+}
+
+.adapter-callout p:not(.eyebrow) {
+  margin: 12px 0 0;
+  color: #405466;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.button.adapter-primary {
+  margin-top: 18px;
+  background: var(--adapter-blue);
+  border-color: var(--adapter-blue);
+  color: #fff;
+}
+
+.button.adapter-primary:hover,
+.button.primary:hover {
+  filter: brightness(0.95);
 }
 
 .button {

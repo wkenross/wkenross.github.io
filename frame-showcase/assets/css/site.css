@@ -8,6 +8,10 @@
   --train: #22745b;
   --cert: #a06412;
   --tool: #4d5b70;
+  --b2b-blue: #1e5f99;
+  --b2b-blue-dark: #173f66;
+  --b2b-blue-soft: #eaf3fb;
+  --b2b-blue-line: #c7dceb;
 }
 
 * {
@@ -124,6 +128,54 @@ a {
 .kind-tool .pill.kind {
   border-color: var(--tool);
   color: var(--tool);
+}
+
+.theme-b2b-adapter {
+  --paper: #f4f8fc;
+  --surface: #ffffff;
+  --line: var(--b2b-blue-line);
+  --plan: var(--b2b-blue);
+  --train: #1f7a62;
+  --tool: var(--b2b-blue-dark);
+}
+
+.theme-b2b-adapter .nav {
+  background: linear-gradient(180deg, #ffffff 0%, #eef6fd 100%);
+}
+
+.theme-b2b-adapter .brand {
+  color: var(--b2b-blue-dark);
+}
+
+.theme-b2b-adapter .nav-heading {
+  color: var(--b2b-blue);
+}
+
+.theme-b2b-adapter .nav a.nav-link.current {
+  border-left-color: var(--b2b-blue);
+  color: var(--b2b-blue);
+}
+
+.theme-b2b-adapter .content main {
+  border-top: 6px solid var(--b2b-blue);
+  box-shadow: 0 16px 38px rgba(30, 95, 153, 0.08);
+}
+
+.theme-b2b-adapter h1 {
+  color: var(--b2b-blue-dark);
+}
+
+.theme-b2b-adapter h2 {
+  border-top-color: #bfd7ea;
+}
+
+.theme-b2b-adapter th {
+  background: #e8f2fb;
+}
+
+.theme-b2b-adapter .pill.kind {
+  border-color: var(--b2b-blue);
+  color: var(--b2b-blue);
 }
 
 main {

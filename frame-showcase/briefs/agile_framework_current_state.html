@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sales Analytics Obfuscation Path - FRAME Evidence Workbench</title>
+  <title>Agile Framework Current State - FRAME Evidence Workbench</title>
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
-<body class="kind-tool">
+<body class="kind-planme">
   <div class="layout">
     <aside class="nav">
       <p class="brand">FRAME Evidence Workbench</p>
@@ -19,7 +19,7 @@
 </div>
 <div class="nav-section">
   <p class="nav-heading">Product Management &amp; Marketing</p>
-  <a class="nav-link" href="frame_delivery_roadmap.html">Product Strategy And Roadmap</a><a class="nav-link" href="competitive_swot_differentiation_brief.html">Competitive Analysis</a><a class="nav-link" href="procurement_vendor_research_pack.html">Product / Partner Matrices</a><a class="nav-link" href="product_discovery_research_kit.html">Research Methodology</a><a class="nav-link" href="product_discovery_research_kit.html">Market Research</a><a class="nav-link" href="product_discovery_research_kit.html">Customer Interviews</a><a class="nav-link" href="agile_framework_current_state.html">Agile Framework</a><a class="nav-link" href="technical_project_management_one_pager.html">Technical Project Management</a>
+  <a class="nav-link" href="frame_delivery_roadmap.html">Product Strategy And Roadmap</a><a class="nav-link" href="competitive_swot_differentiation_brief.html">Competitive Analysis</a><a class="nav-link" href="procurement_vendor_research_pack.html">Product / Partner Matrices</a><a class="nav-link" href="product_discovery_research_kit.html">Research Methodology</a><a class="nav-link" href="product_discovery_research_kit.html">Market Research</a><a class="nav-link" href="product_discovery_research_kit.html">Customer Interviews</a><a class="nav-link current" href="agile_framework_current_state.html">Agile Framework</a><a class="nav-link" href="technical_project_management_one_pager.html">Technical Project Management</a>
 </div>
 <div class="nav-section">
   <p class="nav-heading">Business Intelligence</p>
@@ -48,43 +48,100 @@
     </aside>
     <div class="content">
       <div class="meta">
-        <span class="pill kind">tool</span>
-        <span class="pill">published-verified</span>
+        <span class="pill kind">planme</span>
+        <span class="pill">ready-for-html-review</span>
       </div>
       <main>
-        <h1 id="sales-analytics-obfuscation-path">Sales Analytics Obfuscation Path</h1>
-<p>The sales analytics workflow can become a stronger GitHub showcase after a controlled obfuscation and synthetic-data pass.</p>
-<h2 id="what-can-publish-first">What Can Publish First</h2>
+        <h1 id="agile-framework-current-state">Agile Framework Current State</h1>
+<p>FRAME uses Agile artifacts to turn research, automation, product discovery, service design, and dashboard work into visible delivery evidence. Markdown remains the durable reasoning surface; Jira or similar tooling becomes the planning, communication, and review surface when a board is available.</p>
+<h2 id="current-implementation">Current Implementation</h2>
+<table>
+<thead><tr>
+<th>Agile Layer</th>
+<th>FRAME Status</th>
+<th>Linked Resource</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Strategy and roadmap</td>
+<td>Active. Product strategy and roadmap pages describe longer-term direction, SOA transition, and adapter delivery.</td>
+<td><a href="frame_delivery_roadmap.html">FRAME Delivery Roadmap</a></td>
+</tr>
+<tr>
+<td>Epics and stories</td>
+<td>Active. Procurement adapter and service work are now expressed as epics, stories, acceptance criteria, and risks.</td>
+<td><a href="procurement_adapter_agile_backlog.html">Procurement Adapter Agile Backlog</a></td>
+</tr>
+<tr>
+<td>Artifact mapping</td>
+<td>Active. FRAME names such as PlanMe, README, architecture, backlog, and roadmap are mapped to Agile/Jira terms.</td>
+<td><a href="agile_frame_artifact_mapping.html">FRAME Artifact Mapping To Agile</a></td>
+</tr>
+<tr>
+<td>Sprint candidates</td>
+<td>Active in service docs. Tools and procurement adapter work have spike sprint files, validation reports, and handoffs.</td>
+<td><a href="procurement_adapter_workbench.html">Adapter Prototype Workbench</a></td>
+</tr>
+<tr>
+<td>Jira readiness</td>
+<td>In progress. Public pages describe Jira-ready fields and backlog shape; private Jira URLs and screenshots stay out of the public site.</td>
+<td><a href="agile_framework_showcase.html">Agile Delivery And Jira Operating Model</a></td>
+</tr>
+<tr>
+<td>Dashboard communication</td>
+<td>Active. The B2B dashboard gathers roadmap, persona, partner, sprint, backlog, SWOT, and launch-health signals in one page.</td>
+<td><a href="b2b_ecommerce_adapter.html">B2B eCommerce Adapter Dashboard</a></td>
+</tr>
+<tr>
+<td>Cross-Codex coordination</td>
+<td>Active. Handoff files are used instead of assuming another VS Code or Codex session sees the current chat.</td>
+<td><a href="technical_project_management_one_pager.html">Technical Project Management One-Pager</a></td>
+</tr>
+</tbody></table>
+<h2 id="operating-flow">Operating Flow</h2>
+<pre><code>
+idea / requirement / research signal
+  -&gt; product brief or plan update
+  -&gt; epic / story / acceptance criteria
+  -&gt; sprint candidate or spike
+  -&gt; validation report
+  -&gt; dashboard update
+  -&gt; roadmap and release evidence
+</code></pre>
+<h2 id="jira-and-tooling-posture">Jira And Tooling Posture</h2>
+<p>FRAME can use Jira, Markdown, JSON, Excel trackers, GitHub Pages, and Power BI style dashboards together:</p>
 <ul>
-<li>functional descriptions</li>
-<li>workflow maps</li>
-<li>data-model explanations</li>
-<li>orchestration diagrams</li>
-<li>SQL/Power BI handoff requirements</li>
-<li>sanitized screenshots or diagrams created from synthetic examples</li>
+<li>Markdown stores the reasoning and source context.</li>
+<li>JSON stores structured state, fixtures, registry data, and backlog seeds.</li>
+<li>Jira or a similar board can show epics, stories, tasks, sprint state, risks,</li>
+<p>and review status.</p>
+<li>Dashboards communicate project health to stakeholders who do not live in the</li>
+<p>code or backlog.</p>
+<li>Public pages publish only reviewed, safe, non-credentialed examples.</li>
 </ul>
-<h2 id="what-must-stay-private-until-reviewed">What Must Stay Private Until Reviewed</h2>
+<h2 id="why-dashboards-matter">Why Dashboards Matter</h2>
+<p>A project dashboard is the communication layer between product management and delivery. For FRAME, the dashboard should show:</p>
 <ul>
-<li>Excel workbooks with real business values</li>
-<li>portal scrape calls and private URLs</li>
-<li>customer, carrier, contract, or employer labels</li>
-<li>email notification examples containing real addresses or messages</li>
-<li>browser profile, cookie, credential, and account-state details</li>
-<li>scripts that still depend on private source systems</li>
+<li>current objective and product thesis;</li>
+<li>roadmap and sprint status;</li>
+<li>top epics and user stories;</li>
+<li>partner and persona research;</li>
+<li>risks, blockers, and mitigation actions;</li>
+<li>launch-health or validation signals;</li>
+<li>links to deeper strategy, architecture, backlog, and business-plan artifacts.</li>
 </ul>
-<h2 id="obfuscation-steps">Obfuscation Steps</h2>
-<ol>
-<li>Rename private workbook concepts to generic revenue-performance and</li>
-<p>projection names.</p>
-<li>Replace customer/employer-specific labels with FRAME Sales Automation terms.</li>
-<li>Scale or synthesize numeric values while preserving data shape.</li>
-<li>Replace private scrape sources with public proxy sources.</li>
-<li>Add SQL-ready normalized outputs keyed by contract and customer identifiers.</li>
-<li>Generate public-safe HTML pages through <code>wb_html</code>.</li>
-<li>Publish reviewed documentation through <code>wb_github</code>.</li>
-</ol>
-<h2 id="future-public-code-gate">Future Public Code Gate</h2>
-<p>Code should move to GitHub only after it can run against synthetic or public inputs and no longer requires private portals, private workbooks, or hard-coded local paths.</p>
+<h2 id="tools-service-follow-up">Tools-Service Follow-Up</h2>
+<p>The Tools service owns the deeper Agile implementation details, including artifact naming standards, Jira field recommendations, sprint files, and provider-specific backlog generation. This page is the public summary; Tools should refine it as the Agile service matures.</p>
+<h2 id="related-resources">Related Resources</h2>
+<ul>
+<li><a href="agile_framework_showcase.html">Agile Delivery And Jira Operating Model</a></li>
+<li><a href="agile_frame_artifact_mapping.html">FRAME Artifact Mapping To Agile</a></li>
+<li><a href="procurement_adapter_agile_backlog.html">Procurement Adapter Agile Backlog</a></li>
+<li><a href="b2b_ecommerce_adapter.html">B2B eCommerce Adapter Dashboard</a></li>
+<li><a href="product_discovery_research_kit.html">Product Discovery Research Kit</a></li>
+<li><a href="technical_project_management_one_pager.html">Technical Project Management One-Pager</a></li>
+<li><a href="frame_delivery_roadmap.html">FRAME Delivery Roadmap</a></li>
+</ul>
       </main>
     </div>
   </div>

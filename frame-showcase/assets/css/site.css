@@ -376,6 +376,30 @@ body[class*="artifact-"] main {
   margin: 0;
 }
 
+.risk-dialog-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.risk-dialog-links a {
+  border: 1px solid color-mix(in srgb, var(--plan) 32%, var(--line));
+  border-radius: 999px;
+  background: #f6f9fd;
+  color: var(--plan);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 9px;
+  text-decoration: none;
+}
+
+.risk-dialog-links a:hover,
+.risk-dialog-links a:focus-visible {
+  background: #eef5fc;
+  outline: 2px solid color-mix(in srgb, var(--plan) 28%, transparent);
+  outline-offset: 2px;
+}
+
 .risk-dialog-note {
   border-left: 4px solid var(--train);
   background: #f2f8f5;

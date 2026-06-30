@@ -70,6 +70,68 @@ cXML / XML / OCI / EDI / hosted file / API payload
   -&gt; SQL-ready event log
   -&gt; BI dashboard, Jira story, launch monitor, or exception note
 </code></pre>
+<h2 id="frame-tools-used">FRAME Tools Used</h2>
+<p>The lanes are built with the FRAME toolchain, not just drawn as diagrams:</p>
+<table>
+<thead><tr>
+<th>FRAME Tool</th>
+<th>Adapter Use</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Reviewed AI research</td>
+<td>Summarize public provider documentation, flag claim boundaries, and draft discovery questions.</td>
+</tr>
+<tr>
+<td>Markdown planme/codeme artifacts</td>
+<td>Preserve product strategy, adapter assumptions, and acceptance criteria.</td>
+</tr>
+<tr>
+<td>JSON fixture registry</td>
+<td>Store provider-specific lane metadata and normalized event names.</td>
+</tr>
+<tr>
+<td>Python validators</td>
+<td>Parse cXML/XML/CSV/JSON fixtures and normalize payloads into adapter events.</td>
+</tr>
+<tr>
+<td>PowerShell launchers</td>
+<td>Run validation, report generation, browser review, and publication workflows.</td>
+</tr>
+<tr>
+<td>SQL/BI handoff</td>
+<td>Convert adapter events into launch-health and exception reports.</td>
+</tr>
+<tr>
+<td>Jira-ready backlog generation</td>
+<td>Turn failed validations into epics, stories, acceptance criteria, and risks.</td>
+</tr>
+<tr>
+<td>API testing pattern</td>
+<td>Apply Price Digests-style endpoint monitoring lessons, including API Fortress / Sauce Labs-style continuous API test thinking.</td>
+</tr>
+</tbody></table>
+<h2 id="three-step-eprocurement-pattern">Three-Step eProcurement Pattern</h2>
+<p>Each adapter lane should conform to the public eProcurement install rhythm:</p>
+<table>
+<thead><tr>
+<th>Step</th>
+<th>Adapter-Lane Output</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1. Create a Project Plan</td>
+<td>Provider lane brief, data-exchange map, security assumptions, fixture inventory, Jira epics, and milestones.</td>
+</tr>
+<tr>
+<td>2. Setup &amp; Testing</td>
+<td>Hosted catalog, PunchOut/cXML/XML/EDI/API fixtures, parser checks, exception catalog, API/endpoint test plan, and acceptance checklist.</td>
+</tr>
+<tr>
+<td>3. Launch and Go-Live Monitoring</td>
+<td>Launch-health JSON events, SQL/BI dashboard, support triage, API/adapter monitor, go-live report, and optimization backlog.</td>
+</tr>
+</tbody></table>
 <h2 id="six-adapter-lanes">Six Adapter Lanes</h2>
 <table>
 <thead><tr>
@@ -120,6 +182,8 @@ cXML / XML / OCI / EDI / hosted file / API payload
 </ol>
 <h2 id="connection-to-visviva">Connection To VisViva</h2>
 <p>The energy portal work matters because it used the same adapter thinking: closed operational workflows, order-management handoffs, carrier/truck status, invoice data, logistics events, browser automation, and executive reporting all had to be made visible and testable. Procurement adapters apply that same FRAME pattern to hosted catalogs, PunchOut, e-PO, invoice, ASN, and exception flows.</p>
+<h2 id="connection-to-price-digests">Connection To Price Digests</h2>
+<p>Price Digests adds the API-product side of the story: insurer-facing data/API delivery, endpoint quality, usage evidence, and product analytics. That maps cleanly to procurement adapters because each lane needs a tested contract, monitored payload health, clear failures, and backlog follow-up. API Fortress, now part of Sauce Labs, is a useful modern reference point for continuous API testing and monitoring around those adapter contracts.</p>
 <h2 id="sources">Sources</h2>
 <ul>
 <li>MilliporeSigma eCommerce Solutions:</li>
@@ -136,6 +200,8 @@ cXML / XML / OCI / EDI / hosted file / API payload
 <p>https://www.workday.com/content/dam/web/se/documents/datasheets/datasheet-procurement-se.pdf</p>
 <li>cXML Reference Guide:</li>
 <p>https://xml.cxml.org/current/cXMLReferenceGuide.pdf</p>
+<li>Sauce Labs acquisition of API Fortress:</li>
+<p>https://saucelabs.com/company/news/sauce-labs-acquires-api-fortress-to-bolster-continuous-testing-platform-with-modern-api-testing-solution</p>
 </ul>
 <h2 id="related">Related</h2>
 <ul>

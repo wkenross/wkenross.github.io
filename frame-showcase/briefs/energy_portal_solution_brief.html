@@ -52,6 +52,7 @@
       <main>
         <h1 id="energy-portal-solution-brief">Energy Portal Solution Brief</h1>
 <p>The Energy Portal case study describes a B2B operations and commercial portal surface that connects dashboard review, contract context, counterparty and carrier workflows, transaction and invoice traceability, executive reporting, and revenue-model inputs.</p>
+<p>It also shows an integration-product pattern that matters for B2B commerce: adapters around order, carrier, and logistics data exchange. In the energy distribution context, those adapters can sit behind portal screens and connect bulk/terminal systems, carrier or truck workflows, order-management systems, and reporting layers through XML-style standards, JSON normalization, EDI-like transaction exchange, REST API wrappers, and telemetry-informed status updates.</p>
 <p>The public story is not the private portal itself. The public story is how FRAME turns a complex portal environment into reviewed, repeatable automation:</p>
 <ul>
 <li>map the product surface and page flow</li>
@@ -75,6 +76,37 @@ Dashboard
     +-- Executive Reports
     +-- Revenue Modeling
 </code></pre>
+<h2 id="adapter-and-data-exchange-layer">Adapter And Data-Exchange Layer</h2>
+<p>The Energy Portal story is broader than browser screens. It includes the business need to move order, schedule, delivery, carrier, invoice, and status data between systems.</p>
+<p>Public-safe adapter patterns to highlight:</p>
+<table>
+<thead><tr>
+<th>Adapter Pattern</th>
+<th>Public-safe interpretation</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>XML standards</td>
+<td>Structured business documents for order, carrier, invoice, confirmation, and status workflows.</td>
+</tr>
+<tr>
+<td>JSON normalization</td>
+<td>Internal normalized event records that make portal, workbook, reporting, SQL, BI, and AI review paths easier to test.</td>
+</tr>
+<tr>
+<td>EDI-like exchange</td>
+<td>Order, shipment, carrier, invoice, and status transaction sets similar to the standardized exchange used by major rail and logistics partners.</td>
+</tr>
+<tr>
+<td>REST API wrappers</td>
+<td>Service interfaces that connect order-management systems, portal functions, reporting pipelines, and downstream automation.</td>
+</tr>
+<tr>
+<td>Telematics/status data</td>
+<td>Truck, delivery, terminal, and carrier status signals that can inform exceptions, fulfillment visibility, and shortage-prevention workflows.</td>
+</tr>
+</tbody></table>
+<p>FRAME&#x27;s role is to map these flows, preserve the expected reports, create public-safe fixtures, and turn exceptions into backlog items, dashboards, and reviewable operating evidence.</p>
 <h2 id="what-it-demonstrates">What It Demonstrates</h2>
 <table>
 <thead><tr>
@@ -96,15 +128,15 @@ Dashboard
 </tr>
 <tr>
 <td>Carriers</td>
-<td>Transportation partner workflows connect schedules, allocations, incidents, and operational follow-up.</td>
+<td>Transportation partner workflows connect schedules, allocations, incidents, operational follow-up, and carrier/order data exchange.</td>
 </tr>
 <tr>
 <td>Transactions</td>
-<td>Movement and quantity records become structured review inputs for reporting and exception handling.</td>
+<td>Movement and quantity records become structured review inputs for reporting, EDI-like exchange, API wrappers, and exception handling.</td>
 </tr>
 <tr>
 <td>Invoices</td>
-<td>Billing and reconciliation surfaces support cash, revenue, and exception visibility.</td>
+<td>Billing and reconciliation surfaces support cash, revenue, exception visibility, and electronic document exchange.</td>
 </tr>
 <tr>
 <td>Executive reporting</td>
@@ -124,6 +156,10 @@ Dashboard
 <li>Excel-based review workbooks for operator inspection</li>
 <li>SQL-ready data-model planning for durable reporting</li>
 <li>BI and dashboard handoff for Power BI, Tableau, or Excel outputs</li>
+<li>JSON fixture and event-model planning for public-safe replacement of private</li>
+<p>portal calls</p>
+<li>adapter-oriented documentation for XML, EDI-like, REST API, carrier, truck,</li>
+<p>and order-management handoffs</p>
 <li>obfuscation rules and publication gates for public-safe examples</li>
 </ul>
 <h2 id="evidence-reviewed">Evidence Reviewed</h2>

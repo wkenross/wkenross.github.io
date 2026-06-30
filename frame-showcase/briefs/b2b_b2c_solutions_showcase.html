@@ -86,8 +86,8 @@
 </tr>
 <tr>
 <td>VisViva Energy Portal</td>
-<td>B2B energy operations portal connecting contract, counterparty, carrier, transaction, invoice, dashboard, and reporting flows</td>
-<td>Portal page mapping, executive reporting, revenue modeling, workflow orchestration</td>
+<td>B2B energy operations portal connecting contract, counterparty, carrier, transaction, invoice, dashboard, reporting, and logistics/order data exchange flows</td>
+<td>Portal page mapping, executive reporting, revenue modeling, workflow orchestration, XML/JSON/EDI-like adapter mapping, REST API wrapper planning, and carrier/order-management handoffs</td>
 </tr>
 <tr>
 <td>Generative AI + Review-First Automation</td>
@@ -95,6 +95,17 @@
 <td>Human-reviewed AI workflows, recommendation lists, draft artifacts, browser/email/desktop orchestration, and explicit submit/send checkpoints</td>
 </tr>
 </tbody></table>
+<h2 id="energy-portal-adapter-lesson">Energy Portal Adapter Lesson</h2>
+<p>The Energy Portal lane now carries an important adapter lesson for the B2B eCommerce story. Fuel and propane distribution workflows often need to bridge backend terminal or bulk-storage systems, order-management systems, carrier partners, truck delivery workflows, invoicing, and reporting. The useful product-management skill is not only screen mapping. It is understanding the data exchange behind the screen:</p>
+<ul>
+<li>XML-style business-document exchange;</li>
+<li>JSON normalization for fixtures, reports, and AI-readable review;</li>
+<li>EDI-like order, carrier, shipment, invoice, and status transaction patterns;</li>
+<li>REST API wrappers around order-management and reporting systems;</li>
+<li>telematics/status signals that can drive exceptions and supply-risk</li>
+<p>monitoring.</p>
+</ul>
+<p>That is the same thinking now used in the B2B eCommerce Adapter Workbench: map the ecosystem, build safe fixtures, validate flows, create backlog, and monitor launch health without exposing private systems.</p>
 <h2 id="related-tool-lanes">Related Tool Lanes</h2>
 <ul>
 <li><a href="b2b_ecommerce_adapter.html">B2B eCommerce Adapter Workbench</a></li>

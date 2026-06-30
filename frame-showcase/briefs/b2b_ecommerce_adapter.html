@@ -569,6 +569,129 @@ learning more observable, testable, and product-led.
 <li>Replace placeholder status bars with generated metrics once the validator</li>
 <p>produces richer event outputs.</p>
 </ol>
+<h2 id="background-and-capability-map">Background And Capability Map</h2>
+<p>This lower section is the interview-prep layer behind the dashboard. It maps the role language to relevant FRAME evidence, prior product experience, and public-safe pages that can be opened quickly during review.</p>
+<h3 id="1-strategy-roadmap-and-product-ownership">1. Strategy, Roadmap, And Product Ownership</h3>
+<table>
+<thead><tr>
+<th>Role Emphasis</th>
+<th>Capability Mapping</th>
+<th>Review Links</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Own the B2B Core Platform and B2B eCommerce Adapter product domain.</td>
+<td>FRAME frames the adapter as the productized bridge between external procurement systems and core commerce capabilities: account context, catalog, pricing, cart/order, documents, invoice, ASN, support, reporting, and launch health.</td>
+<td><a href="frame_procurement_adapter_architecture.html">Architecture</a>, <a href="procurement_adapter_business_plan.html">Business Plan</a>, <a href="frame_delivery_roadmap.html">12-Month Roadmap Pattern</a></td>
+</tr>
+<tr>
+<td>Create a 12-month product vision linked to company and eCommerce strategy.</td>
+<td>The operating model starts with strategy, persona segmentation, roadmap themes, customer value, commercial impact, feasibility, security, and operational excellence before moving into tools.</td>
+<td><a href="frame_delivery_roadmap.html">Product Strategy And Roadmap</a>, <a href="frame_automation_adapter_delivery_pathway.html">Delivery Pathway</a></td>
+</tr>
+<tr>
+<td>Balance strategic accounts with scalable platform needs.</td>
+<td>The adapter plan separates account-specific implementation details from reusable product lanes: hosted catalog, PunchOut, e-PO, invoice, ASN, status, exception, and reporting patterns.</td>
+<td><a href="procurement_adapter_prototype_lanes.html">Prototype Lanes</a>, <a href="jaggaer_procurement_adapter_enablement_guide.html">JAGGAER Enablement</a></td>
+</tr>
+</tbody></table>
+<p>Talking point:</p>
+<pre><code>
+I would manage the adapter as a product domain, not just an integration task:
+strategy, roadmap, personas, partner ecosystem, backlog, launch monitoring,
+and measurable adoption all have to stay connected.
+</code></pre>
+<h3 id="2-procurement-ecosystem-and-adapter-execution">2. Procurement Ecosystem And Adapter Execution</h3>
+<table>
+<thead><tr>
+<th>Role Emphasis</th>
+<th>Capability Mapping</th>
+<th>Review Links</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Understand PunchOut, procurement integrations, and B2B purchasing ecosystems.</td>
+<td>FRAME uses public-safe adapter fixtures to model procurement events without claiming closed tenant access: hosted catalog, PunchOut/cXML-like exchange, e-PO, confirmation, invoice, ASN, exceptions, and launch-health rows.</td>
+<td><a href="procurement_adapter_workbench.html">Adapter Workbench</a>, <a href="api_development_monitoring.html">API Development And Monitoring</a>, <a href="json_core_tooling.html">JSON Core Tooling</a></td>
+</tr>
+<tr>
+<td>Work across JAGGAER, SAP/Ariba, Oracle, Coupa, Workday, and supplier-side eProcurement patterns.</td>
+<td>Partner matrices, day-in-the-life persona research, and gotcha/drop-off maps turn vendor research into roadmap choices, interview questions, and acceptance-criteria boundaries.</td>
+<td><a href="procurement_vendor_research_pack.html">Vendor Research Pack</a>, <a href="spend_management_admin_day_in_life.html">Admin Day In The Life</a>, <a href="spend_management_gotcha_dropoff_map.html">Gotcha Map</a></td>
+</tr>
+<tr>
+<td>Preserve security, identity, usage, and operational health.</td>
+<td>Prior Auth0/Azure identity work and FRAME cloud/usage notes keep authentication, roles, session behavior, telemetry, and support visibility in the product conversation.</td>
+<td><a href="authentication_usage_cloud_infrastructure.html">Authentication Usage And Cloud Infrastructure</a>, <a href="endpoint_assurance_loop.html">Endpoint Assurance Loop</a></td>
+</tr>
+</tbody></table>
+<p>Talking point:</p>
+<pre><code>
+PunchOut is not usually JSON-first like a modern REST API; it is an integration
+session and message flow. The product skill is to make that lifecycle
+observable, testable, supported, and measurable.
+</code></pre>
+<h3 id="3-data-dashboards-bi-and-launch-health">3. Data, Dashboards, BI, And Launch Health</h3>
+<table>
+<thead><tr>
+<th>Role Emphasis</th>
+<th>Capability Mapping</th>
+<th>Review Links</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Set OKRs and build or leverage dashboards.</td>
+<td>FRAME converts adapter events into launch-health signals: catalog readiness, setup/testing status, PO acceptance, invoice exceptions, ASN coverage, support cases, adoption, and business impact.</td>
+<td><a href="sql_power_bi.html">SQL And Power BI</a>, <a href="web_development_delivery.html">B2B Web Dashboard Development</a></td>
+</tr>
+<tr>
+<td>Partner with analytics/data teams for deeper data needs.</td>
+<td>The workflow starts with synthetic JSON/CSV fixtures and moves toward SQL/BI-ready datasets so business, technical, and CX metrics can be reviewed together.</td>
+<td><a href="sql_power_bi.html">SQL Data Analysis</a>, <a href="sql_power_bi.html">BI Reporting Tools</a></td>
+</tr>
+<tr>
+<td>Synthesize CX, market data, and qualitative research into roadmap decisions.</td>
+<td>Product discovery tools now cover competitive analysis, product SWOT, partner matrices, customer interview guides, and dashboard-ready summaries.</td>
+<td><a href="product_discovery_research_kit.html">Discovery Kit</a>, <a href="competitive_swot_differentiation_brief.html">Competitive SWOT</a></td>
+</tr>
+</tbody></table>
+<p>Talking point:</p>
+<pre><code>
+The dashboard is not decoration. It is how product, engineering, CX, support,
+and commercial teams see whether the adapter is actually ready to launch and
+where the roadmap needs to change.
+</code></pre>
+<h3 id="4-cross-functional-delivery-agile-and-communication">4. Cross-Functional Delivery, Agile, And Communication</h3>
+<table>
+<thead><tr>
+<th>Role Emphasis</th>
+<th>Capability Mapping</th>
+<th>Review Links</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Align IT, Commercial, Merchandising, Marketing, Engineering, Design, CX, data, support, and partners.</td>
+<td>FRAME uses a durable documentation and publishing workflow so product decisions, risks, requirements, launch notes, and stakeholder summaries stay visible across desktops, mobile capture, Codex workspaces, and web dashboards.</td>
+<td><a href="technical_project_management_one_pager.html">Technical Project Management One-Pager</a>, <a href="client_communication_documentation.html">Client Communication And Documentation</a></td>
+</tr>
+<tr>
+<td>Manage epics, stories, acceptance criteria, sprint backlog, risks, and mitigation.</td>
+<td>The adapter work is organized through product strategy, epics, story candidates, acceptance checks, validation reports, sprint risks, and public-safe publish reviews.</td>
+<td><a href="agile_framework_current_state.html">Agile Framework Current State</a>, <a href="procurement_adapter_agile_backlog.html">Agile Backlog</a></td>
+</tr>
+<tr>
+<td>Bring prior B2B portal lessons into a new scientific procurement domain.</td>
+<td>The story connects finance/economic data, insurance risk products, and energy portal workflows to the next step: scientific procurement and B2B eCommerce adapter leadership.</td>
+<td><a href="fedm_solution_brief.html">FEDM Solution</a>, <a href="price_digests_solution_brief.html">Price Digests Solution</a>, <a href="energy_portal_solution_brief.html">Energy Portal</a></td>
+</tr>
+</tbody></table>
+<p>Talking point:</p>
+<pre><code>
+My background started in big data, finance, and economic analysis, but the
+through line has been automation: reducing time to market, reducing error, and
+turning complex workflows into repeatable product systems. Scientific
+procurement is an exciting next domain for that same product-management pattern.
+</code></pre>
 <h2 id="claim-boundary">Claim Boundary</h2>
 <p>This dashboard uses public-safe documentation, synthetic fixtures, and reviewed research. It demonstrates product-management, discovery, architecture, Agile, and analytics thinking. It does not claim production ownership of closed buyer tenants or live supplier integrations.</p>
       </main>

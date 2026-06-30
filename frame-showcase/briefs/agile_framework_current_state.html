@@ -97,10 +97,16 @@
 <td>Active. Handoff files are used instead of assuming another VS Code or Codex session sees the current chat.</td>
 <td><a href="technical_project_management_one_pager.html">Technical Project Management One-Pager</a></td>
 </tr>
+<tr>
+<td>Validation and publishing</td>
+<td>Active. Service validators, web builds, link audits, and staging packages make publish readiness visible.</td>
+<td><a href="../docs/wb_html_publish_workflow_planme.html">Publish Workflow</a></td>
+</tr>
 </tbody></table>
 <h2 id="operating-flow">Operating Flow</h2>
 <pre><code>
 idea / requirement / research signal
+  -&gt; mobile or service intake
   -&gt; product brief or plan update
   -&gt; epic / story / acceptance criteria
   -&gt; sprint candidate or spike
@@ -108,6 +114,50 @@ idea / requirement / research signal
   -&gt; dashboard update
   -&gt; roadmap and release evidence
 </code></pre>
+<h2 id="agile-journey">Agile Journey</h2>
+<table>
+<thead><tr>
+<th>Journey Stage</th>
+<th>FRAME Practice</th>
+<th>Output</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Idea generation</td>
+<td>Mobile note, stakeholder comment, market signal, interview prep, or Codex observation is captured for review.</td>
+<td>Intake note or source update</td>
+</tr>
+<tr>
+<td>Product framing</td>
+<td>The idea is translated into a problem, persona, value hypothesis, claim boundary, and artifact target.</td>
+<td>Product brief, README, or dashboard section</td>
+</tr>
+<tr>
+<td>Backlog shaping</td>
+<td>Work becomes an epic, story, task, acceptance criteria, risk, or spike.</td>
+<td>Markdown backlog and Jira-ready fields</td>
+</tr>
+<tr>
+<td>Sprint planning</td>
+<td>High-learning work is selected for a two-week sprint or technical spike.</td>
+<td>Sprint goal, candidate stories, validation plan</td>
+</tr>
+<tr>
+<td>Execution</td>
+<td>PowerShell, Python, Markdown, JSON, fixtures, HTML factory, and BI/SQL tools produce evidence.</td>
+<td>Source changes and validation report</td>
+</tr>
+<tr>
+<td>Review</td>
+<td>The result is checked for function, privacy, claim boundary, link integrity, and stakeholder readability.</td>
+<td>Peer review, link audit, generated package</td>
+</tr>
+<tr>
+<td>Roadmap feedback</td>
+<td>Learnings update the roadmap, release plan, dashboard, and next backlog slice.</td>
+<td>Roadmap signal and release evidence</td>
+</tr>
+</tbody></table>
 <h2 id="jira-and-tooling-posture">Jira And Tooling Posture</h2>
 <p>FRAME can use Jira, Markdown, JSON, Excel trackers, GitHub Pages, and Power BI style dashboards together:</p>
 <ul>
@@ -119,6 +169,7 @@ idea / requirement / research signal
 <p>code or backlog.</p>
 <li>Public pages publish only reviewed, safe, non-credentialed examples.</li>
 </ul>
+<p>Jira is useful as the visible planning board, but it is not the only source of truth. FRAME keeps durable reasoning in Markdown, structured state in JSON, and stakeholder communication in dashboards. That lets work survive across machines, mobile capture, VS Code workspaces, and separate Codex sessions.</p>
 <h2 id="why-dashboards-matter">Why Dashboards Matter</h2>
 <p>A project dashboard is the communication layer between product management and delivery. For FRAME, the dashboard should show:</p>
 <ul>
@@ -132,6 +183,34 @@ idea / requirement / research signal
 </ul>
 <h2 id="tools-service-follow-up">Tools-Service Follow-Up</h2>
 <p>The Tools service owns the deeper Agile implementation details, including artifact naming standards, Jira field recommendations, sprint files, and provider-specific backlog generation. This page is the public summary; Tools should refine it as the Agile service matures.</p>
+<h2 id="current-gaps-and-next-improvements">Current Gaps And Next Improvements</h2>
+<table>
+<thead><tr>
+<th>Gap</th>
+<th>Next Improvement</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Jira evidence is mostly private</td>
+<td>Publish scrubbed sprint snapshots and Jira-ready field examples instead of private board screenshots.</td>
+</tr>
+<tr>
+<td>Sprint velocity is still placeholder-heavy</td>
+<td>Generate small sprint summaries from validation reports and backlog files.</td>
+</tr>
+<tr>
+<td>Dashboard metrics are mostly qualitative</td>
+<td>Add synthetic event counts, blocker age, story status, and launch-health metrics.</td>
+</tr>
+<tr>
+<td>Cross-operator review is file-based but still manual</td>
+<td>Standardize handoff checklists and peer-review summaries for SOA, Web, Tools, and Install.</td>
+</tr>
+<tr>
+<td>Mobile intake requires review discipline</td>
+<td>Keep mobile notes as intake only until a service operator promotes them into source docs.</td>
+</tr>
+</tbody></table>
 <h2 id="related-resources">Related Resources</h2>
 <ul>
 <li><a href="agile_framework_showcase.html">Agile Delivery And Jira Operating Model</a></li>
@@ -141,6 +220,8 @@ idea / requirement / research signal
 <li><a href="product_discovery_research_kit.html">Product Discovery Research Kit</a></li>
 <li><a href="technical_project_management_one_pager.html">Technical Project Management One-Pager</a></li>
 <li><a href="frame_delivery_roadmap.html">FRAME Delivery Roadmap</a></li>
+<li><a href="frame_project_plan.html">FRAME Project Plan</a></li>
+<li><a href="frame_release_plan.html">FRAME Release Plan</a></li>
 </ul>
       </main>
     </div>

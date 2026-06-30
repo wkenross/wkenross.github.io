@@ -58,14 +58,58 @@
 <h2 id="one-journey-from-idea-to-roadmap">One Journey From Idea To Roadmap</h2>
 <pre><code>
 mobile idea / interview note / stakeholder request
-  -&gt; requirements inbox
-  -&gt; service workspace review
-  -&gt; README / plan / architecture / backlog update
-  -&gt; JSON registry, CSS/style, or manifest update when needed
-  -&gt; local validation and generated HTML
-  -&gt; dashboard / showcase / B2B page refresh
-  -&gt; sprint candidate, Jira-ready story, and roadmap signal
+  -&gt; reviewed intake in the relevant service workspace
+  -&gt; source document update: README, plan, architecture, backlog, or runbook
+  -&gt; registry update: JSON manifest, workspace registry, fixture data, or CSS/style rule
+  -&gt; local validation: PowerShell, Python, link audit, fixture check, or build output
+  -&gt; dashboard or showcase refresh through the HTML factory
+  -&gt; backlog update: epic, story, acceptance criteria, risk, and owner
+  -&gt; sprint candidate, Jira-ready issue, release evidence, and roadmap signal
 </code></pre>
+<h2 id="operating-cadence">Operating Cadence</h2>
+<table>
+<thead><tr>
+<th>Step</th>
+<th>TPM Action</th>
+<th>Evidence</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Capture</td>
+<td>Convert a mobile note, interview thought, stakeholder request, or Codex observation into a reviewed service task.</td>
+<td>Mobile handoff, service inbox note, or operator message</td>
+</tr>
+<tr>
+<td>Clarify</td>
+<td>Identify persona, business value, technical surface, privacy boundary, and expected artifact.</td>
+<td>Product brief, README, or PlanMe update</td>
+</tr>
+<tr>
+<td>Route</td>
+<td>Assign the work to a service lane: Tools, Web, Install, Reports, Resumes, SOA, or Frame.</td>
+<td>Workspace/operator registry and service README</td>
+</tr>
+<tr>
+<td>Implement</td>
+<td>Update source Markdown, JSON, scripts, fixtures, CSS/style, manifests, or dashboards.</td>
+<td>Commit-ready source changes and generated artifacts</td>
+</tr>
+<tr>
+<td>Validate</td>
+<td>Run service validators, web builds, link audits, fixture parsers, and public-safety checks.</td>
+<td>Validation report and generated package</td>
+</tr>
+<tr>
+<td>Communicate</td>
+<td>Write a durable handoff when another operator must review or publish.</td>
+<td>Operator message and peer-review note</td>
+</tr>
+<tr>
+<td>Plan</td>
+<td>Convert the result into an epic, story, acceptance criteria, risk, sprint candidate, or roadmap signal.</td>
+<td>Agile backlog, Jira-ready fields, and roadmap page</td>
+</tr>
+</tbody></table>
 <h2 id="how-the-work-is-coordinated">How The Work Is Coordinated</h2>
 <table>
 <thead><tr>
@@ -119,6 +163,46 @@ mobile idea / interview note / stakeholder request
 <li>links to the public page or private service file;</li>
 <li>explicit claim boundaries around live systems, credentials, and private data.</li>
 </ul>
+<p>The communication rule is intentionally simple:</p>
+<pre><code>
+Do not rely on chat-to-chat memory.
+Use durable handoff files, validation reports, registries, and reviewed
+publication packages.
+</code></pre>
+<p>The preferred cross-operator message is a short handoff with source docs, what changed, validation, requested review, publish decision, and next action. This works across machines, VS Code workspaces, mobile notes, and Codex operators because the source of truth is a file, not a live conversation.</p>
+<h2 id="dashboard-as-the-stakeholder-surface">Dashboard As The Stakeholder Surface</h2>
+<p>Technical project management does not end in the backlog. FRAME uses dashboards and public-safe pages as the stakeholder communication layer:</p>
+<table>
+<thead><tr>
+<th>Dashboard Signal</th>
+<th>Why It Matters</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Roadmap and strategy</td>
+<td>Shows long-term direction and tradeoffs.</td>
+</tr>
+<tr>
+<td>Sprint status</td>
+<td>Shows what is being worked now and what is deferred.</td>
+</tr>
+<tr>
+<td>Backlog and risks</td>
+<td>Shows epics, stories, acceptance criteria, blockers, and mitigation.</td>
+</tr>
+<tr>
+<td>Validation and build status</td>
+<td>Shows whether scripts, fixtures, generated pages, and link checks passed.</td>
+</tr>
+<tr>
+<td>Research and product evidence</td>
+<td>Shows competitive analysis, partner matrices, personas, and customer questions.</td>
+</tr>
+<tr>
+<td>Communication links</td>
+<td>Lets stakeholders drill into source docs without hunting through file trees.</td>
+</tr>
+</tbody></table>
 <h2 id="related-resources">Related Resources</h2>
 <ul>
 <li><a href="soa_elevator.html">FRAME SOA Elevator</a></li>
@@ -126,8 +210,11 @@ mobile idea / interview note / stakeholder request
 <li><a href="agile_frame_artifact_mapping.html">FRAME Artifact Mapping To Agile</a></li>
 <li><a href="agile_framework_current_state.html">Agile Framework Current State</a></li>
 <li><a href="agile_framework_showcase.html">Agile Delivery And Jira Operating Model</a></li>
+<li><a href="procurement_adapter_agile_backlog.html">Procurement Adapter Agile Backlog</a></li>
 <li><a href="product_discovery_research_kit.html">Product Discovery Research Kit</a></li>
+<li><a href="json_core_tooling.html">JSON Core Tooling</a></li>
 <li><a href="web_development_delivery.html">Web Development And Delivery</a></li>
+<li><a href="authentication_usage_cloud_infrastructure.html">Authentication Usage And Cloud Infrastructure</a></li>
 <li><a href="client_communication_documentation.html">Client Communication And Documentation</a></li>
 <li><a href="install_frame_automation.html">Install FRAME Automation</a></li>
 <li><a href="../docs/wb_html_publish_workflow_planme.html">Publish Workflow</a></li>

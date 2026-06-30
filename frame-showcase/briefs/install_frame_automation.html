@@ -176,6 +176,33 @@ Downloads\Install\bootstrap\START_HERE_KR.md
 <p>That runbook points to the matching copy/paste command and command helper in the same bootstrap folder. The command locates the downloaded Install service, runs the service router, performs first-login checks, and records reports under the downloaded or synced service folder.</p>
 <p>Bootstrap is the first step, not the whole install by itself. Framework install/config continues through <code>PostBootstrapContinuation</code> after the first-login checks and source readiness checkpoint pass. The runbook tells the operator when to start that second command; it is not a silent background install.</p>
 <p>Codex or ChatGPT is useful at this stage as an operator assistant over the downloaded folder: it can read the runbook, inspect reports, explain failures, and choose the next service operation. It should not replace the runbook with a free-form &quot;figure it out&quot; install. The scripts remain the source of truth for machine changes.</p>
+<h2 id="bootstrap-launcher-helpers">Bootstrap Launcher Helpers</h2>
+<p>Use these helpers when bringing up a fresh Windows account.</p>
+<table>
+<thead><tr>
+<th>Step</th>
+<th>Link or local launcher</th>
+<th>What it does</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><a href="https://onedrive.live.com/">Open OneDrive online</a></td>
+<td>Sign in with the Microsoft account that can reach <code>Services &gt; Install</code>, then download only that folder if desktop sync is not ready yet.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>FRAME Copy Synced Install To Downloads.cmd</code></td>
+<td>If OneDrive desktop sync already contains <code>Services\Install</code>, this local launcher copies it to <code>%USERPROFILE%\Downloads\Install</code> and opens <code>bootstrap\START_HERE_KR.md</code>.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>Downloads\Install\bootstrap\START_HERE_KR.md</code></td>
+<td>Follow the current KR runbook and copy/paste the bootstrap command from the downloaded service kit.</td>
+</tr>
+</tbody></table>
+<p>The public install page cannot directly run local PowerShell, unzip private OneDrive folders, or read a user&#x27;s cloud files. That boundary is intentional. The page provides the official links and instructions; local launchers in the OneDrive or <code>Services</code> root handle local file moves after the signed-in user has made the folder available on the machine.</p>
+<p>Install these core assistants first when a machine is missing them: <a href="https://code.visualstudio.com/download">Download VS Code</a>, <a href="https://chatgpt.com/download">Download ChatGPT</a>, <a href="https://www.python.org/downloads/windows/">Python for Windows</a>, <a href="https://www.microsoft.com/en-us/microsoft-365/download-office">Microsoft 365 apps</a>, and <a href="https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-windows">PowerShell for Windows</a>.</p>
 <h2 id="service-command-surface">Service Command Surface</h2>
 <p>Install operations are launched through a small service router so operators do not have to remember individual script paths. Important operations include:</p>
 <table>
@@ -224,7 +251,7 @@ Downloads\Install\bootstrap\START_HERE_KR.md
 <td>PowerShell 7</td>
 <td>Required</td>
 <td><a href="https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-windows">Microsoft Learn PowerShell install</a></td>
-<td><code>winget install --id Microsoft.PowerShell --source winget --installer-type wix</code></td>
+<td><code>winget install --id Microsoft.PowerShell --source winget --installer-type wix</code>; the Learn page also links the current MSI</td>
 </tr>
 <tr>
 <td>Python 3.13</td>
@@ -261,6 +288,12 @@ Downloads\Install\bootstrap\START_HERE_KR.md
 <td>Required</td>
 <td><a href="https://learn.microsoft.com/en-us/windows/package-manager/winget/">winget documentation</a></td>
 <td>Repair or update App Installer if <code>winget</code> is missing</td>
+</tr>
+<tr>
+<td>Microsoft 365 / Office apps</td>
+<td>Required for Office workflows</td>
+<td><a href="https://www.microsoft.com/en-us/microsoft-365/download-office">Download Microsoft 365 apps</a></td>
+<td>Sign in, install apps, and complete Office/Teams identity setup manually</td>
 </tr>
 <tr>
 <td>ChatGPT / Codex desktop assist</td>

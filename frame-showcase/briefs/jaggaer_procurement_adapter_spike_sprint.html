@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FRAME Delivery Roadmap - FRAME Evidence Workbench</title>
+  <title>JAGGAER Procurement Adapter Spike Sprint - FRAME Evidence Workbench</title>
   <link rel="stylesheet" href="../assets/css/site.css">
 </head>
-<body class="kind-planme">
+<body class="kind-planme theme-b2b-adapter artifact-sprint">
   <div class="layout">
     <aside class="nav">
       <p class="brand">FRAME Evidence Workbench</p>
@@ -19,7 +19,7 @@
 </div>
 <div class="nav-section">
   <p class="nav-heading">Product Management &amp; Marketing</p>
-  <a class="nav-link current" href="frame_delivery_roadmap.html">Product Strategy And Roadmap</a><a class="nav-link" href="competitive_swot_differentiation_brief.html">Competitive Analysis</a><a class="nav-link" href="procurement_vendor_research_pack.html">Product / Partner Matrices</a><a class="nav-link" href="product_discovery_research_kit.html">Research Methodology</a><a class="nav-link" href="product_discovery_research_kit.html">Market Research</a><a class="nav-link" href="product_discovery_research_kit.html">Customer Interviews</a><a class="nav-link" href="agile_framework_current_state.html">Agile Framework</a><a class="nav-link" href="jira_integration_links.html">Jira Integration</a><a class="nav-link" href="jaggaer_procurement_adapter_spike_sprint.html">Sprint 1</a><a class="nav-link" href="technical_project_management_one_pager.html">Technical Project Management</a>
+  <a class="nav-link" href="frame_delivery_roadmap.html">Product Strategy And Roadmap</a><a class="nav-link" href="competitive_swot_differentiation_brief.html">Competitive Analysis</a><a class="nav-link" href="procurement_vendor_research_pack.html">Product / Partner Matrices</a><a class="nav-link" href="product_discovery_research_kit.html">Research Methodology</a><a class="nav-link" href="product_discovery_research_kit.html">Market Research</a><a class="nav-link" href="product_discovery_research_kit.html">Customer Interviews</a><a class="nav-link" href="agile_framework_current_state.html">Agile Framework</a><a class="nav-link" href="jira_integration_links.html">Jira Integration</a><a class="nav-link current" href="jaggaer_procurement_adapter_spike_sprint.html">Sprint 1</a><a class="nav-link" href="technical_project_management_one_pager.html">Technical Project Management</a>
 </div>
 <div class="nav-section">
   <p class="nav-heading">Business Intelligence</p>
@@ -49,219 +49,186 @@
     <div class="content">
       <div class="meta">
         <span class="pill kind">planme</span>
-        <span class="pill">published-verified</span>
+        <span class="pill artifact">sprint</span>
+        <span class="pill">candidate-review-required</span>
       </div>
       <main>
-        <h1 id="frame-delivery-roadmap">FRAME Delivery Roadmap</h1>
-<p>Updated: 2026-06-16</p>
-<h2 id="overview">Overview</h2>
-<p>This roadmap shows how the FRAME automation framework is being managed as a technical project-management program. It complements the project-plan overview with delivery phases, release intent, Jira-backed evidence, and completion artifacts.</p>
-<p>The roadmap is public-safe: it avoids private local paths, credentials, browser-session details, private job-application material, and account-specific configuration.</p>
-<h2 id="roadmap">Roadmap</h2>
-<table>
-<thead><tr>
-<th>Phase</th>
-<th>Stage</th>
-<th>Target</th>
-<th>Status</th>
-<th>Evidence</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>Phase 0</td>
-<td>Vision</td>
-<td>Define the FRAME technical project-management operating model.</td>
-<td>Done</td>
-<td>PlanMe, TrainMe, stage-gate model</td>
-</tr>
-<tr>
-<td>Phase 1</td>
-<td>V0 Scope</td>
-<td>Create registers, templates, and weekly status reporting.</td>
-<td>Done</td>
-<td>project, milestone, risk, dependency, and decision artifacts</td>
-</tr>
-<tr>
-<td>Phase 2</td>
-<td>P1 Build</td>
-<td>Seed Jira and publish the public-safe project-plan page.</td>
-<td>Done</td>
-<td>Jira issue range <code>SCRUM-30</code> through <code>SCRUM-35</code>; project-plan URL</td>
-</tr>
-<tr>
-<td>Phase 3</td>
-<td>P1 Build</td>
-<td>Add roadmap, release, Jira status, RAID, milestone, and completion evidence artifacts.</td>
-<td>In Progress</td>
-<td>delivery artifact reports</td>
-</tr>
-<tr>
-<td>Phase 4</td>
-<td>P2 Handoff</td>
-<td>Generate delivery artifacts through PowerShell orchestration and Python operation scripts.</td>
-<td>In Progress</td>
-<td>repeatable delivery-artifact generator</td>
-</tr>
-<tr>
-<td>Phase 5</td>
-<td>Run</td>
-<td>Maintain weekly project status and public-safe updates.</td>
-<td>Next</td>
-<td>recurring reports and reviewed publish inputs</td>
-</tr>
-</tbody></table>
-<h2 id="release-view">Release View</h2>
-<table>
-<thead><tr>
-<th>Release</th>
-<th>Theme</th>
-<th>Status</th>
-<th>Client-Safe Evidence</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>V0</td>
-<td>Technical project-management scaffold</td>
-<td>Done</td>
-<td>operating docs, registers, templates</td>
-</tr>
-<tr>
-<td>P1</td>
-<td>Jira-backed visibility and public project-plan page</td>
-<td>Done</td>
-<td>Jira issue range and public HTML overview</td>
-</tr>
-<tr>
-<td>P1.1</td>
-<td>Delivery artifact layer</td>
-<td>In Progress</td>
-<td>roadmap, release plan, Jira snapshot, RAID, milestone tracker</td>
-</tr>
-<tr>
-<td>P2</td>
-<td>Handoff package</td>
-<td>Next</td>
-<td>RunMe, TrainMe, generated reports, publish path</td>
-</tr>
-<tr>
-<td>P2.1</td>
-<td>Adapter future-proofing layer</td>
-<td>Next</td>
-<td>data syndication watchlist, AI guardrails, standards matrix, monitoring-options comparison</td>
-</tr>
-<tr>
-<td>Run</td>
-<td>Operating cadence</td>
-<td>Next</td>
-<td>weekly reports and refreshed public-safe pages</td>
-</tr>
-</tbody></table>
-<h2 id="jira-backed-evidence">Jira-Backed Evidence</h2>
-<p>FRAME uses Jira as the visible Agile board while keeping durable reasoning in Markdown, CSV, and JSON artifacts.</p>
-<table>
-<thead><tr>
-<th>Issue Range</th>
-<th>Meaning</th>
-</tr></thead>
-<tbody>
-<tr>
-<td><code>SCRUM-5</code> through <code>SCRUM-23</code></td>
-<td>Initial Agile project-management operating system</td>
-</tr>
-<tr>
-<td><code>SCRUM-24</code> through <code>SCRUM-29</code></td>
-<td>Search and product-owner toolkit implementation</td>
-</tr>
-<tr>
-<td><code>SCRUM-30</code> through <code>SCRUM-35</code></td>
-<td>Technical project-management operating model</td>
-</tr>
-</tbody></table>
-<p>Jira provides the Agile tracking layer. FRAME-generated reports provide the client-facing timeline, release, RAID, milestone, and completion evidence.</p>
-<h2 id="delivery-artifact-layer">Delivery Artifact Layer</h2>
-<p>The roadmap is part of a broader delivery evidence set:</p>
-<table>
-<thead><tr>
-<th>Artifact</th>
-<th>Purpose</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>Delivery roadmap</td>
-<td>Show phases, delivery sequence, status, and evidence.</td>
-</tr>
-<tr>
-<td>Release plan</td>
-<td>Show what is included and excluded in each release slice.</td>
-</tr>
-<tr>
-<td>Jira status snapshot</td>
-<td>Show visible Agile issue ranges and sprint candidates.</td>
-</tr>
-<tr>
-<td>RAID log</td>
-<td>Show risks, assumptions, issues, and dependencies.</td>
-</tr>
-<tr>
-<td>Milestone tracker</td>
-<td>Show planned and completed delivery gates.</td>
-</tr>
-<tr>
-<td>Completion evidence</td>
-<td>Tie finished work to files, reports, URLs, and Jira keys.</td>
-</tr>
-<tr>
-<td>Standards watchlist</td>
-<td>Track data syndication, cXML/OCI/EDI/API changes, AI guardrails, and monitoring candidates for adapter prototypes.</td>
-</tr>
-</tbody></table>
-<h2 id="b2b-adapter-future-proofing-roadmap">B2B Adapter Future-Proofing Roadmap</h2>
-<p>The procurement adapter prototype should evolve through four visible slices:</p>
-<table>
-<thead><tr>
-<th>Slice</th>
-<th>Purpose</th>
-<th>Evidence</th>
-</tr></thead>
-<tbody>
-<tr>
-<td>Data syndication</td>
-<td>Model product identity, UOM, price, eligibility, safety documents, and account context as governed data.</td>
-<td>catalog/data-contract notes and fixture rules</td>
-</tr>
-<tr>
-<td>Automation / agentic AI</td>
-<td>Define where AI may summarize, classify, recommend, or draft, and where human approval is required.</td>
-<td>AI guardrail notes and exception-summary examples</td>
-</tr>
-<tr>
-<td>Evolving standards</td>
-<td>Track cXML, XML, OCI, EDI, hosted files, REST/OpenAPI, event/AsyncAPI, and provider-specific APIs.</td>
-<td>standards matrix and provider-lane assumptions</td>
-</tr>
-<tr>
-<td>Monitoring maturity</td>
-<td>Compare API Fortress/Sauce Labs-style API testing, Postman, Playwright/APIRequest, contract testing, and platform-native monitoring.</td>
-<td>monitoring-options comparison and launch-health dashboard spec</td>
-</tr>
-</tbody></table>
-<h2 id="how-the-roadmap-is-maintained">How The Roadmap Is Maintained</h2>
-<p>The working roadmap is generated inside the technical project-management workflow. The public page is staged through the publishing workflow after review.</p>
+        <h1 id="jaggaer-procurement-adapter-spike-sprint">JAGGAER Procurement Adapter Spike Sprint</h1>
+<p>Created: 2026-06-30</p>
+<p>Status: proposed first named procurement-system lane for the B2B eCommerce Adapter proof.</p>
+<h2 id="sprint-name">Sprint Name</h2>
+<p>Use:</p>
 <pre><code>
-FRAME registers and Jira reports
-  -&gt; PowerShell orchestration
-  -&gt; Python delivery-artifact generator
-  -&gt; reviewed Markdown
-  -&gt; wb_html
-  -&gt; GitHub Pages
+JAGGAER Procurement Adapter Spike
 </code></pre>
-<h2 id="related-page">Related Page</h2>
-<p>Project-plan overview:</p>
+<p>Agile artifact type:</p>
 <pre><code>
-https://wkenross.github.io/frame-showcase/briefs/frame_project_plan.html
+technical spike / integration research spike / enablement sprint
 </code></pre>
-<h2 id="current-next-step">Current Next Step</h2>
-<p>The next delivery-management improvement is to publish a release and completion evidence page after review. That page should show what shipped, what remains out of scope, and how completed work ties back to scripts, reports, Jira keys, and public-safe URLs.</p>
+<p>Public-facing artifact title:</p>
+<pre><code>
+JAGGAER Procurement Adapter Spike Sprint
+</code></pre>
+<p>Primary guide:</p>
+<p><a href="jaggaer_procurement_adapter_enablement_guide.html">JAGGAER Procurement Adapter Enablement Guide</a></p>
+<p>Access and installation posture:</p>
+<p><a href="jaggaer_access_installation_posture.html">JAGGAER Access And Installation Posture</a></p>
+<p>Jira and sprint link hub:</p>
+<p><a href="jira_integration_links.html">Jira Integration And Sprint Links</a></p>
+<p>This sprint is not a production JAGGAER implementation. It is the first named procurement-system lane for learning how a supplier-side B2B eCommerce adapter would support JAGGAER-style source-to-pay and procure-to-pay integration.</p>
+<h2 id="decision">Decision</h2>
+<p>Use JAGGAER as the first named procurement-system lane.</p>
+<p>Use ERPNext only as an optional local ERP/procurement lab runtime if the team needs a self-hosted system for supplier, item, purchase order, receipt, invoice, and reporting concepts.</p>
+<p>The working sequence is:</p>
+<pre><code>
+JAGGAER access/cost/shortcut posture
+  -&gt; JAGGAER-aligned supplier enablement lane
+  -&gt; hosted catalog or cXML PunchOut fixture
+  -&gt; e-PO, confirmation, invoice, ASN, and exception events
+  -&gt; FRAME adapter event JSON
+  -&gt; SQL/BI service-health report
+  -&gt; Jira-ready backlog updates
+</code></pre>
+<h2 id="why-jaggaer-first">Why JAGGAER First</h2>
+<table>
+<thead><tr>
+<th>Criterion</th>
+<th>JAGGAER fit</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Named in the target ecosystem</td>
+<td>JAGGAER appears directly in the B2B procurement-platform list.</td>
+</tr>
+<tr>
+<td>SOA/integration fit</td>
+<td>JAGGAER positions integrations around APIs, ERP connections, source-to-pay, procure-to-pay, supplier collaboration, and finance systems.</td>
+</tr>
+<tr>
+<td>Supplier enablement fit</td>
+<td>Public material references hosted catalogs, PunchOut/cXML, order confirmations, electronic invoicing, and EDIINT X12-style exchange.</td>
+</tr>
+<tr>
+<td>Product-management fit</td>
+<td>The lane supports project plan, setup/testing, launch/go-live monitoring, supplier onboarding, risk, support, and roadmap artifacts.</td>
+</tr>
+<tr>
+<td>Claim posture</td>
+<td>FRAME can model JAGGAER-style integration without claiming live tenant administration.</td>
+</tr>
+</tbody></table>
+<h2 id="sprint-goal">Sprint Goal</h2>
+<p>By the end of the sprint, FRAME can explain and prototype the JAGGAER adapter lane with enough detail to support product-management discovery:</p>
+<ul>
+<li>supplier enablement assumptions;</li>
+<li>hosted catalog vs. PunchOut choice;</li>
+<li>cXML or EDIINT X12 order-delivery vocabulary;</li>
+<li>e-PO, confirmation, invoice, ASN, and exception events;</li>
+<li>launch monitoring and support triage;</li>
+<li>SQL/BI service-health output;</li>
+<li>Jira-ready stories and acceptance criteria.</li>
+</ul>
+<h2 id="sprint-backlog">Sprint Backlog</h2>
+<table>
+<thead><tr>
+<th>Story</th>
+<th>Outcome</th>
+<th>Acceptance Criteria</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>JAG-SPIKE-0 Confirm access, cost, and shortcut posture</td>
+<td>The team knows whether JAGGAER is installable, trialable, supplier-accessible, demo-only, or synthetic-only for this sprint.</td>
+<td>Public pricing/trial search is recorded; supplier portal vs buyer tenant access is separated; registry classification is set; desktop/Edge shortcut plan exists; no production tenant claim is made.</td>
+</tr>
+<tr>
+<td>JAG-SPIKE-1 Build JAGGAER lane brief</td>
+<td>Public-safe summary of JAGGAER source-to-pay/procure-to-pay role.</td>
+<td>Brief cites source anchors; claim boundary is explicit; live tenant access is not implied.</td>
+</tr>
+<tr>
+<td>JAG-SPIKE-2 Model supplier enablement choices</td>
+<td>Hosted catalog, PunchOut/cXML, order confirmation, invoice, and ASN options are visible.</td>
+<td>Matrix identifies exchange pattern, fixture needed, owner, and open question.</td>
+</tr>
+<tr>
+<td>JAG-SPIKE-3 Create JAGGAER-style fixtures</td>
+<td>First synthetic files exist for hosted catalog or PunchOut and transaction events.</td>
+<td>Fixtures contain no secrets; validator can parse or flag missing fields.</td>
+</tr>
+<tr>
+<td>JAG-SPIKE-4 Normalize to FRAME adapter events</td>
+<td>JAGGAER-style events map into the common adapter event schema.</td>
+<td>Event log includes provider lane, transaction type, status, exception reason, and source protocol.</td>
+</tr>
+<tr>
+<td>JAG-SPIKE-5 Generate SQL/BI service-health report</td>
+<td>Launch-health output shows pass/fail and exception patterns.</td>
+<td>Report groups by transaction type and status; missing setup facts become visible risks.</td>
+</tr>
+<tr>
+<td>JAG-SPIKE-6 Create Jira-ready backlog</td>
+<td>Runtime or fixture gaps become Agile work.</td>
+<td>At least one issue includes persona, problem, value, acceptance criteria, risk, and evidence link.</td>
+</tr>
+<tr>
+<td>JAG-SPIKE-7 Publish-safe summary</td>
+<td>B2B Adapter site can explain the JAGGAER lane.</td>
+<td>Summary distinguishes JAGGAER-aligned prototype learning from production platform ownership.</td>
+</tr>
+</tbody></table>
+<h2 id="jira-integration">Jira Integration</h2>
+<p>Sprint stories should flow into Jira only after review. The public site keeps the source-backed sprint plan visible, while Jira becomes the active planning board for story ownership, sprint selection, status, and review notes.</p>
+<table>
+<thead><tr>
+<th>Jira Link Type</th>
+<th>Destination</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Public sprint hub</td>
+<td><a href="jira_integration_links.html">Jira Integration And Sprint Links</a></td>
+</tr>
+<tr>
+<td>Public backlog</td>
+<td><a href="procurement_adapter_agile_backlog.html">Procurement Adapter Agile Backlog</a></td>
+</tr>
+<tr>
+<td>Public operating model</td>
+<td><a href="agile_framework_showcase.html">Agile Delivery And Jira Operating Model</a></td>
+</tr>
+<tr>
+<td>Private Jira board</td>
+<td><code>https://autoframe.atlassian.net/jira/software/projects/SCRUM/boards/1</code></td>
+</tr>
+</tbody></table>
+<h2 id="interview-safe-language">Interview-Safe Language</h2>
+<p>Use:</p>
+<pre><code>
+I would make JAGGAER the first named source-to-pay lane because it is directly
+relevant to the procurement ecosystem list and its public materials expose the
+right integration vocabulary: supplier enablement, hosted catalogs,
+PunchOut/cXML, order confirmations, electronic invoicing, ERP connectivity,
+and procure-to-pay workflows. I would prototype the supplier-side adapter and
+launch evidence without claiming live tenant configuration experience.
+</code></pre>
+<p>Avoid:</p>
+<pre><code>
+I have implemented JAGGAER in production.
+</code></pre>
+<h2 id="source-anchors">Source Anchors</h2>
+<ul>
+<li>JAGGAER One Integrations:</li>
+<p>https://www.jaggaer.com/solutions/integrations</p>
+<li>JAGGAER Connect:</li>
+<p>https://www.jaggaer.com/solutions/connect</p>
+<li>JAGGAER Source to Pay:</li>
+<p>https://www.jaggaer.com/solutions/source-to-pay</p>
+<li>JAGGAER Supplier Enablement terms:</li>
+<p>https://www.jaggaer.com/wp-content/uploads/2024/06/JAGGAER-Supplier-Enablement-terms.pdf</p>
+<li>JAGGAER Public APIs:</li>
+<p>https://www.jaggaer.com/wp-content/uploads/2024/06/JAGGAER-Integration-via-JAGGAER-Public-APIs.pdf</p>
+</ul>
       </main>
     </div>
   </div>

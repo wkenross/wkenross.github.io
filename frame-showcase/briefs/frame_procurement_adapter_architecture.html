@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FRAME Procurement Adapter Architecture - FRAME Evidence Workbench</title>
+  <link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body class="kind-tool">
+  <div class="layout">
+    <aside class="nav">
+      <p class="brand">FRAME Evidence Workbench</p>
+      <p class="tagline">Review-first FRAME showcase</p>
+      <div class="nav-section">
+  <p class="nav-heading">Framework Sources</p>
+  <a class="nav-link" href="legacy_to_soa_transition_architecture.html">Legacy-To-SOA Mission</a><a class="nav-link" href="b2b_ecommerce_adapter.html">B2B eCommerce Adapter</a><a class="nav-link current" href="frame_procurement_adapter_architecture.html">Adapter Architecture</a><a class="nav-link" href="procurement_vendor_research_pack.html">Vendor Research Pack</a><a class="nav-link" href="procurement_adapter_workbench.html">Procurement Adapter</a><a class="nav-link" href="b2b_b2c_solutions_showcase.html">B2B/B2C Portal Sources</a><a class="nav-link" href="energy_portal_solution_brief.html">Energy Portal</a><a class="nav-link" href="price_digests_solution_brief.html">Price Digests</a><a class="nav-link" href="fedm_solution_brief.html">FEDM</a><a class="nav-link" href="ai_tooling_review_first_pattern.html">AI Tooling</a><a class="nav-link" href="ai_autopilot_research_overview.html">AI Autopilot Research</a>
+</div>
+<div class="nav-section">
+  <p class="nav-heading">Analytic Sales</p>
+  <a class="nav-link" href="sales_analytics_showcase.html">Sales Analytics Showcase</a><a class="nav-link" href="sales_analytics_workflow_map.html">Workflow Map</a><a class="nav-link" href="sales_analytics_obfuscation_path.html">Obfuscation Path</a><a class="nav-link" href="public_energy_data.html">Public Energy Data</a>
+</div>
+<div class="nav-section">
+  <p class="nav-heading">Automated Marketing</p>
+  <a class="nav-link" href="marketing_automation_showcase.html">Marketing Automation Showcase</a><a class="nav-link" href="intelligent_rfp_sales_wizard_showcase.html">Intelligent RFP + Lead Wizards</a><a class="nav-link" href="registry_learning_and_json_wizards.html">Registry Learning</a><a class="nav-link" href="rfp_lead_recommendation_workflow.html">RFP + Lead Recommendations</a><a class="nav-link" href="marketing_inbox_followup_workflow.html">Inbox Follow-Up</a><a class="nav-link" href="multi_industry_search_playbook.html">Multi-Industry Search</a><a class="nav-link" href="marketing_automation_script_catalog.html">Script Catalog</a><a class="nav-link" href="reviewed_autopilot_architecture.html">Reviewed Autopilot</a>
+</div>
+<div class="nav-section">
+  <p class="nav-heading">Business Intelligence</p>
+  <a class="nav-link" href="sql_power_bi.html">SQL Data</a><a class="nav-link" href="endpoint_assurance_loop.html">Endpoint Assurance</a><a class="nav-link" href="bi_tools_showcase.html">BI Tools</a><a class="nav-link" href="bi_reporting_case_study.html">BI Reporting Case Study</a><a class="nav-link" href="bi_script_catalog.html">BI Script Catalog</a><a class="nav-link" href="crm_automation.html">CRM Management</a><a class="nav-link" href="salesforce_cloud.html">Salesforce Cloud CRM</a>
+</div>
+<div class="nav-section">
+  <p class="nav-heading">Agile Frameworks</p>
+  <a class="nav-link" href="agile_certification.html">Technical Project Management</a><a class="nav-link" href="agile_framework_showcase.html">Agile Operating Model</a><a class="nav-link" href="agile_frame_artifact_mapping.html">Artifact Mapping</a><a class="nav-link" href="frame_delivery_roadmap.html">Delivery Roadmap</a><a class="nav-link" href="frame_project_plan.html">Project Plan</a><a class="nav-link" href="frame_release_plan.html">Release Plan</a>
+</div>
+<div class="nav-section">
+  <p class="nav-heading">Install And Configure</p>
+  <a class="nav-link" href="install_frame_automation.html">Install FRAME Automation</a><a class="nav-link" href="frame_automation_desktop_publishme.html">Windows Desktop Automation</a><a class="nav-link" href="install_new_machine_setup.html">New Machine Setup</a><a class="nav-link" href="install_mobile_handoff.html">Mobile Handoff</a><a class="nav-link" href="install_desktop_builder_canvas.html">Desktop Builder</a><a class="nav-link" href="install_road_ready_sync.html">Road-Ready Outlook Sync</a><a class="nav-link" href="install_publication_pipeline.html">Publication Pipeline</a>
+</div>
+<div class="nav-section">
+  <p class="nav-heading">Workbench Governance</p>
+  <a class="nav-link" href="../index.html">Workbench Home</a><a class="nav-link" href="../docs/wb_html_planme.html">WB HTML PlanMe</a><a class="nav-link" href="../docs/wb_html_trainme.html">WB HTML TrainMe</a><a class="nav-link" href="../docs/wb_html_certifyme.html">WB HTML CertifyMe</a><a class="nav-link" href="../docs/wb_html_style_guide.html">Style Guide</a><a class="nav-link" href="../docs/wb_html_publish_workflow_planme.html">Publish Workflow</a><a class="nav-link" href="../docs/wb_github_showcase_infrastructure_planme.html">GitHub Infrastructure</a><a class="nav-link" href="../docs/wb_public_data_source_planme.html">Public Data Source Plan</a><a class="nav-link" href="safety_review.html">Safety Review</a><a class="nav-link" href="operations_wizard_patterns.html">Operations Wizard Patterns</a>
+</div>
+<div class="nav-section">
+  <p class="nav-heading">Additional Notes</p>
+  <a class="nav-link" href="soa_elevator.html">FRAME SOA Elevator</a><a class="nav-link" href="b2b_endpoint_fulfillment.html">B2B Endpoint Fulfillment</a><a class="nav-link" href="interactive_wizard_publication_catalog.html">Interactive Wizard Publication Catalog</a>
+</div>
+    </aside>
+    <div class="content">
+      <div class="meta">
+        <span class="pill kind">tool</span>
+        <span class="pill">candidate-review-required</span>
+      </div>
+      <main>
+        <h1 id="frame-procurement-adapter-architecture">FRAME Procurement Adapter Architecture</h1>
+<p>FRAME is a prototype, fixture, acceptance-test, and launch-monitoring harness for B2B eCommerce adapter work. It does not replace enterprise procurement suites, commerce platforms, middleware, ERP, or API gateways.</p>
+<h2 id="the-point">The Point</h2>
+<p>For procurement integrations, the gap is often not only technical. The team needs a way to understand the buyer ecosystem, map the business transaction, test candidate messages, track readiness, and keep stakeholders aligned.</p>
+<p>FRAME helps with that early and recurring work:</p>
+<pre><code>
+research
+  -&gt; architecture map
+  -&gt; synthetic fixtures
+  -&gt; validation checks
+  -&gt; Jira-ready backlog
+  -&gt; launch monitoring
+  -&gt; reviewed AI summaries
+</code></pre>
+<h2 id="adapter-boundary">Adapter Boundary</h2>
+<pre><code>
+buyer spend platform
+  -&gt; hosted catalog or PunchOut entry
+  -&gt; B2B eCommerce adaptor
+  -&gt; B2B core capability
+  -&gt; fulfillment / finance / support
+  -&gt; SQL/BI reporting and roadmap learning
+</code></pre>
+<p>Production adapters would normally be implemented in the selected enterprise technology stack. FRAME gives the product manager and delivery team a fast, public-safe way to prototype and validate the flow.</p>
+<h2 id="prototype-scope">Prototype Scope</h2>
+<table>
+<thead><tr>
+<th>Capability</th>
+<th>Prototype Artifact</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Hosted catalog</td>
+<td>CSV/flat-file product and price fixture</td>
+</tr>
+<tr>
+<td>PunchOut</td>
+<td>cXML-style setup request, setup response, and cart return</td>
+</tr>
+<tr>
+<td>e-Purchase Order</td>
+<td>Synthetic PO request and acknowledgement</td>
+</tr>
+<tr>
+<td>Confirmation</td>
+<td>Order confirmation event</td>
+</tr>
+<tr>
+<td>Invoice</td>
+<td>Electronic invoice fixture</td>
+</tr>
+<tr>
+<td>ASN</td>
+<td>Advanced shipping notice fixture</td>
+</tr>
+<tr>
+<td>Exception</td>
+<td>Missing field, invalid UOM, stale price, or rejected order event</td>
+</tr>
+<tr>
+<td>Reporting</td>
+<td>Normalized JSON event log and SQL/BI-ready health metrics</td>
+</tr>
+<tr>
+<td>Delivery</td>
+<td>Jira-ready epics, stories, acceptance criteria, and launch checklist</td>
+</tr>
+</tbody></table>
+<h2 id="product-management-uses">Product-Management Uses</h2>
+<ul>
+<li>four-square prioritization: value/impact vs. effort/feasibility/risk;</li>
+<li>prototype validation of strategy assumptions;</li>
+<li>product briefs and persona-led requirements;</li>
+<li>sprint backlog, acceptance criteria, and risk mitigation;</li>
+<li>dashboard evidence for launch and post-launch optimization;</li>
+<li>AI-assisted research summaries with human review.</li>
+</ul>
+<h2 id="implementation-pattern">Implementation Pattern</h2>
+<p>MilliporeSigma publicly describes e-Procurement implementation as project planning, setup/testing, and launch/go-live monitoring. FRAME maps cleanly to that sequence:</p>
+<table>
+<thead><tr>
+<th>Stage</th>
+<th>FRAME Output</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Create a Project Plan</td>
+<td>Research brief, stakeholder map, roadmap, Jira backlog, fixture plan</td>
+</tr>
+<tr>
+<td>Setup &amp; Testing</td>
+<td>Hosted catalog and PunchOut-style fixtures, parser checks, exception catalog</td>
+</tr>
+<tr>
+<td>Launch and Go-Live Monitoring</td>
+<td>Service-health dashboard, support triage, go-live checklist, optimization backlog</td>
+</tr>
+</tbody></table>
+<h2 id="claim-boundary">Claim Boundary</h2>
+<p>This page is intentionally careful:</p>
+<ul>
+<li>yes: prototype, research, fixtures, validation, launch monitoring, backlog</li>
+<p>and dashboard support;</p>
+<li>no: claim of production ownership of Ariba, Coupa, SAP Procurement,</li>
+<p>JAGGAER, Oracle Procurement, Workday Procurement, or a live customer tenant.</p>
+</ul>
+<h2 id="source-aware-references">Source-Aware References</h2>
+<ul>
+<li>MilliporeSigma eCommerce Solutions:</li>
+<p>https://www.sigmaaldrich.com/US/en/life-science/ecommerce/ecommerce-solutions</p>
+<li>Coupa Punchout Catalogs:</li>
+<p>https://compass.coupa.com/en-us/products/product-documentation/supplier-resources/for-suppliers/coupa-supplier-portal/set-up-the-csp/catalogs/punchout-catalogs</p>
+<li>SAP Learning, Working with PunchOut Catalogs:</li>
+<p>https://learning.sap.com/courses/loading-catalogs/working-with-punchout-catalogs_e7638548-6f70-4ffb-b4af-7b5e2171f867</p>
+<li>cXML Reference Guide:</li>
+<p>https://xml.cxml.org/current/cXMLReferenceGuide.pdf</p>
+<li>JAGGAER Supplier Enablement terms:</li>
+<p>https://www.jaggaer.com/wp-content/uploads/2024/06/JAGGAER-Supplier-Enablement-terms.pdf</p>
+</ul>
+<h2 id="related">Related</h2>
+<ul>
+<li><a href="b2b_ecommerce_adapter.html">B2B eCommerce Adapter Workbench</a></li>
+<li><a href="procurement_adapter_workbench.html">Procurement Adapter Workbench</a></li>
+<li><a href="procurement_vendor_research_pack.html">Procurement Vendor Research Pack</a></li>
+<li><a href="agile_framework_showcase.html">Agile Delivery And Jira Operating Model</a></li>
+<li><a href="sql_power_bi.html">SQL And Power BI</a></li>
+</ul>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

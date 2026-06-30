@@ -42,6 +42,10 @@
   <a class="nav-link" href="client_communication_documentation.html">Client Communication</a><a class="nav-link" href="client_communication_documentation.html">Technical Writing</a><a class="nav-link" href="client_communication_documentation.html">Marketing And Company Docs</a><a class="nav-link" href="client_communication_documentation.html">Runbooks And Handoffs</a>
 </div>
 <div class="nav-section">
+  <p class="nav-heading">Install And Configure</p>
+  <a class="nav-link" href="install_frame_automation.html">Install FRAME Automation</a><a class="nav-link" href="frame_automation_desktop_publishme.html">Windows Desktop Automation</a><a class="nav-link" href="install_new_machine_setup.html">New Machine Setup</a><a class="nav-link" href="install_mobile_handoff.html">Mobile Handoff</a><a class="nav-link" href="install_desktop_builder_canvas.html">Desktop Builder</a><a class="nav-link" href="install_road_ready_sync.html">Road-Ready Outlook Sync</a><a class="nav-link" href="install_publication_pipeline.html">Publication Pipeline</a>
+</div>
+<div class="nav-section">
   <p class="nav-heading">Workbench Governance</p>
   <a class="nav-link" href="../docs/wb_html_planme.html">WB HTML PlanMe</a><a class="nav-link" href="../docs/wb_html_trainme.html">WB HTML TrainMe</a><a class="nav-link" href="../docs/wb_html_certifyme.html">WB HTML CertifyMe</a><a class="nav-link" href="../docs/wb_html_style_guide.html">Style Guide</a><a class="nav-link" href="../docs/wb_html_publish_workflow_planme.html">Publish Workflow</a><a class="nav-link" href="../docs/wb_github_showcase_infrastructure_planme.html">GitHub Infrastructure</a><a class="nav-link" href="../docs/wb_public_data_source_planme.html">Public Data Source Plan</a><a class="nav-link" href="safety_review.html">Safety Review</a><a class="nav-link" href="operations_wizard_patterns.html">Operations Wizard Patterns</a>
 </div>
@@ -72,6 +76,28 @@
 <li>test and production credentials.</li>
 </ul>
 <p>For basic spend-control value, the admin can often start with internal configuration, catalog access, guided buying, approval policies, and simple reporting. For seamless supplier eProcurement with Sigma-Aldrich, the admin needs a supplier onboarding and integration project.</p>
+<h2 id="jaggaer-learning-install-reality">JAGGAER Learning Install Reality</h2>
+<p>JAGGAER should be treated as access-gated enterprise SaaS for this sprint, not as a confirmed single-user local install. Public material points to a buyer-side demo and customer agreement path, while supplier portal participation is free but catalog enablement depends on customer request or program eligibility.</p>
+<p>That means the practical day-in-the-life has two tracks:</p>
+<table>
+<thead><tr>
+<th>Track</th>
+<th>What the admin can learn quickly</th>
+<th>What remains gated</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Supplier portal / public research</td>
+<td>Supplier profile, support, training, catalog/PunchOut vocabulary, supplier enablement flow, order/invoice/confirmation concepts</td>
+<td>Customer-specific enablement request, buyer tenant settings, credentials, production endpoints</td>
+</tr>
+<tr>
+<td>Buyer tenant / customer project</td>
+<td>Guided buying, policies, approvals, supplier records, catalog setup, PO/invoice routing, dashboards</td>
+<td>Pricing, tenant access, support package, implementation scope, professional services</td>
+</tr>
+</tbody></table>
+<p>For FRAME, the first two-week sprint should not wait on a paid tenant. It should document access posture, create shortcut surfaces, build synthetic fixtures, and keep live JAGGAER configuration as a follow-on if demo, partner, supplier, or customer access is obtained.</p>
 <h2 id="first-day-scenario">First Day Scenario</h2>
 <p>Persona:</p>
 <pre><code>
@@ -198,6 +224,91 @@ enablement, catalog/PunchOut quality, and spend-control workflows.
 <p>testing;</p>
 <li>the current purchase volume does not justify integration.</li>
 </ul>
+<h2 id="typical-customer-usage-pattern">Typical Customer Usage Pattern</h2>
+<p>A MilliporeSigma customer usually has overlapping user groups rather than one single &quot;procurement user.&quot; The spend-management admin configures the buying environment. Researchers, lab managers, buyers, approvers, receiving teams, and finance/AP users interact with it at different moments in the purchasing lifecycle.</p>
+<table>
+<thead><tr>
+<th>Persona</th>
+<th>Where They Work</th>
+<th>Typical Actions</th>
+<th>Manual Entry Signal</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Researcher / requester</td>
+<td>Spend system, guided-buying portal, PunchOut session, or Sigma-Aldrich eShop</td>
+<td>Search products, check availability, add items to cart, submit requisition, reference favorite items or quotes</td>
+<td>May enter catalog numbers, but should not need repeated order or invoice entry for normal buying</td>
+</tr>
+<tr>
+<td>Procurement buyer</td>
+<td>Spend system and supplier/customer service channels</td>
+<td>Review requisitions, resolve supplier/category issues, ensure approved-channel buying, watch exceptions</td>
+<td>Manual PO/order rekeying means the adapter or supplier enablement path is incomplete</td>
+</tr>
+<tr>
+<td>Approver / budget owner</td>
+<td>Spend system workflow, email notification, or mobile approval surface</td>
+<td>Approve, reject, or route requisitions based on policy, budget, project, grant, or lab needs</td>
+<td>Frequent clarification requests mean product data, pricing, or justification is weak</td>
+</tr>
+<tr>
+<td>Receiving / lab operations</td>
+<td>Receiving workflow, order-status view, shipping notices, supplier portal</td>
+<td>Confirm receipt, monitor shipment status, handle backorders, manage cold-chain or regulated deliveries</td>
+<td>Manual tracking lookups increase when ASN/order-status events are missing</td>
+</tr>
+<tr>
+<td>Finance / AP</td>
+<td>Invoice matching, ERP/AP queue, supplier portal, reporting dashboard</td>
+<td>Match invoice to PO/receipt, resolve tax/freight/UOM discrepancies, reconcile spend</td>
+<td>Repeated invoice number entry is a symptom of weak invoice integration or matching rules</td>
+</tr>
+</tbody></table>
+<p>Healthy supplier integration reduces repeated typing of order numbers, invoice numbers, and product details. Manual entry still happens for lookup, exception-handling, quote conversion, one-off purchases, customer support, or reconciliation. For the adapter prototype, every repeated manual lookup should be treated as a possible drop-off metric and backlog signal.</p>
+<h2 id="best-and-worst-features-of-spend-systems">Best And Worst Features Of Spend Systems</h2>
+<p>Best feature:</p>
+<pre><code>
+Spend systems turn purchasing into a controlled, auditable workflow: approved
+suppliers, contract pricing, guided buying, policy approvals, PO discipline,
+invoice matching, and spend reporting.
+</code></pre>
+<p>Worst feature:</p>
+<pre><code>
+They can add friction when catalog data is stale, product search is poor,
+supplier setup is slow, UOM/category/accounting mappings do not match, or the
+workflow pushes scientists and buyers into exception handling.
+</code></pre>
+<p>The product-management opportunity is to preserve control while reducing the steps that feel like procurement overhead.</p>
+<h2 id="life-sciences-procurement-challenges">Life Sciences Procurement Challenges</h2>
+<p>Life-science procurement uses the same broad integration patterns as other B2B procurement domains, but the product and compliance payload is more demanding.</p>
+<p>Important complications include:</p>
+<ul>
+<li>hazardous, regulated, temperature-sensitive, or restricted products;</li>
+<li>SDS, certificates, documentation, and regulatory metadata;</li>
+<li>lot, batch, expiry, storage, and shipping constraints;</li>
+<li>contract pricing, grants, cost centers, and lab/project accounting;</li>
+<li>substitutions, availability, backorders, and urgent lab timelines;</li>
+<li>custom products, quote-led workflows, and approval-level variation;</li>
+<li>global account structures and country/site-specific restrictions.</li>
+</ul>
+<p>The underlying protocols are usually familiar procurement standards and patterns such as PunchOut/cXML, hosted catalogs, EDI-style documents, APIs, PO, invoice, confirmation, and ASN flows. What differs in life sciences is the data-quality bar: product identity, units, hazard attributes, documentation, availability, fulfillment constraints, and compliance context matter more than they would in a simple office-supplies catalog.</p>
+<h2 id="online-mobile-and-pwa-posture">Online, Mobile, And PWA Posture</h2>
+<p>Most modern spend-management systems are accessed through an online interface, often a cloud SaaS application with guided-buying pages, approval workflows, reporting dashboards, and supplier/PunchOut links. Mobile support varies by platform and use case. Approvals and status checks are often mobile-friendly, while supplier setup, catalog mapping, invoice troubleshooting, and integration testing still tend to be desktop-heavy administrative work.</p>
+<p>The public Sigma-Aldrich eCommerce material supports an online eShop and eProcurement model with login/register, order lookup, Quick Order, cart, PunchOut, hosted catalog, e-PO, invoice, confirmation, and ASN concepts. This research does not confirm the Sigma-Aldrich site as a Progressive Web App. A true PWA claim requires browser/devtools verification of a web app manifest, service worker behavior, installability, and offline/cache behavior.</p>
+<h2 id="pipeline-and-adapter-implications">PIPELINE And Adapter Implications</h2>
+<p>Sigma-Aldrich presents PIPELINE as a customized procurement service that can balance organizational purchasing controls with researcher product needs, private/direct order processing, approval levels, contract pricing, special offers, tailored portal behavior, invoicing/payment options, and streamlined reconciliation.</p>
+<p>Competitors also offer eProcurement, PunchOut, hosted catalog, and B2B integration services, so &quot;custom integration exists&quot; is not the differentiator by itself. PIPELINE becomes more differentiated when it creates a tailored customer experience that connects:</p>
+<ul>
+<li>customer/account identity and authorization;</li>
+<li>catalog eligibility, product restrictions, pricing, and availability;</li>
+<li>quotes, favorites, carts, and requisition handoff;</li>
+<li>approval levels and procurement policy;</li>
+<li>PO, order confirmation, invoice, payment, ASN, and tracking events;</li>
+<li>documentation such as SDS, certificates, and regulated-product information;</li>
+<li>support exceptions, reconciliation, analytics, and launch-health reporting.</li>
+</ul>
+<p>Those are likely integration points between PIPELINE and the B2B eCommerce Adapter product domain. The adapter should treat PIPELINE as a customer-specific experience layer that may need the same event visibility, testing, support, and dashboard controls as classic PunchOut or hosted-catalog procurement flows.</p>
 <h2 id="customer-interview-questions">Customer Interview Questions</h2>
 <p>Use these in an <code>interview.md</code> guide:</p>
 <ol>
@@ -291,6 +402,10 @@ exception / dashboard / roadmap feedback
 <p>https://www.jaggaer.com/solutions/integrations</p>
 <li>JAGGAER Source to Pay:</li>
 <p>https://www.jaggaer.com/solutions/source-to-pay</p>
+<li>JAGGAER Supplier Support:</li>
+<p>https://www.jaggaer.com/supplier-support</p>
+<li>JAGGAER Book A Demo:</li>
+<p>https://www.jaggaer.com/book-a-demo</p>
 <li>Sigma-Aldrich / MilliporeSigma eCommerce Solutions:</li>
 <p>https://www.sigmaaldrich.com/US/en/life-science/ecommerce/ecommerce-solutions</p>
 </ul>

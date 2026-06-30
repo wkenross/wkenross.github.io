@@ -42,6 +42,10 @@
   <a class="nav-link" href="client_communication_documentation.html">Client Communication</a><a class="nav-link" href="client_communication_documentation.html">Technical Writing</a><a class="nav-link" href="client_communication_documentation.html">Marketing And Company Docs</a><a class="nav-link" href="client_communication_documentation.html">Runbooks And Handoffs</a>
 </div>
 <div class="nav-section">
+  <p class="nav-heading">Install And Configure</p>
+  <a class="nav-link" href="install_frame_automation.html">Install FRAME Automation</a><a class="nav-link" href="frame_automation_desktop_publishme.html">Windows Desktop Automation</a><a class="nav-link" href="install_new_machine_setup.html">New Machine Setup</a><a class="nav-link" href="install_mobile_handoff.html">Mobile Handoff</a><a class="nav-link" href="install_desktop_builder_canvas.html">Desktop Builder</a><a class="nav-link" href="install_road_ready_sync.html">Road-Ready Outlook Sync</a><a class="nav-link" href="install_publication_pipeline.html">Publication Pipeline</a>
+</div>
+<div class="nav-section">
   <p class="nav-heading">Workbench Governance</p>
   <a class="nav-link" href="../docs/wb_html_planme.html">WB HTML PlanMe</a><a class="nav-link" href="../docs/wb_html_trainme.html">WB HTML TrainMe</a><a class="nav-link" href="../docs/wb_html_certifyme.html">WB HTML CertifyMe</a><a class="nav-link" href="../docs/wb_html_style_guide.html">Style Guide</a><a class="nav-link" href="../docs/wb_html_publish_workflow_planme.html">Publish Workflow</a><a class="nav-link" href="../docs/wb_github_showcase_infrastructure_planme.html">GitHub Infrastructure</a><a class="nav-link" href="../docs/wb_public_data_source_planme.html">Public Data Source Plan</a><a class="nav-link" href="safety_review.html">Safety Review</a><a class="nav-link" href="operations_wizard_patterns.html">Operations Wizard Patterns</a>
 </div>
@@ -147,6 +151,13 @@ supplier-side eCommerce capability
 <td><a href="procurement_adapter_workbench.html">Adapter Workbench</a></td>
 </tr>
 <tr>
+<td>PunchOut automation check</td>
+<td>Active</td>
+<td>[####---]</td>
+<td>PowerShell can launch a Python PunchOut setup checker that validates the synthetic cXML fixture and writes a pass/fail JSON report.</td>
+<td><a href="jaggaer_procurement_adapter_spike_sprint.html">Sprint 1</a>, <a href="procurement_adapter_workbench.html">Adapter Workbench</a></td>
+</tr>
+<tr>
 <td>Partner matrix research</td>
 <td>Active</td>
 <td>[#####--]</td>
@@ -180,6 +191,20 @@ supplier-side eCommerce capability
 <td>[####---]</td>
 <td>Spend-management admin day-in-the-life is documented across SAP/Ariba, Oracle, Coupa, JAGGAER, and Sigma-Aldrich triggers.</td>
 <td><a href="spend_management_admin_day_in_life.html">Admin Day In The Life</a></td>
+</tr>
+<tr>
+<td>Customer usage model</td>
+<td>Active</td>
+<td>[####---]</td>
+<td>Researcher, buyer, approver, receiving, AP, and admin interactions are mapped to online spend-system, eShop, PunchOut, PIPELINE, and exception paths.</td>
+<td><a href="spend_management_admin_day_in_life.html">Admin Day In The Life</a></td>
+</tr>
+<tr>
+<td>Target operating environment</td>
+<td>Active</td>
+<td>[####---]</td>
+<td>FRAME tooling is compared against likely Microsoft 365, Teams, SharePoint, governed AI, managed desktop, and security-policy constraints.</td>
+<td><a href="target_operating_environment_tool_comparison.html">Tool Comparison</a></td>
 </tr>
 <tr>
 <td>SQL/BI operating dashboard</td>
@@ -227,6 +252,18 @@ for the JAGGAER-first lane without claiming production tenant access.
 <td>Needs clean schema and repeatable command path</td>
 </tr>
 <tr>
+<td>PunchOut automation</td>
+<td>High</td>
+<td>Run <code>Invoke-PunchOutSetupCheck.ps1</code> to call Python, validate setup request structure, and emit <code>reports\punchout_setup_check.json</code></td>
+<td>Online endpoint mode requires approved URL, credentials, and <code>-AllowNetwork</code></td>
+</tr>
+<tr>
+<td>ERP/procurement resource launch</td>
+<td>Medium</td>
+<td>Classify what FRAME can open automatically: local scripts, browser resources, optional ERP lab, and SaaS login pages</td>
+<td>Installation, login, MFA, and tenant actions remain governed access tasks</td>
+</tr>
+<tr>
 <td>SQL/BI metric shape</td>
 <td>Medium</td>
 <td>Define event rows and launch-health metrics</td>
@@ -268,7 +305,7 @@ for the JAGGAER-first lane without claiming production tenant access.
 </tr>
 <tr>
 <td>Validation status</td>
-<td>Procurement adapter validation passes</td>
+<td>Procurement adapter validation passes after PunchOut setup check report exists</td>
 </tr>
 <tr>
 <td>Review gate</td>
@@ -329,7 +366,118 @@ users, roles, policies, catalogs, approvals, and reporting. Supplier
 system-to-system value requires onboarding, credentials, mappings, testing,
 and go-live ownership.
 </code></pre>
-<h2 id="5-swot-and-feasibility">5. SWOT And Feasibility</h2>
+<h2 id="5-customer-usage-life-science-fit-and-pipeline">5. Customer Usage, Life-Science Fit, And PIPELINE</h2>
+<p>This dashboard should show how the end customer actually works, not just which systems appear in the architecture.</p>
+<table>
+<thead><tr>
+<th>Question</th>
+<th>Current Interpretation</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>How does a typical customer use spend management?</td>
+<td>A researcher or requester usually starts in a spend system, guided-buying portal, supplier PunchOut session, or Sigma-Aldrich eShop. The cart/requisition then moves through approval, PO, confirmation, shipment/ASN, receiving, invoice, and reconciliation.</td>
+</tr>
+<tr>
+<td>Are users constantly entering order or invoice numbers?</td>
+<td>Healthy integrations reduce repeated typing. Users may enter catalog numbers, quote references, order numbers, or invoice numbers for lookup and exceptions, but repeated rekeying is a drop-off signal for the adapter backlog.</td>
+</tr>
+<tr>
+<td>What is the best feature?</td>
+<td>Spend control: approved suppliers, contract pricing, guided buying, policy approvals, auditability, PO discipline, invoice matching, and spend reporting.</td>
+</tr>
+<tr>
+<td>What is the worst feature?</td>
+<td>Friction: stale catalogs, weak search, slow supplier setup, UOM/category/accounting mismatches, mobile limits, and workflows that push scientists or buyers into exception handling.</td>
+</tr>
+<tr>
+<td>Is life-science procurement unique?</td>
+<td>The protocols are mostly familiar B2B/eProcurement patterns, but the payload is harder: hazardous or regulated products, SDS/certificates, lot/batch/expiry, cold-chain handling, custom products, quotes, availability, account restrictions, and site/country rules.</td>
+</tr>
+<tr>
+<td>Are spend systems online or mobile?</td>
+<td>Most modern systems are cloud/browser workflows with guided buying, approvals, supplier links, and dashboards. Mobile is common for approvals and status checks; supplier setup, catalog mapping, invoice exceptions, and integration testing remain more desktop-heavy.</td>
+</tr>
+<tr>
+<td>Is the Sigma-Aldrich procurement site a PWA?</td>
+<td>Public research supports an online eShop/eProcurement surface, but does not confirm PWA status. A PWA claim needs manifest, service-worker, installability, and cache/offline verification in browser/devtools.</td>
+</tr>
+<tr>
+<td>Is PIPELINE a differentiator?</td>
+<td>PIPELINE looks differentiated when positioned as a customer-specific procurement layer: tailored portal behavior, approval levels, contract pricing, direct order processing, invoicing/payment options, and streamlined reconciliation. Competitors also offer PunchOut/hosted catalog/custom integration, so the differentiation is the depth of tailored workflow and lifecycle visibility, not custom integration alone.</td>
+</tr>
+</tbody></table>
+<p>Likely PIPELINE-to-adapter integration points:</p>
+<pre><code>
+customer/account identity -&gt; auth/session -&gt; catalog eligibility -&gt;
+contract pricing -&gt; availability -&gt; quote/cart/requisition -&gt; approval level -&gt;
+PO/order -&gt; confirmation -&gt; ASN/tracking -&gt; invoice/payment -&gt;
+documentation -&gt; exception support -&gt; analytics/dashboard
+</code></pre>
+<p>Source-backed customer usage links:</p>
+<ul>
+<li><a href="https://www.sigmaaldrich.com/US/en/life-science/ecommerce/ecommerce-solutions">Sigma-Aldrich eCommerce Solutions</a></li>
+<li><a href="https://www.sigmaaldrich.com/US/en/life-science/ecommerce/ecommerce-faq">Sigma-Aldrich eCommerce FAQ</a></li>
+<li><a href="https://www.fishersci.com/us/en/customer-help-support/eprocurement.html">Fisher Scientific eProcurement Integration Solutions</a></li>
+<li><a href="https://us.vwr.com/cms/b2b_integration_services">Avantor / VWR B2B Integration Services</a></li>
+<li><a href="https://bioscience.lonza.com/lonza_bs/US/en/eProcurement">Lonza eProcurement</a></li>
+</ul>
+<p>Dashboard implication:</p>
+<pre><code>
+The adapter should track not only technical pass/fail, but where customers
+fall out of the buying lifecycle: product search, cart return, approval, PO,
+shipment visibility, invoice matching, documentation, and support exceptions.
+</code></pre>
+<h2 id="6-operating-environment-fit-and-security-discovery">6. Operating Environment Fit And Security Discovery</h2>
+<p>Detailed brief:</p>
+<p><a href="target_operating_environment_tool_comparison.html">Target Operating Environment Tool Comparison</a></p>
+<p>Public research supports a Microsoft-centered collaboration posture for MilliporeSigma / Merck KGaA: Office 365, Teams, Outlook, Excel, SharePoint, and video interviews are all visible in public materials or job postings. Public research also shows internal AI direction through <code>myGPT</code> and a Code of Digital Ethics posture around privacy, security, access control, literacy, reliability, controllability, and accountability.</p>
+<p>The dashboard should not claim that product managers can run open local automation, Python, Codex, or unmanaged browser tooling on enterprise desktops. Those are adoption and security-discovery questions.</p>
+<table>
+<thead><tr>
+<th>Question</th>
+<th>Current Read</th>
+<th>Dashboard / Product Response</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Windows or Mac?</td>
+<td>Microsoft 365 evidence is strong; Windows is likely common in corporate/product/commercial environments, but Mac may exist in design, research, data, or engineering pockets.</td>
+<td>Keep FRAME portable: local Windows prototype, governed repo/CI path, browser dashboard, and BI-ready outputs.</td>
+</tr>
+<tr>
+<td>Teams and SharePoint?</td>
+<td>Public materials and job postings support Teams/Outlook/SharePoint/Office 365 usage.</td>
+<td>Package product artifacts so they can be linked from Teams, SharePoint, Jira/Confluence, or a dashboard.</td>
+</tr>
+<tr>
+<td>Edge default?</td>
+<td>Not publicly confirmed.</td>
+<td>Ask whether Edge is managed default and whether Chrome/automation tools are allowed for eCommerce/procurement testing.</td>
+</tr>
+<tr>
+<td>Local scripts allowed?</td>
+<td>Not publicly confirmed.</td>
+<td>Treat PowerShell/Python as prototype tooling; prepare a governed CI/service execution path for enterprise adoption.</td>
+</tr>
+<tr>
+<td>Codex/open AI allowed?</td>
+<td>Merck discusses internal <code>myGPT</code>; public policy does not confirm open desktop AI use.</td>
+<td>Use public-safe/synthetic inputs and ask which AI tools and data classifications are approved.</td>
+</tr>
+<tr>
+<td>Security levels?</td>
+<td>Public digital-ethics materials emphasize privacy, security, access rights, accountability, and human control.</td>
+<td>Add data classification, approved-tool coverage, and execution venue to dashboard metrics before production claims.</td>
+</tr>
+</tbody></table>
+<p>Interview-safe operating thesis:</p>
+<pre><code>
+FRAME proves the workflow with public-safe fixtures, then adapts to the
+enterprise-approved environment: managed device, approved repo, approved AI,
+approved data classification, approved dashboard, and approved deployment path.
+</code></pre>
+<h2 id="7-swot-and-feasibility">7. SWOT And Feasibility</h2>
 <p>Detailed brief:</p>
 <p><a href="competitive_swot_differentiation_brief.html">Competitive SWOT Differentiation Brief</a></p>
 <p>Innovation read:</p>
@@ -487,7 +635,7 @@ learning more observable, testable, and product-led.
 </tbody></table>
 <p>Related experience:</p>
 <p>FRAME can connect this adapter work to prior B2B portal lessons: catalog data, account context, contract pricing, order workflows, status visibility, invoices, dashboards, stakeholder reporting, and support feedback loops.</p>
-<h2 id="6-dashboard-operations">6. Dashboard Operations</h2>
+<h2 id="8-dashboard-operations">8. Dashboard Operations</h2>
 <p>This dashboard should be maintained by the automation framework, not by hand editing alone.</p>
 <table>
 <thead><tr>
@@ -536,7 +684,7 @@ learning more observable, testable, and product-led.
 <td>Summarize sources, draft interview questions, detect gaps, and convert exceptions into story candidates with human review.</td>
 </tr>
 </tbody></table>
-<h2 id="7-delivery-commitments">7. Delivery Commitments</h2>
+<h2 id="9-delivery-commitments">9. Delivery Commitments</h2>
 <p>FRAME delivers more than a static page. For this adapter lane it should keep the following operating commitments visible:</p>
 <table>
 <thead><tr>
@@ -622,6 +770,18 @@ learning more observable, testable, and product-led.
 <tr>
 <td><a href="https://www.sigmaaldrich.com/US/en/services/custom-products">Sigma-Aldrich Custom Products</a></td>
 <td>Useful context for when catalog flows may need quote-led, requirements-led, or documentation-heavy paths.</td>
+</tr>
+<tr>
+<td><a href="https://www.emdgroup.com/en/company/contact-us/collaboration-via-microsoft-office-365.html">Merck Office 365 Collaboration</a></td>
+<td>Public signal that Microsoft 365 collaboration is relevant to the target operating environment.</td>
+</tr>
+<tr>
+<td><a href="https://www.emdgroup.com/en/the-future-transformation/AI-as-Knowledge-Broker.html">Merck AI Knowledge Broker</a></td>
+<td>Public signal that Merck uses internal generative AI, including <code>myGPT</code>, and studies how AI changes work.</td>
+</tr>
+<tr>
+<td><a href="https://www.merckgroup.com/company/responsibility/us/products-businesses/CoDE-Code_of_Digital_Ethics.pdf">Merck Code of Digital Ethics</a></td>
+<td>Public governance anchor for privacy, security, access control, literacy, reliability, controllability, and accountability.</td>
 </tr>
 <tr>
 <td><a href="https://www.linkedin.com/in/ken-rossiter/">LinkedIn Profile</a></td>

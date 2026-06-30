@@ -42,6 +42,10 @@
   <a class="nav-link" href="client_communication_documentation.html">Client Communication</a><a class="nav-link" href="client_communication_documentation.html">Technical Writing</a><a class="nav-link" href="client_communication_documentation.html">Marketing And Company Docs</a><a class="nav-link" href="client_communication_documentation.html">Runbooks And Handoffs</a>
 </div>
 <div class="nav-section">
+  <p class="nav-heading">Install And Configure</p>
+  <a class="nav-link" href="install_frame_automation.html">Install FRAME Automation</a><a class="nav-link" href="frame_automation_desktop_publishme.html">Windows Desktop Automation</a><a class="nav-link" href="install_new_machine_setup.html">New Machine Setup</a><a class="nav-link" href="install_mobile_handoff.html">Mobile Handoff</a><a class="nav-link" href="install_desktop_builder_canvas.html">Desktop Builder</a><a class="nav-link" href="install_road_ready_sync.html">Road-Ready Outlook Sync</a><a class="nav-link" href="install_publication_pipeline.html">Publication Pipeline</a>
+</div>
+<div class="nav-section">
   <p class="nav-heading">Workbench Governance</p>
   <a class="nav-link" href="../docs/wb_html_planme.html">WB HTML PlanMe</a><a class="nav-link" href="../docs/wb_html_trainme.html">WB HTML TrainMe</a><a class="nav-link" href="../docs/wb_html_certifyme.html">WB HTML CertifyMe</a><a class="nav-link" href="../docs/wb_html_style_guide.html">Style Guide</a><a class="nav-link" href="../docs/wb_html_publish_workflow_planme.html">Publish Workflow</a><a class="nav-link" href="../docs/wb_github_showcase_infrastructure_planme.html">GitHub Infrastructure</a><a class="nav-link" href="../docs/wb_public_data_source_planme.html">Public Data Source Plan</a><a class="nav-link" href="safety_review.html">Safety Review</a><a class="nav-link" href="operations_wizard_patterns.html">Operations Wizard Patterns</a>
 </div>
@@ -67,14 +71,20 @@ technical spike / integration research spike / enablement sprint
 </code></pre>
 <p>Public-facing artifact title:</p>
 <pre><code>
-JAGGAER Procurement Adapter Spike Sprint
+JAGGAER Procurement Adapter Enablement Guide
 </code></pre>
 <p>Primary guide:</p>
-<p><a href="jaggaer_procurement_adapter_enablement_guide.html">JAGGAER Procurement Adapter Enablement Guide</a></p>
+<pre><code>
+docs\jaggaer_procurement_adapter_enablement_guide.md
+</code></pre>
 <p>Access and installation posture:</p>
-<p><a href="jaggaer_access_installation_posture.html">JAGGAER Access And Installation Posture</a></p>
-<p>Jira and sprint link hub:</p>
-<p><a href="jira_integration_links.html">Jira Integration And Sprint Links</a></p>
+<pre><code>
+docs\jaggaer_access_installation_posture.md
+</code></pre>
+<p>FRAME-local bundle:</p>
+<pre><code>
+TrainMe + PlanMe + TaskMe
+</code></pre>
 <p>This sprint is not a production JAGGAER implementation. It is the first named procurement-system lane for learning how a supplier-side B2B eCommerce adapter would support JAGGAER-style source-to-pay and procure-to-pay integration.</p>
 <h2 id="decision">Decision</h2>
 <p>Use JAGGAER as the first named procurement-system lane.</p>
@@ -117,6 +127,13 @@ JAGGAER access/cost/shortcut posture
 <td>FRAME can model JAGGAER-style integration without claiming live tenant administration.</td>
 </tr>
 </tbody></table>
+<h2 id="why-erpnext-is-not-the-target-lane">Why ERPNext Is Not The Target Lane</h2>
+<p>ERPNext is not on the target procurement ecosystem list. It should not be presented as the employer-relevant procurement platform.</p>
+<p>Its only useful role is optional:</p>
+<pre><code>
+local ERP/procurement lab runtime
+</code></pre>
+<p>That can help FRAME practice purchasing objects and SQL/BI reporting, but the named adapter story should stay focused on JAGGAER, SAP Ariba, SAP Procurement, Oracle Procurement, Coupa, Workday Procurement, and potential source-to-pay platforms such as Ivalua, GEP, and PeopleSoft.</p>
 <h2 id="sprint-goal">Sprint Goal</h2>
 <p>By the end of the sprint, FRAME can explain and prototype the JAGGAER adapter lane with enough detail to support product-management discovery:</p>
 <ul>
@@ -128,6 +145,12 @@ JAGGAER access/cost/shortcut posture
 <li>SQL/BI service-health output;</li>
 <li>Jira-ready stories and acceptance criteria.</li>
 </ul>
+<p>The sprint also sets up the first automation environment for a PunchOut-style success/failure check:</p>
+<pre><code>
+PowerShell launcher -&gt; Python PunchOut setup checker -&gt; JSON report -&gt;
+validation dashboard -&gt; backlog/story updates
+</code></pre>
+<p>The offline mode validates the synthetic cXML fixture and reports pass/fail without contacting a live procurement tenant. If an approved online endpoint, credentials, and security approval exist, the same check can be run in network mode against that endpoint. Network mode is a controlled follow-on, not an assumption.</p>
 <h2 id="sprint-backlog">Sprint Backlog</h2>
 <table>
 <thead><tr>
@@ -176,32 +199,95 @@ JAGGAER access/cost/shortcut posture
 <td>B2B Adapter site can explain the JAGGAER lane.</td>
 <td>Summary distinguishes JAGGAER-aligned prototype learning from production platform ownership.</td>
 </tr>
+<tr>
+<td>JAG-SPIKE-8 Add PunchOut automation check</td>
+<td>FRAME can run a local PunchOut setup check and produce a clear success/failure artifact.</td>
+<td><code>Invoke-PunchOutSetupCheck.ps1</code> calls the Python checker; <code>reports\punchout_setup_check.json</code> is created; offline fixture pass/fail is visible; optional network mode requires an approved endpoint and <code>-AllowNetwork</code>.</td>
+</tr>
+<tr>
+<td>JAG-SPIKE-9 Define ERP/procurement launch posture</td>
+<td>The team knows what can be opened automatically versus what requires installation, tenant access, or security approval.</td>
+<td>Local resources, browser shortcuts, ERPNext/demo options, and SaaS login-gated systems are classified; no credentials are stored in scripts; launch steps become backlog tasks.</td>
+</tr>
 </tbody></table>
-<h2 id="jira-integration">Jira Integration</h2>
-<p>Sprint stories should flow into Jira only after review. The public site keeps the source-backed sprint plan visible, while Jira becomes the active planning board for story ownership, sprint selection, status, and review notes.</p>
+<h2 id="automation-environment-setup">Automation Environment Setup</h2>
+<p>Local PunchOut fixture check:</p>
+<pre><code>
+pwsh -NoProfile -ExecutionPolicy Bypass -File &quot;.\scripts\ps1\Invoke-PunchOutSetupCheck.ps1&quot;
+</code></pre>
+<p>Optional approved endpoint check:</p>
+<pre><code>
+pwsh -NoProfile -ExecutionPolicy Bypass -File &quot;.\scripts\ps1\Invoke-PunchOutSetupCheck.ps1&quot; -EndpointUrl &quot;https://approved.example/punchout/setup&quot; -AllowNetwork
+</code></pre>
+<p>Report:</p>
+<pre><code>
+reports\punchout_setup_check.json
+</code></pre>
+<p>Success/failure meaning:</p>
 <table>
 <thead><tr>
-<th>Jira Link Type</th>
-<th>Destination</th>
+<th>Mode</th>
+<th>What It Proves</th>
+<th>What It Does Not Prove</th>
 </tr></thead>
 <tbody>
 <tr>
-<td>Public sprint hub</td>
-<td><a href="jira_integration_links.html">Jira Integration And Sprint Links</a></td>
+<td>Offline fixture check</td>
+<td>The cXML-like setup request has required structural fields and can be parsed by FRAME tooling.</td>
+<td>Live buyer/supplier tenant authentication, cart return, or production JAGGAER behavior.</td>
 </tr>
 <tr>
-<td>Public backlog</td>
-<td><a href="procurement_adapter_agile_backlog.html">Procurement Adapter Agile Backlog</a></td>
-</tr>
-<tr>
-<td>Public operating model</td>
-<td><a href="agile_framework_showcase.html">Agile Delivery And Jira Operating Model</a></td>
-</tr>
-<tr>
-<td>Private Jira board</td>
-<td><code>https://autoframe.atlassian.net/jira/software/projects/SCRUM/boards/1</code></td>
+<td>Online approved endpoint check</td>
+<td>The environment can POST a setup request and record HTTP/cXML response status from an approved endpoint.</td>
+<td>End-to-end production integration unless buyer tenant, credentials, return URL, cart, PO, invoice, ASN, and go-live monitoring are also validated.</td>
 </tr>
 </tbody></table>
+<p>ERP/procurement resource launch posture:</p>
+<table>
+<thead><tr>
+<th>Resource Type</th>
+<th>FRAME Can Automate</th>
+<th>Boundary</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Local scripts and fixtures</td>
+<td>Run Python validators, generate reports, normalize events, and update sprint evidence.</td>
+<td>Uses synthetic/public-safe data only.</td>
+</tr>
+<tr>
+<td>Browser resources</td>
+<td>Open public docs, dashboards, local HTML, and approved login pages.</td>
+<td>Login, MFA, and tenant actions remain user/enterprise controlled.</td>
+</tr>
+<tr>
+<td>Local ERP lab</td>
+<td>Launch or check a local/demo ERP runtime if installed and approved.</td>
+<td>Installation and credentials are separate tasks.</td>
+</tr>
+<tr>
+<td>SaaS procurement systems</td>
+<td>Open approved URLs and run synthetic/offline checks until access exists.</td>
+<td>Live configuration requires sponsor-approved tenant access and security review.</td>
+</tr>
+</tbody></table>
+<h2 id="trainme-educateme-outline">TrainMe / EducateMe Outline</h2>
+<p>Recommended public title:</p>
+<pre><code>
+JAGGAER Procurement Adapter Enablement Guide
+</code></pre>
+<p>Suggested sections:</p>
+<ol>
+<li>What JAGGAER contributes to source-to-pay and procure-to-pay.</li>
+<li>How JAGGAER fits buyer procurement, supplier eCommerce, ERP, finance, and</li>
+<p>supplier network flows.</p>
+<li>Hosted catalog, PunchOut/cXML, EDIINT X12, order confirmation, invoice, ASN,</li>
+<p>and exception concepts.</p>
+<li>What FRAME can prototype safely without tenant access.</li>
+<li>What still requires JAGGAER/customer/platform access.</li>
+<li>How SQL, BI, Agile, and reviewed AI use the adapter evidence.</li>
+<li>Interview-safe claim language.</li>
+</ol>
 <h2 id="interview-safe-language">Interview-Safe Language</h2>
 <p>Use:</p>
 <pre><code>

@@ -55,7 +55,7 @@
 </div>
 <div class="nav-section">
   <p class="nav-heading">Additional Notes</p>
-  <a class="nav-link" href="public_energy_data.html">Public Energy And Economic Data</a><a class="nav-link" href="spend_management_gotcha_dropoff_map.html">Spend Management Gotcha And Drop-Off Map</a><a class="nav-link" href="spend_management_admin_day_in_life.html">Spend Management Admin Day In The Life</a><a class="nav-link" href="jaggaer_procurement_adapter_enablement_guide.html">JAGGAER Procurement Adapter Enablement Guide</a><a class="nav-link" href="jaggaer_access_installation_posture.html">JAGGAER Access And Installation Posture</a><a class="nav-link" href="b2b_endpoint_fulfillment.html">B2B Transaction Lifecycle</a><a class="nav-link" href="agile_certification.html">Agile And Certification</a><a class="nav-link" href="agile_framework_showcase.html">Agile Delivery And Jira Operating Model</a><a class="nav-link" href="salesforce_cloud.html">Salesforce Cloud CRM</a><a class="nav-link" href="bi_script_catalog.html">BI Script Catalog</a><a class="nav-link" href="sales_analytics_obfuscation_path.html">Sales Analytics Obfuscation Path</a><a class="nav-link" href="marketing_automation_showcase.html">Product Management And Marketing Discovery</a><a class="nav-link" href="intelligent_rfp_sales_wizard_showcase.html">Competitive Analysis And Market Intelligence Wizards</a><a class="nav-link" href="registry_learning_and_json_wizards.html">Registry Learning And Data Wizards</a><a class="nav-link" href="rfp_lead_recommendation_workflow.html">Product Research Recommendation Workflow</a><a class="nav-link" href="interactive_wizard_publication_catalog.html">Interactive Product Wizard Catalog</a><a class="nav-link" href="ai_autopilot_research_overview.html">AI Autopilot Research Overview</a><a class="nav-link" href="frame_project_plan.html">FRAME Project Plan</a><a class="nav-link" href="frame_release_plan.html">FRAME Release Plan</a>
+  <a class="nav-link" href="public_energy_data.html">Public Energy And Economic Data</a><a class="nav-link" href="spend_management_gotcha_dropoff_map.html">Spend Management Gotcha And Drop-Off Map</a><a class="nav-link" href="spend_management_admin_day_in_life.html">Spend Management Admin Day In The Life</a><a class="nav-link" href="target_operating_environment_tool_comparison.html">Target Operating Environment Tool Comparison</a><a class="nav-link" href="jaggaer_procurement_adapter_enablement_guide.html">JAGGAER Procurement Adapter Enablement Guide</a><a class="nav-link" href="jaggaer_access_installation_posture.html">JAGGAER Access And Installation Posture</a><a class="nav-link" href="b2b_endpoint_fulfillment.html">B2B Transaction Lifecycle</a><a class="nav-link" href="agile_certification.html">Agile And Certification</a><a class="nav-link" href="agile_framework_showcase.html">Agile Delivery And Jira Operating Model</a><a class="nav-link" href="salesforce_cloud.html">Salesforce Cloud CRM</a><a class="nav-link" href="bi_script_catalog.html">BI Script Catalog</a><a class="nav-link" href="sales_analytics_obfuscation_path.html">Sales Analytics Obfuscation Path</a><a class="nav-link" href="marketing_automation_showcase.html">Product Management And Marketing Discovery</a><a class="nav-link" href="intelligent_rfp_sales_wizard_showcase.html">Competitive Analysis And Market Intelligence Wizards</a><a class="nav-link" href="registry_learning_and_json_wizards.html">Registry Learning And Data Wizards</a><a class="nav-link" href="rfp_lead_recommendation_workflow.html">Product Research Recommendation Workflow</a><a class="nav-link" href="interactive_wizard_publication_catalog.html">Interactive Product Wizard Catalog</a><a class="nav-link" href="ai_autopilot_research_overview.html">AI Autopilot Research Overview</a><a class="nav-link" href="frame_project_plan.html">FRAME Project Plan</a><a class="nav-link" href="frame_release_plan.html">FRAME Release Plan</a>
 </div>
     </aside>
     <div class="content">
@@ -148,6 +148,50 @@
 <p>FRAME uses a common browser identity strategy across desktops, machines, and iPhone. Edge and Chrome should present consistent favorites, bookmarks, and account menus so the same workflow links are available whether the operator is on the install desktop, the resume desktop, another Windows machine, or an iPhone review session.</p>
 <p>Automation profiles remain machine-local. Each workflow lane recreates its own debug profile and port on the local workstation. This preserves repeatable automation behavior without publishing or syncing private browser profile folders.</p>
 <p>The iPhone integration extends the same operating model. Mobile files and Shortcuts let the operator review key PlanMe and RunMe docs, dictate new requirements, and save Markdown drafts into a mobile requirements inbox. A Windows Codex session later intakes those drafts, inspects the live project files, and merges the requirement into the appropriate workflow.</p>
+<h2 id="new-user-bootstrap-pattern">New-User Bootstrap Pattern</h2>
+<p>The current FRAME bootstrap pattern is intentionally human-first for identity and script-first for installation.</p>
+<p>The operator signs in to the new Windows account, opens Edge, signs in to the Microsoft account that has access to the FRAME OneDrive material, and verifies that the cloud <code>Services &gt; Install</code> folder is reachable. The scripts do not copy browser profiles, cookies, MFA sessions, OneDrive tokens, or saved passwords from another Windows user.</p>
+<p>After identity is established, download the full <code>Services &gt; Install</code> folder to the new user&#x27;s <code>Downloads\Install</code> folder. Downloading only the bootstrap folder is faster, but it leaves the new account without the service docs, router scripts, reports folder, bootstrap helpers, and validation files that Codex and PowerShell need when something goes wrong. The full folder download is the recommended default.</p>
+<p>The first file for a clean current bootstrap is:</p>
+<pre><code>
+Downloads\Install\bootstrap\START_HERE_KR.md
+</code></pre>
+<p>That runbook points to the matching copy/paste command and command helper in the same bootstrap folder. The command locates the downloaded Install service, runs the service router, performs first-login checks, and records reports under the downloaded or synced service folder.</p>
+<p>Codex or ChatGPT is useful at this stage as an operator assistant over the downloaded folder: it can read the runbook, inspect reports, explain failures, and choose the next service operation. It should not replace the runbook with a free-form &quot;figure it out&quot; install. The scripts remain the source of truth for machine changes.</p>
+<h2 id="service-command-surface">Service Command Surface</h2>
+<p>Install operations are launched through a small service router so operators do not have to remember individual script paths. Important operations include:</p>
+<table>
+<thead><tr>
+<th>Operation</th>
+<th>Purpose</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>PathConfigStatus</code></td>
+<td>Show resolved service, project, report, and bootstrap roots.</td>
+</tr>
+<tr>
+<td><code>PrerequisiteCheck</code></td>
+<td>Verify PowerShell, Python, Git, winget, VS Code, Edge, WebDriver, and PATH readiness.</td>
+</tr>
+<tr>
+<td><code>FirstLoginBootstrap</code></td>
+<td>Configure and validate the fresh Windows user after the full Install folder is downloaded.</td>
+</tr>
+<tr>
+<td><code>PostBootstrapContinuation</code></td>
+<td>Continue after first-login bootstrap and publish the fixed service kit when checks pass.</td>
+</tr>
+<tr>
+<td><code>KRAccountReset</code></td>
+<td>Reset the current clean install-test account lane from an administrator context.</td>
+</tr>
+<tr>
+<td><code>DesktopBuilderReadiness</code></td>
+<td>Check resource state and desktop-builder readiness before opening workflow lanes.</td>
+</tr>
+</tbody></table>
+<p>The practical readiness rule is that FRAME should distinguish &quot;required to operate&quot; from &quot;preferred latest.&quot; A machine can be usable while still carrying yellow follow-up items, such as an available PowerShell update, as long as the running scripts do not depend on the newer version.</p>
 <h2 id="primary-workspace">Primary Workspace</h2>
 <pre><code>
 %USERPROFILE%\OneDrive\projects\Install.code-workspace

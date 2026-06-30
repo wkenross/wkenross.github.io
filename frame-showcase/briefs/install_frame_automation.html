@@ -72,12 +72,17 @@
 <ol class="quick-steps">
 <li><strong>Sign in first.</strong> Log into the Windows user, open Edge, and sign in to the Microsoft account that can reach OneDrive.</li>
 <li><strong>Download the full folder.</strong> From OneDrive live, download <code>Services &gt; Install</code> into <code>Downloads\Install</code>. Do not download only the bootstrap folder for the normal path.</li>
-<li><strong>Start the bootstrap.</strong> Open <code>Downloads\Install\bootstrap\START_HERE_KR.md</code>, then run <code>COPY_PASTE_KR_BOOTSTRAP.txt</code> or <code>RUN_KR_BOOTSTRAP.cmd</code>.</li>
+<li><strong>Start the bootstrap.</strong> Open <code>Downloads\Install\bootstrap\START_HERE_KR.md</code>, or use <code>FRAME Copy Synced Install To Downloads.cmd</code> first if <code>Services\Install</code> is already synced locally.</li>
 </ol>
 <p><strong>What happens next:</strong> first-login bootstrap starts the service router and runs user readiness checks. Full framework install/config continues through <code>PostBootstrapContinuation</code>; the runbook tells the operator when to start that second step. It is not a silent background install.</p>
 <div class="quick-menu-links">
+<a href="#bootstrap-launcher-helpers">Bootstrap Helpers</a>
+<a href="https://onedrive.live.com/">Open OneDrive</a>
 <a href="https://code.visualstudio.com/download">Download VS Code</a>
 <a href="https://chatgpt.com/download">Download ChatGPT</a>
+<a href="https://www.python.org/downloads/windows/">Download Python</a>
+<a href="https://www.microsoft.com/en-us/microsoft-365/download-office">Download Office</a>
+<a href="https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-windows">Download PowerShell</a>
 </div>
 <p class="quick-menu-note">Use Codex or ChatGPT as an assistant over the downloaded folder when a check fails; the scripts and runbooks remain the source of truth.</p>
 </div>

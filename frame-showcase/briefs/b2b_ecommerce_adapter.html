@@ -172,11 +172,11 @@ supplier-side eCommerce capability
 <td><a href="competitive_swot_differentiation_brief.html">Competitive SWOT</a></td>
 </tr>
 <tr>
-<td>Spend-system gotcha map</td>
+<td>Product risk map</td>
 <td>Active</td>
-<td>[####---]</td>
-<td>Provider-specific drop-offs are mapped across access, setup, cart return, PO, invoice/ASN, support, and adoption.</td>
-<td><a href="spend_management_gotcha_dropoff_map.html">Gotcha Map</a></td>
+<td>[#####--]</td>
+<td>Failure drivers, success drivers, life-science amplifiers, provider-specific drop-offs, and mitigation owners are mapped.</td>
+<td><a href="spend_management_gotcha_dropoff_map.html">Gotcha / Product Risk Map</a></td>
 </tr>
 <tr>
 <td>Product discovery toolkit</td>
@@ -276,6 +276,12 @@ for the JAGGAER-first lane without claiming production tenant access.
 <td>Must stay public-safe and source-backed</td>
 </tr>
 <tr>
+<td>Product risk management</td>
+<td>High</td>
+<td>Convert failure drivers and success drivers into sprint risks, acceptance criteria, dashboard signals, and mitigation owners</td>
+<td>Avoid treating PunchOut setup success as full project success</td>
+</tr>
+<tr>
 <td>Jira and sprint visibility</td>
 <td>High</td>
 <td>Sprint 1 has a public-safe plan, Jira-ready fields, and private board reference</td>
@@ -358,6 +364,13 @@ for the JAGGAER-first lane without claiming production tenant access.
 <pre><code>
 access -&gt; supplier master -&gt; catalog discovery -&gt; PunchOut auth -&gt; cart return
 -&gt; requisition approval -&gt; PO delivery -&gt; invoice/ASN -&gt; support -&gt; adoption
+</code></pre>
+<p>Failure/success read:</p>
+<pre><code>
+B2B adapter projects fail when access, data mapping, credentials, downstream
+finance flows, support ownership, security policy, and adoption are treated as
+secondary details. They succeed when the full lifecycle is dashboarded, owners
+are named, acceptance criteria are split, and launch-health evidence is visible.
 </code></pre>
 <p>Persona takeaway:</p>
 <pre><code>
@@ -914,6 +927,86 @@ My background started in big data, finance, and economic analysis, but the
 through line has been automation: reducing time to market, reducing error, and
 turning complex workflows into repeatable product systems. Scientific
 procurement is an exciting next domain for that same product-management pattern.
+</code></pre>
+<h3 id="milliporesigma-public-navigation-references">MilliporeSigma Public Navigation References</h3>
+<p>These public links sit at the bottom of the dashboard as an interview-prep map. They are not private implementation evidence. They are useful public surfaces for discussing how a B2B Core Platform and B2B eCommerce Adapter would have to connect product discovery, cart/order behavior, procurement integrations, documentation, support, and launch monitoring.</p>
+<table>
+<thead><tr>
+<th>Public Surface</th>
+<th>Link</th>
+<th>Product / Adapter Relevance</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>eCommerce Solutions</td>
+<td><a href="https://www.sigmaaldrich.com/US/en/life-science/ecommerce/ecommerce-solutions">Sigma-Aldrich eCommerce Solutions</a></td>
+<td>Public framing for eProcurement, PIPELINE, eShop, spend control, procurement optimization, and the three-step install model: project plan, setup/testing, launch/go-live monitoring.</td>
+</tr>
+<tr>
+<td>eProcurement</td>
+<td><a href="https://www.sigmaaldrich.com/US/en/life-science/ecommerce/ecommerce-solutions#procurement">Procurement Section</a></td>
+<td>Anchor for PunchOut/hosted catalog, e-Purchase Orders, electronic invoices, order confirmations, ASNs, and provider support across JAGGAER, Ariba, SAP, Oracle, Coupa, and others.</td>
+</tr>
+<tr>
+<td>PIPELINE</td>
+<td><a href="https://www.sigmaaldrich.com/US/en/life-science/ecommerce/ecommerce-solutions#pipeline">PIPELINE Section</a></td>
+<td>Useful for discussing customized account-specific ordering, private connection patterns, procurement approvals, contract pricing, invoicing, payment, and reconciliation.</td>
+</tr>
+<tr>
+<td>Sigma-Aldrich eShop</td>
+<td><a href="https://www.sigmaaldrich.com/US/en/life-science/ecommerce/ecommerce-solutions#eshop">eShop Section</a></td>
+<td>Public eShop story around online ordering, quotes, account-specific pricing, order tracking, and real-time fulfillment.</td>
+</tr>
+<tr>
+<td>Product / Cart Surface</td>
+<td><a href="https://www.sigmaaldrich.com/US/en/cart?type=active">Shopping Cart</a></td>
+<td>Helps frame catalog search, cart, account context, quote/order conversion, and the adapter boundary between buyer spend systems and supplier commerce.</td>
+</tr>
+<tr>
+<td>Quick Order</td>
+<td><a href="https://www.sigmaaldrich.com/US/en/quick-order">Quick Order</a></td>
+<td>Shows SKU/pack-size and quantity entry plus bulk-order behavior, a good proxy for hosted catalog and high-volume reorder flows.</td>
+</tr>
+<tr>
+<td>Order Lookup</td>
+<td><a href="https://www.sigmaaldrich.com/US/en/order-lookup">Order Lookup</a></td>
+<td>Public order-status entry point; useful for launch-health thinking around order number, postal code, tracking, order history, and exception visibility.</td>
+</tr>
+<tr>
+<td>Documents / SDS / COA</td>
+<td><a href="https://www.sigmaaldrich.com/US/en/documents-search">Documents Search</a></td>
+<td>Highlights Safety Data Sheets, Certificates of Analysis, Certificates of Origin, and quality documentation as first-class B2B lifecycle artifacts.</td>
+</tr>
+<tr>
+<td>Customer Support</td>
+<td><a href="https://www.sigmaaldrich.com/US/en/support/customer-support">Customer Support</a></td>
+<td>Maps support workflows for orders, invoices, quotes, order status, confirmations, returns, pricing/availability, product documentation, accounts, and website issues.</td>
+</tr>
+<tr>
+<td>Custom Products</td>
+<td><a href="https://www.sigmaaldrich.com/US/en/services/custom-products">Custom Product Development</a></td>
+<td>Useful for quote-led, documentation-heavy, requirements-led, and non-standard catalog flows where product selection is more than a simple SKU purchase.</td>
+</tr>
+<tr>
+<td>Get Site Smart</td>
+<td><a href="https://www.sigmaaldrich.com/US/en/life-science/ecommerce/website-update-info">Website Updates</a></td>
+<td>Public product-learning channel for site feature releases, adoption messaging, and customer education.</td>
+</tr>
+<tr>
+<td>Order Lookup Feature Note</td>
+<td><a href="https://www.sigmaaldrich.com/US/en/life-science/ecommerce/website-update-info/order-look-up">Order Lookup Update</a></td>
+<td>Good example of a feature release that can be mapped to adoption metrics, CX support reduction, and roadmap communication.</td>
+</tr>
+</tbody></table>
+<p>Working interview frame:</p>
+<pre><code>
+The public site already exposes many of the adapter-adjacent product surfaces:
+catalog search, cart, quick order, order lookup, documentation, customer
+support, account context, eProcurement, PIPELINE, eShop, and custom products.
+The product-management job is to turn those surfaces into a roadmap and
+operating dashboard: what integrates, what is measured, where customers get
+stuck, which documents travel with the transaction, and how launch health is
+monitored after go-live.
 </code></pre>
 <h2 id="claim-boundary">Claim Boundary</h2>
 <p>This dashboard uses public-safe documentation, synthetic fixtures, and reviewed research. It demonstrates product-management, discovery, architecture, Agile, and analytics thinking. It does not claim production ownership of closed buyer tenants or live supplier integrations.</p>

@@ -92,6 +92,56 @@
 <li>OneDrive, iCloud, and mobile handoff folders</li>
 <li>Outlook Classic and Office readiness where a workflow needs them</li>
 </ul>
+<h2 id="grouped-tooling-checklist">Grouped Tooling Checklist</h2>
+<p>The install lane can remain a practical checklist. It should make clear what kind of tool is being prepared without turning every application into a product story.</p>
+<table>
+<thead><tr>
+<th>Group</th>
+<th>Examples</th>
+<th>Why FRAME Needs It</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Windows runtime</td>
+<td>Windows 11, PowerShell 7, Python, Git, PATH checks</td>
+<td>Provides the repeatable command surface for orchestration and validation.</td>
+</tr>
+<tr>
+<td>Development workbench</td>
+<td>VS Code, workspace files, Codex handoff files, terminal tasks</td>
+<td>Gives each workflow a focused operating environment.</td>
+</tr>
+<tr>
+<td>Browser automation</td>
+<td>Edge, Chrome, WebDriver, remote-debugging profiles, favorites/bookmarks</td>
+<td>Supports web research, portal testing, supervised application flows, and browser-assisted operations.</td>
+</tr>
+<tr>
+<td>Office productivity</td>
+<td>Excel, Outlook Classic, Word, PowerPoint, Adobe Acrobat</td>
+<td>Supports reporting, email evidence, document production, PDF review, and client-ready artifacts.</td>
+</tr>
+<tr>
+<td>Data and BI</td>
+<td>SQL tooling, Power BI readiness, Excel/CSV/JSON folders</td>
+<td>Prepares dashboard, reporting, and service-event handoff paths.</td>
+</tr>
+<tr>
+<td>Sync and mobile</td>
+<td>OneDrive, iCloud, iPhone intake folders, mobile RunMe docs</td>
+<td>Keeps two laptops, service folders, and mobile requirement capture aligned.</td>
+</tr>
+<tr>
+<td>Publishing</td>
+<td><code>wb_html</code>, <code>wb_github</code>, GitHub Pages repo, showcase URL checks</td>
+<td>Moves reviewed Markdown into public-safe HTML and site updates.</td>
+</tr>
+<tr>
+<td>Safety and recovery</td>
+<td>profile snapshots, backups, deprecated folders, public-safety checks</td>
+<td>Preserves originals and keeps credentials/private data out of published material.</td>
+</tr>
+</tbody></table>
 <p>Manual sign-in, MFA, and account recovery remain operator actions. The scripts prepare applications and verify readiness; they do not copy private browser sessions, cookies, tokens, or credentials.</p>
 <h2 id="browser-and-mobile-continuity">Browser And Mobile Continuity</h2>
 <p>FRAME uses a common browser identity strategy across desktops, machines, and iPhone. Edge and Chrome should present consistent favorites, bookmarks, and account menus so the same workflow links are available whether the operator is on the install desktop, the resume desktop, another Windows machine, or an iPhone review session.</p>

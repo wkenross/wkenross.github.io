@@ -200,6 +200,32 @@
 </tbody></table>
 <h2 id="value-hypothesis">Value Hypothesis</h2>
 <p>If FRAME can build a prototype workbench around procurement adapters, then the product team can ramp faster, ask sharper discovery questions, align stakeholders, test adapter behavior with synthetic data, and turn launch exceptions into backlog and monitoring evidence.</p>
+<h2 id="market-advancement-and-future-proofing">Market Advancement And Future-Proofing</h2>
+<p>The B2B eCommerce adaptor roadmap should anticipate three market advancements:</p>
+<table>
+<thead><tr>
+<th>Advancement</th>
+<th>Meaning</th>
+<th>Prototype Relevance</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Data syndication</td>
+<td>Trusted product, catalog, price, eligibility, and documentation data shared across trading partners and channels. GS1 GDSN is a useful reference pattern for synchronized product data.</td>
+<td>Treat product identity, UOM, contract pricing, SDS/certificates, availability, and region rules as first-class data.</td>
+</tr>
+<tr>
+<td>Automation / agentic AI</td>
+<td>AI moves from summarizing text toward task-specific agents embedded in enterprise workflows, with governance becoming essential.</td>
+<td>Use reviewed AI to summarize vendor docs, draft discovery questions, classify exceptions, and prepare Jira-ready stories while keeping humans in control.</td>
+</tr>
+<tr>
+<td>Evolving integration standards</td>
+<td>Procurement ecosystems continue to use cXML, XML, OCI, EDI, hosted files, APIs, and event-driven API documentation patterns.</td>
+<td>Normalize provider lanes into common adapter event JSON while preserving source protocol and transaction lineage.</td>
+</tr>
+</tbody></table>
+<p>For this small project, future-proofing means building adapter lanes as inspectable contracts. The prototype does not need to become the production integration layer. It needs to teach the product team what data, workflow, security, monitoring, and exception questions must be answered before the production solution is selected.</p>
 <h2 id="what-remains-unproven">What Remains Unproven</h2>
 <p>This remains a prototype. Further work is needed to:</p>
 <ul>
@@ -209,6 +235,10 @@
 <li>validate real catalog, pricing, UOM, product-document, and region rules;</li>
 <li>compare monitoring tools such as Sauce Labs/API Fortress, Postman,</li>
 <p>Playwright/APIRequest, contract-testing tools, and platform-native monitors;</p>
+<li>evaluate product-data syndication options, catalog governance, and provider</li>
+<p>schema/versioning requirements;</p>
+<li>define AI guardrails for reviewed summaries, exception classification,</li>
+<p>backlog drafting, and any future semi-autonomous actions;</p>
 <li>define production ownership across commerce, ERP, procurement platform,</li>
 <p>middleware, support, and analytics.</p>
 </ul>
@@ -227,6 +257,17 @@
 <li><a href="frame_procurement_adapter_architecture.html">FRAME Procurement Adapter Architecture</a></li>
 <li><a href="procurement_adapter_prototype_lanes.html">Procurement Adapter Prototype Lanes</a></li>
 <li><a href="procurement_vendor_research_pack.html">Procurement Vendor Research Pack</a></li>
+</ul>
+<h2 id="research-anchors">Research Anchors</h2>
+<ul>
+<li>GS1 GDSN:</li>
+<p>https://www.gs1.org/services/gdsn</p>
+<li>cXML resources:</li>
+<p>https://cxml.org/</p>
+<li>AsyncAPI:</li>
+<p>https://www.asyncapi.com/</p>
+<li>Gartner task-specific AI agents:</li>
+<p>https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026-up-from-less-than-5-percent-in-2025</p>
 </ul>
       </main>
     </div>

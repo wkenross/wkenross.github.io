@@ -195,6 +195,32 @@ buyer spend platform
 <li>Price Digests-style API endpoint monitoring lessons, including API Fortress /</li>
 <p>Sauce Labs-style API contract testing.</p>
 </ul>
+<h2 id="future-proofing-architecture">Future-Proofing Architecture</h2>
+<p>The adapter architecture should be designed around contracts that can evolve:</p>
+<table>
+<thead><tr>
+<th>Future-Proofing Need</th>
+<th>Architecture Response</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Data syndication</td>
+<td>Keep product identity, UOM, price, eligibility, SDS/certificates, availability, and account context separated from any single page, workbook, or vendor payload.</td>
+</tr>
+<tr>
+<td>Automation / agentic AI</td>
+<td>Preserve source lineage, validation output, exception history, and human approvals so AI can summarize and draft next actions without silently changing production state.</td>
+</tr>
+<tr>
+<td>Evolving integration standards</td>
+<td>Record the source format for every event: cXML, XML, OCI, EDI, hosted file, REST/OpenAPI, event/AsyncAPI, or provider-specific API.</td>
+</tr>
+<tr>
+<td>Monitoring maturity</td>
+<td>Compare API Fortress / Sauce Labs-style API testing, Postman-style collections, Playwright/APIRequest checks, contract testing, and platform-native monitoring before choosing the production monitor.</td>
+</tr>
+</tbody></table>
+<p>The prototype should normalize data to FRAME adapter JSON only after preserving the source protocol, version, identifiers, validation rules, exception taxonomy, and review gates.</p>
 <h2 id="claim-boundary">Claim Boundary</h2>
 <p>This page is intentionally careful:</p>
 <ul>
@@ -217,6 +243,12 @@ buyer spend platform
 <p>https://www.jaggaer.com/wp-content/uploads/2024/06/JAGGAER-Supplier-Enablement-terms.pdf</p>
 <li>Sauce Labs acquisition of API Fortress:</li>
 <p>https://saucelabs.com/company/news/sauce-labs-acquires-api-fortress-to-bolster-continuous-testing-platform-with-modern-api-testing-solution</p>
+<li>GS1 GDSN:</li>
+<p>https://www.gs1.org/services/gdsn</p>
+<li>cXML resources:</li>
+<p>https://cxml.org/</p>
+<li>AsyncAPI:</li>
+<p>https://www.asyncapi.com/</p>
 </ul>
 <h2 id="related">Related</h2>
 <ul>

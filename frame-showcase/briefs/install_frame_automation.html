@@ -72,9 +72,9 @@
 <ol class="quick-steps">
 <li><strong>Sign in first.</strong> Log into the Windows user, open Edge, and sign in to the Microsoft account that can reach OneDrive.</li>
 <li><strong>Download the full folder.</strong> From OneDrive live, download <code>Services &gt; Install</code> into <code>Downloads\Install</code>. Do not download only the bootstrap folder for the normal path.</li>
-<li><strong>Start the bootstrap.</strong> Open <code>Downloads\Install\bootstrap\START_HERE_KR.md</code>, or use <code>FRAME Copy Synced Install To Downloads.cmd</code> first if <code>Services\Install</code> is already synced locally.</li>
+<li><strong>Start the bootstrap.</strong> Open <code>Downloads\Install\bootstrap\START_HERE_KR.md</code>, then double-click <code>00_START_HERE.cmd</code>. Use <code>FRAME Copy Synced Install To Downloads.cmd</code> first if <code>Services\Install</code> is already synced locally.</li>
 </ol>
-<p><strong>What happens next:</strong> first-login bootstrap starts the service router and runs user readiness checks. Full framework install/config continues through <code>PostBootstrapContinuation</code>; the runbook tells the operator when to start that second step. It is not a silent background install.</p>
+<p><strong>What happens next:</strong> first-login bootstrap starts the service router and runs user readiness checks. Full framework install/config continues through <code>04_CONTINUE_FRAME_INSTALL.cmd</code>; Desktop Builder opens through <code>05_OPEN_DESKTOP_BUILDER.cmd</code>. It is not a silent background install.</p>
 <div class="quick-menu-links">
 <a href="#bootstrap-launcher-helpers">Bootstrap Helpers</a>
 <a href="https://onedrive.live.com/">Open OneDrive</a>
@@ -178,7 +178,11 @@
 <pre><code>
 Downloads\Install\bootstrap\START_HERE_KR.md
 </code></pre>
-<p>That runbook points to the matching copy/paste command and command helper in the same bootstrap folder. The command locates the downloaded Install service, runs the service router, performs first-login checks, and records reports under the downloaded or synced service folder.</p>
+<p>That runbook points to the numbered one-click helpers in the same bootstrap folder. The first executable is:</p>
+<pre><code>
+Downloads\Install\bootstrap\00_START_HERE.cmd
+</code></pre>
+<p>Use the copy/paste command only as a fallback when Windows blocks the double-click path. The command locates the downloaded Install service, runs the service router, performs first-login checks, and records reports under the downloaded or synced service folder.</p>
 <p>Bootstrap is the first step, not the whole install by itself. Framework install/config continues through <code>PostBootstrapContinuation</code> after the first-login checks and source readiness checkpoint pass. The runbook tells the operator when to start that second command; it is not a silent background install.</p>
 <p>Codex or ChatGPT is useful at this stage as an operator assistant over the downloaded folder: it can read the runbook, inspect reports, explain failures, and choose the next service operation. It should not replace the runbook with a free-form &quot;figure it out&quot; install. The scripts remain the source of truth for machine changes.</p>
 <h2 id="bootstrap-launcher-helpers">Bootstrap Launcher Helpers</h2>
@@ -202,12 +206,78 @@ Downloads\Install\bootstrap\START_HERE_KR.md
 </tr>
 <tr>
 <td>3</td>
-<td><code>Downloads\Install\bootstrap\START_HERE_KR.md</code></td>
-<td>Follow the current KR runbook and copy/paste the bootstrap command from the downloaded service kit.</td>
+<td><code>Downloads\Install\bootstrap\00_START_HERE.cmd</code></td>
+<td>First click for KR bootstrap. It checks OneDrive and starts the guided bootstrap flow.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>Downloads\Install\bootstrap\04_CONTINUE_FRAME_INSTALL.cmd</code></td>
+<td>Continues the full FRAME install after first-login checks and source readiness pass.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>Downloads\Install\bootstrap\05_OPEN_DESKTOP_BUILDER.cmd</code></td>
+<td>Opens the Services-era Desktop Builder launcher after continuation is ready.</td>
 </tr>
 </tbody></table>
 <p>The public install page cannot directly run local PowerShell, unzip private OneDrive folders, or read a user&#x27;s cloud files. That boundary is intentional. The page provides the official links and instructions; local launchers in the OneDrive or <code>Services</code> root handle local file moves after the signed-in user has made the folder available on the machine.</p>
 <p>Install these core assistants first when a machine is missing them: <a href="https://code.visualstudio.com/download">Download VS Code</a>, <a href="https://chatgpt.com/download">Download ChatGPT</a>, <a href="https://www.python.org/downloads/windows/">Python for Windows</a>, <a href="https://www.microsoft.com/en-us/microsoft-365/download-office">Microsoft 365 apps</a>, and <a href="https://learn.microsoft.com/en-us/powershell/scripting/install/install-powershell-on-windows">PowerShell for Windows</a>.</p>
+<h2 id="bootstrap-exit-codes">Bootstrap Exit Codes</h2>
+<table>
+<thead><tr>
+<th>Code</th>
+<th>Meaning</th>
+<th>Next step</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td>Completed successfully</td>
+<td>Run the next numbered file shown on screen.</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>Script failure</td>
+<td>Read the report in <code>reports</code>, then rerun after fixing the listed issue.</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td>Implementation source missing</td>
+<td>Sync <code>projects\fr_install</code> and <code>projects\frame</code>, then run <code>04_CONTINUE_FRAME_INSTALL.cmd</code>.</td>
+</tr>
+<tr>
+<td><code>3</code></td>
+<td>Account or identity preflight issue</td>
+<td>Confirm Windows user <code>KR</code> and OneDrive sign-in, then rerun <code>00_START_HERE.cmd</code>.</td>
+</tr>
+<tr>
+<td><code>4</code></td>
+<td>Account/path issue</td>
+<td>Confirm the full <code>Services &gt; Install</code> folder is present.</td>
+</tr>
+<tr>
+<td><code>5</code></td>
+<td>User cancelled</td>
+<td>Rerun the same numbered file when ready.</td>
+</tr>
+</tbody></table>
+<h2 id="services-era-desktop-builder">Services-Era Desktop Builder</h2>
+<p>Preferred:</p>
+<pre><code>
+Desktop &gt; FRAME Desktop Builder
+</code></pre>
+<p>Alternative:</p>
+<pre><code>
+Start &gt; FRAME Automation &gt; FRAME Desktop Builder
+</code></pre>
+<p>Manual fallback:</p>
+<pre><code>
+OneDrive &gt; Services &gt; Install &gt; launcher &gt; FRAME Desktop Builder.cmd
+</code></pre>
+<p>If your shortcut opens <code>OneDrive\projects</code>, it is legacy. Do not guess among <code>Scripts</code>, <code>Invoke</code>, <code>bootstrap</code>, <code>Frame Launch</code>, or old <code>Projects</code> shortcuts. Use the <code>launcher</code> folder or refresh shortcuts with:</p>
+<pre><code>
+OneDrive &gt; Services &gt; Install &gt; launcher &gt; Refresh FRAME Shortcuts.cmd
+</code></pre>
 <h2 id="service-command-surface">Service Command Surface</h2>
 <p>Install operations are launched through a small service router so operators do not have to remember individual script paths. Important operations include:</p>
 <table>
